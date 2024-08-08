@@ -7,18 +7,46 @@ const Survey = () => {
 
     const questions = [
         {
-            question: 'What is your name?',
-            inputType: 'text'
+            question: `Welcome! Let's learn a bit more about you.`
         },
         {
-            question: 'How old are you?',
-            inputType: 'number'
+            question: `I'm a...`,
+            inputType: 'button',
+            buttonOptions: [
+                { text: 'Newbie Crafter', value: 1 },
+                { text: 'Casual Crafter', value: 2 },
+                { text: 'Pro Crafter', value: 3 }
+            ]
         },
         {
-            question: 'What is your favorite color?',
-            inputType: 'text'
+            question: `I'm interested in... (Choose up to 3)`,
+            inputType: 'button',
+            buttonOptions: [
+                { text: 'Sewing', value: 'Sewing' },
+                { text: 'Painting', value: 'Painting' },
+                { text: 'Pottery', value: 'Pottery' },
+                { text: 'Crochet', value: 'Crochet' },
+                { text: 'Woodworking', value: 'Woodworking' },
+                { text: 'Stained Glass', value: 'Stained Glass' },
+                { text: 'Scrapbooking', value: 'Scrapbooking' },
+                { text: 'Origami', value: 'Origami' },
+            ]
+        },
+        {
+            question: `My ideal price point for a new craft is...`,
+            inputType: 'button',
+            buttonOptions: [
+                { text: '$10–20', value: '$' },
+                { text: '$20–80', value: '$$' },
+                { text: '$100+', value: '$$$' }
+            ]
         }
     ];
+
+    const handleUserResponse = (response) => {
+        // Store the user's response for the current question
+        setUserResponses([...userResponses, response]);
+    };
 
     const handleNextQuestion = (response) => {
         setUserResponses([...userResponses, response]);
@@ -27,16 +55,19 @@ const Survey = () => {
 
     const history = useHistory();
 
+    if (currentQuestion === questions.length) {
+        history.push('/dashboard'); // Redirect to the dashboard page
+    }
+
     return (
         <main>
-            {currentQuestion === questions.length ? (
-                <>
-                    {history.push('/dashboard')} {/* Redirect to the dashboard page */}
-                </>
-            ) : (
+            {currentQuestion !== questions.length && (
                 <div>
-                    <h1>Welcome! Let's learn a bit more about you.</h1>
-                    <button onClick={() => handleNextQuestion('User response')}>Next</button>
+                    <h1>{questions[currentQuestion].question}</h1>
+                    {questions[currentQuestion].buttonOptions.map((option) => (
+                    <button key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
+                    ))}
+                    <button onClick={() => handleNextQuestion('Next Question')}>Next Question</button>
                 </div>
             )}
         </main>
