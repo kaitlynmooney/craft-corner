@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Morticia Adams",
+        "email": "iliveinamansion@creepy.net",
+        "password": "ilovegomez3"
+    },
+    {
+        "name":"Tallulah Bankhead",
+        "email":"hollywoodstar@life.com",
+        "password":"itsme1"
+    },
+    {
+        "name": "Lucy Pevensie",
+        "email": "spareoom@narnia.net",
+        "password":"foundawardrobe2"
+    },
+    {
+        "name": "Sirius Blac",
+        "email":"thegrim@hogwarts.edu",
+        "password": "moonywerewolf"
+    },
+    {
+        "name": "Tobias Rhodes",
+        "email": "forrestranger@oregon.gov",
+        "password": "iamgrouchy2"
+    },
+    {
+        "name": "Daniel Nathaniel",
+        "email":"waggingtail@dog.net",
+        "password":"woofbark2"
+    },
+    {
+        "name": "Peter Parker",
+        "email":"webslinger@avengers.com",
+        "password":"iamspiderman2"
+    }
+]
