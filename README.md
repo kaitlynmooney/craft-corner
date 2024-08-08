@@ -10,6 +10,12 @@
 
 ## Contributors
 
+Kaitlyn Mooney
+[Github](https://github.com/kaitlynmooney) <br>
+
+Laura Waters
+[Github](https://github.com/Laura-Waters)
+
 Violet Stanziani <br>
 [Github](https://github.com/floweringvi) <br>
 
