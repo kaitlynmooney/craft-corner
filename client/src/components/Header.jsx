@@ -1,7 +1,4 @@
-import { useState } from 'react';
-
 export default function Header() {
-
 
     return (
         <header className="bg-white">
@@ -15,13 +12,15 @@ export default function Header() {
 
                 <div className="">
                     {/* // login or signup button if user is not logged in */}
-                    {!loggedIn && <button type="button" className="btn btn-primary">Login/SignUp</button>}
+                    {!loggedIn && <a className="btn btn-primary" href="#" role="button">Login/Signup</a>}
                     {/* // logout button if user is logged in */}
-                    {loggedIn && <button type="button" className="btn btn-primary">Logout</button>}
-                    {/* // dashboard if user is logged in */}
-                    {loggedIn && <button type="button" className="btn btn-primary">Dashboard</button>}
-                    {/* // explore if user is logged in */}
-                    {loggedIn && <button type="button" className="btn btn-primary">Explore</button>}
+                    {loggedIn && <a className="btn btn-primary" href="#" role="button">Logout</a>}
+                    {/* // dashboard if user is logged in and has completed the quiz*/}
+                    {loggedIn && quiz && <a className="btn btn-primary" href="#" role="button">Dashboard</a>}
+                    {/* // explore if user is logged in and has completed the quiz */}
+                    {loggedIn && quiz && <a className="btn btn-primary" href="#" role="button">Explore</a>}
+                    {/* // quiz if user is logged in and has not completed the quiz */}
+                    {loggedIn && !quiz && <a className="btn btn-primary" href="#" role="button">Quiz</a>}
 
                 </div>
             </nav>
