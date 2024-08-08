@@ -1,5 +1,6 @@
 export default function Header() {
-
+    // get loggedin and quiz values
+    
     return (
         <header className="bg-white">
             <nav
