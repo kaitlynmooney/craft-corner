@@ -2,6 +2,8 @@
 :root {
   --background-color: #fffcf3;
   --text-color: #023e8d;
+  --hover-color: #01214b;
+  --clear: #ffffff00;
 }
 
 html {
@@ -10,9 +12,17 @@ html {
 }
 
 /* STYLES */
+.no-borders {
+  border: 0px;
+}
+
 .borders {
-  border: 1px solid var(--text-color);
+  border: 0.8px solid var(--text-color);
   border-radius: 15px;
+}
+
+.hidden {
+  display: none;
 }
 
 /* FONTS */
@@ -26,4 +36,59 @@ html {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-variation-settings: "slnt" 0;
+}
+
+/* LOGIN PAGE */
+#login-page {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 350px;
+}
+
+#login-main-div,
+#google-oauth-div {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 400px;
+}
+
+#login-div,
+#signup-div,
+#google-oauth {
+  padding: 12px;
+  width: 100%;
+}
+
+#show-login-button,
+#show-signup-button,
+#signup,
+#login {
+  color: var(--text-color);
+  background-color: var(--clear);
+}
+
+#show-login-button,
+#show-signup-button {
+  margin: 0px 10px 0px 10px;
+  border-bottom: 0.8px solid var(--clear);
+}
+
+#show-login-button:hover,
+#show-signup-button:hover {
+  border-bottom: 0.8px solid var(--text-color);
+}
+
+#signup,
+#login {
+  padding: 4px 15px 4px 15px;
+}
+
+#login-div input,
+#signup-div input {
+  width: 100%;
 }
