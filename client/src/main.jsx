@@ -4,13 +4,19 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App.jsx";
 import Login from "./pages/Login";
+import Home from "./pages/home.jsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
     errorElement: <h1 className="display-2">Wrong page!</h1>,
-    children: [],
+    children: [
+      {
+        index: true,
+        element: <Home />,
+      },
+    ],
   },
 ]);
 
