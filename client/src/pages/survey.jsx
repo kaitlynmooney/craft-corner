@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 const Survey = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -24,18 +25,17 @@ const Survey = () => {
         setCurrentQuestion(currentQuestion + 1);
     };
 
+    const history = useHistory();
+
     return (
         <main>
             {currentQuestion === questions.length ? (
-                <div>
-                    <h1>Thank you for completing the survey!</h1>
-                    <p>Your responses: {userResponses.join(', ')}</p>
-                </div>
+                <>
+                    {history.push('/dashboard')} {/* Redirect to the dashboard page */}
+                </>
             ) : (
                 <div>
                     <h1>Welcome! Let's learn a bit more about you.</h1>
-                    <p>{questions[currentQuestion].question}</p>
-                    <input type={questions[currentQuestion].inputType} />
                     <button onClick={() => handleNextQuestion('User response')}>Next</button>
                 </div>
             )}
