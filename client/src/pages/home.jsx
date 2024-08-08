@@ -13,7 +13,3 @@ return (
 // Landing Page Video
 
 export default Home;
-
-// Landing Page Video
-
-export default Home;
