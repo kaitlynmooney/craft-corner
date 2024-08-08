@@ -1,31 +1,31 @@
 [
     {
         "name": "Crochet",
-        "description": ""
+        "description": "Crochet is like magic with a hook! You take a ball of yarn and, with some clever looping and pulling, turn it into anything from cozy blankets to cute little critters. It’s a one-hook wonder that lets you stitch your way to handmade happiness, one loop at a time!"
 
     }, 
     {
         "name":"Knitting",
-        "description": ""
+        "description": "Knitting is like crafting with two wands! You grab some yarn and two needles, then start waving them around to create everything from snug scarves to cozy sweaters. It’s a rhythmic dance of loops that turns string into stylish, handmade magic. Plus, it’s super relaxing—like meditation with a fashionable twist!"
     },
     {
         "name":"Painting",
-        "description": ""
+        "description": "Painting is like bringing a rainbow to life with a brush! You dip into vibrant colors and splash them onto a canvas, turning blank spaces into wild landscapes, dreamy portraits, or abstract wonders. It’s all about letting your imagination run free, where every stroke is a step into your own colorful world. Whether you’re channeling your inner Picasso or just having fun, painting is pure, creative bliss!"
     },
     {
-        "name": "Modeling Clay",
-        "description":""
+        "name": "Clay Modeling",
+        "description":"Clay modeling is like playing with grown-up Play-Doh! You start with a lump of squishy clay and shape it into anything your imagination can dream up—whether it's a cute little creature, a funky mug, or a detailed sculpture. It’s hands-on, messy fun that lets you mold your ideas into something real. Plus, getting your hands dirty is all part of the creative magic!"
     },
     {
         "name": "Jewelry",
-        "description":""
+        "description":"Jewelry making is like crafting your own treasure! With beads, wire, and a dash of sparkle, you create everything from dainty earrings to bold statement pieces. It’s a bit like being a fashion alchemist, turning simple materials into shiny, wearable art. Whether you’re stringing together a necklace or designing a ring, every piece you make is a little gem of creativity!"
     },
     {
         "name": "Stained-Glass",
-        "description":""
+        "description":"Stained glass making is like piecing together a puzzle of light and color! You start with sheets of vibrant glass, cut them into shapes, and fit them together to create stunning designs. When the sunlight shines through, your artwork comes alive, casting a rainbow of colors all around. It’s like painting with glass, where every piece you create becomes a glowing masterpiece!"
     },
     {
         "name":"Pottery",
-        "description":"spin on a wheel"
+        "description":"Pottery is like spinning magic with mud! You take a lump of clay, throw it on a wheel, and shape it into anything from a cool vase to a quirky mug. As the wheel spins, your hands mold the clay into something uniquely yours. It’s messy, creative, and oh-so-satisfying—plus, you get to say you made your own dishes!"
     }
 ]
