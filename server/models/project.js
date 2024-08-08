@@ -6,15 +6,15 @@ const projectSchema = new Schema({
         required: true, 
         trim: true, 
     },
-    tools:{
-        type: String,
-        required: true,
-    },
     instructions :{
         type: String, 
         required: true,
     },
     pricePoint: {
+        type: String,
+        required: true
+    },
+    difficulty: {
         type: String,
         required: true
     }

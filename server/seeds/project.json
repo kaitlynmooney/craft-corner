@@ -1,0 +1,73 @@
+[
+    {
+        "name":"Simple Scarf",
+        "instructions":"Materials Needed: Yarn: Type: Medium weight (Worsted, #4) yarn Amount: Approximately 200-300 yards Cost: $5 - $10 per skein Crochet Hook: Size: 5.5mm (Size I-9) Cost: $2 - $5 Scissors: Any small pair will do. Cost: $2 - $5 Tapestry Needle: For weaving in ends. Cost: $1 - $3 Estimated Total Cost: $10 - $23 Project Steps: Chain Stitch (Ch): Start by making a chain the width of your scarf, typically 20-30 stitches. Single Crochet (Sc): Work single crochet stitches across the chain. Repeat: Turn your work and continue single crocheting back and forth until the scarf reaches your desired length (usually around 60-70 inches). Finish Off: Cut the yarn, leaving a tail, and use the tapestry needle to weave in the ends. This project is perfect for getting comfortable with basic stitches and handling yarn, and by the end, you’ll have a cozy scarf to show off!",
+        "pricePoint":"$", 
+        "difficulty": "Beginner"
+    },
+    {
+        "name":"Animal Plush",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$$"
+    },
+    {
+        "name":"Simple Garter Stich Scarf",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$"
+    },
+    {
+        "name":"Cabled Sweater",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$$$"
+    },
+    {
+        "name":"Abstract Canvas",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$"
+    },
+    {
+        "name":"Realistic Portrait",
+        "instructions":"Lorem Ipsum",
+        "pricePoint":"$$$"
+    },
+    {
+        "name":"Simple Pinch Pot",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$-$$"
+    },
+    {
+        "name":"Detailed Ceramic Sculpture",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$$-$$$"
+    },
+    {
+        "name":"Simple Beaded Bracelet",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$"
+    },
+    {
+        "name":"Hancrafted Gemstone Pendant",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$$-$$$"
+    },
+    {
+        "name":"Simple Suncatcher",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$$"
+    },
+    {
+        "name":"Stained Glass Window Panel",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$$$"
+    },
+    {
+        "name":"Simple Hand Built Clay Bowl",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$"
+    },
+    {
+        "name":"Thrown and Trimmed Ceramic Vase",
+        "instructions":"lorem ipsum",
+        "pricePoint":"$$$+"
+    }
+]
