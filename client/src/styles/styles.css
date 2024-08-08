@@ -1,0 +1,29 @@
+/* GLOBAL */
+:root {
+  --background-color: #fffcf3;
+  --text-color: #023e8d;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* STYLES */
+.borders {
+  border: 1px solid var(--text-color);
+  border-radius: 15px;
+}
+
+/* FONTS */
+.sofia {
+  font-family: "Princess Sofia", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0;
+}

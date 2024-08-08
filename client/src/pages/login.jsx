@@ -3,7 +3,7 @@
 /* LOGIN PAGE */
 export default function LoginPage() {
   return (
-    <div>
+    <div className="inter">
       <div>
         <button id="show-login-button">Log in</button>
         <button id="show-signup-button">Sign up</button>
@@ -11,37 +11,37 @@ export default function LoginPage() {
       <div>
         <div className="hidden" id="signup-div">
           <p>Username:</p>
-          <p class="hidden login-alert" id="signup-username-alert">
+          <p className="hidden login-alert" id="signup-username-alert">
             Please enter a username
           </p>
           <input
             type="text"
-            class="borders"
+            className="borders"
             id="signup-username"
             name="signup-username"
           />
           <p>Email:</p>
-          <p class="hidden login-alert" id="signup-email-alert">
+          <p className="hidden login-alert" id="signup-email-alert">
             Please enter a valid email
           </p>
           <input
             type="text"
-            class="borders"
+            className="borders"
             id="signup-email"
             name="signup-email"
           />
           <p>Password:</p>
-          <p class="hidden login-alert" id="signup-password-alert">
+          <p className="hidden login-alert" id="signup-password-alert">
             Please enter a password longer than 6 characters
           </p>
           <input
             type="password"
-            class="borders"
+            className="borders"
             id="signup-password"
             name="signup-password"
           />
           <button id="go-sign-up">Sign Up</button>
-          <p class="hidden login-alert" id="signup-alert">
+          <p className="hidden login-alert" id="signup-alert">
             Sorry, we were unable to create your account. Please try again.
           </p>
         </div>
@@ -66,7 +66,7 @@ export default function LoginPage() {
             id="login-password"
             name="login-password"
           />
-          <p class="hidden login-alert" id="login-alert">
+          <p className="hidden login-alert" id="login-alert">
             Sorry, the email or password you entered does not match any existing
             account. Please try again!
           </p>
