@@ -20,6 +20,19 @@ const userSchema = new Schema({
         required: true, 
         minlength: 5,
     },
+    savedCrafts : [ {
+        type: Schema.Types.ObjectId,
+        ref: 'Craft'
+
+    }],
+    completedProjects : [{
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+    }],
+    ongoingProjects: [{
+        type: Schema.Types.ObjectId,
+        ref: 'Project'
+    }]
 });
 
 profileSchema.pre('save', async function (next) {
@@ -37,5 +50,5 @@ profileSchema.pre('save', async function (next) {
   };
 
   const User = model('User', userSchema);
-  
+
   module.exports = User;
