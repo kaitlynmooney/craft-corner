@@ -31,10 +31,10 @@ const LoginPage = () => {
       const { data } = await login({
         variables: { 
           'login_email': formState['login_email'],
-          'login_password': formState['login_email']
+          'login_password': formState['login_password']
         },
       });
-
+      console.log(data);
       Auth.login(data.login.token);
     } catch (e) {
       console.error(e);

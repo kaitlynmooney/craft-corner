@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
 const { User } = require("../models");
+const { signToken, AuthenticationError } = require('../utils/auth');
 
 /* RESOLVERS */
 const resolvers = {
