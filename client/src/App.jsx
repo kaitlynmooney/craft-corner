@@ -5,12 +5,6 @@ import { setContext } from '@apollo/client/link/context';
 
 import Header from './components/Header';
 
-const client = new ApolloClient({
-  cache: new InMemoryCache(),
-  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
-  link: authLink.concat(httpLink),
-});
-
 // Construct our main GraphQL API endpoint
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -27,6 +21,12 @@ const authLink = setContext((_, { headers }) => {
       authorization: token ? `Bearer ${token}` : '',
     },
   };
+});
+
+const client = new ApolloClient({
+  cache: new InMemoryCache(),
+  // Set up our client to execute the `authLink` middleware prior to making the request to our GraphQL API
+  link: authLink.concat(httpLink),
 });
 
 function App() {

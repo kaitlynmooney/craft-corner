@@ -2,13 +2,15 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
+import { Link } from 'react-router-dom';
+
 
 import Auth from '../utils/auth';
 
 /* LOGIN PAGE */
 // export default function LoginPage() {
 const LoginPage = () => {
-  const [ formState, setFormState ] = useState({ email: '', password: '' });
+  const [ formState, setFormState ] = useState({ 'login_email': '', 'login_password': '' });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
     // update state based on form input changes
@@ -27,7 +29,10 @@ const LoginPage = () => {
     console.log(formState);
     try {
       const { data } = await login({
-        variables: { ...formState },
+        variables: { 
+          'login_email': formState['login_email'],
+          'login_password': formState['login_email']
+        },
       });
 
       Auth.login(data.login.token);
@@ -37,8 +42,8 @@ const LoginPage = () => {
 
     // clear form values
     setFormState({
-      email: '',
-      password: '',
+      'login_email': '',
+      'login_password': '',
     });
   };
   return (
@@ -52,35 +57,54 @@ const LoginPage = () => {
         </button>
       </div>
       <div id="login-main-div">
-        <div className="borders" id="login-div">
-          <p>Email:</p>
-          <p className="hidden login-alert" id="login-email-alert">
-            Please enter your email
-          </p>
-          <input
-            type="text"
-            className="borders"
-            id="login-email"
-            name="login-email"
-          />
-          <p>Password:</p>
-          <p className="hidden login-alert" id="login-password-alert">
-            Please enter your password
-          </p>
-          <input
-            type="password"
-            className="borders"
-            id="login-password"
-            name="login-password"
-          />
-          <p className="hidden login-alert" id="login-alert">
-            Sorry, the email or password you entered does not match any existing
-            account. Please try again!
-          </p>
-          <button className="borders" id="login">
-            Log in
-          </button>
-        </div>
+      {data ? (
+              <p>
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
+              </p>
+            ) : (
+        <form onSubmit={handleFormSubmit}>
+          <div className="borders" id="login-div">
+            <p>Email:</p>
+            <p className="hidden login-alert" id="login-email-alert">
+              Please enter your email
+            </p>
+            <input
+              type="text"
+              className="borders"
+              id="login-email"
+              name="login_email"
+              value={formState.login_email}
+              onChange={handleChange}
+            />
+            <p>Password:</p>
+            <p className="hidden login-alert" id="login-password-alert">
+              Please enter your password
+            </p>
+            <input
+              type="password"
+              className="borders"
+              id="login-password"
+              name="login_password"
+              value={formState.login_password}
+              onChange={handleChange}
+            />
+            <p className="hidden login-alert" id="login-alert">
+              Sorry, the email or password you entered does not match any existing
+              account. Please try again!
+            </p>
+            <button className="borders" id="login" type ="submit">
+              Log in
+            </button>
+          </div>
+        </form>
+      )}
+
+{error && (
+  <div className="my-3 p-3 bg-danger text-white">
+    {error.message}
+  </div>
+)}
         <div className="hidden borders" id="signup-div">
           <p>Username:</p>
           <p className="hidden login-alert" id="signup-username-alert">
