@@ -19,7 +19,7 @@ const Survey = () => {
             ]
         },
         {
-            question: `I'm interested in... (Choose up to 3)`,
+            question: <div dangerouslySetInnerHTML={{ __html: 'I\'m interested in...<br><h4>(Choose up to 3)</h4>' }} />,
             inputType: 'button',
             buttonOptions: [
                 { text: 'Sewing', value: 'Sewing' },
