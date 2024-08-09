@@ -11,6 +11,7 @@ import SingleCraft from "./pages/singleCraft.jsx"
 
 import Survey from "./pages/survey.jsx";
 import Dashboard from "./pages/dashboard.jsx";
+import Explore from "./pages/explore.jsx";
 
 
 const router = createBrowserRouter([
@@ -28,17 +29,19 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
-
         path: "/project/:projectId",
         element: <SingleCraft />
-      }, {
+      }, 
         path: "/survey",
         element: <Survey />,
       }, {
         path: "/dashboard",
         element: <Dashboard />,
       },
-
+      {
+        path: "/explore",
+        element: <Explore />,
+      },
     ],
   },
 ]);

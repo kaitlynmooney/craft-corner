@@ -249,11 +249,9 @@ html {
   height: 150px;
   width:150px;
   border-radius: 15px;
-  margin: 10px;
-  transition: background-color 0.3s; /* Add a smooth transition effect */
-  background-color: var(--background-color); /* Initial background color */
-  color: var(--text-color); /* Initial text color */
 }
+
+
 
 .button-options:hover {
   background-color: var(--text-color); /* Change the background color on hover */
@@ -263,4 +261,41 @@ html {
 .button-options.clicked {
   background-color: var(--text-color); /* Change the background color after click */
   color: var(--background-color);
+}
+
+/* EXPLORE PAGE */
+#explore {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  text-align: center;
+}
+
+#featured-craft {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+p {
+  font-size: 25px;
+}
+
+#search-button {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  padding: 4px 15px 4px 15px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+#search-form {
+  margin-top: 20px;
+  width: 100%;
+  margin: 10px;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+  background-color: var(--background-color); /* Initial background color */
+  color: var(--text-color); /* Initial text color */
 }
