@@ -277,7 +277,7 @@ db.once('open', async () => {
             username: 'Sirius Black',
             email:'thegrim@hogwarts.edu',
             password: 'moonywerewolf',
-            completedProjects:[project[1]._id, project[4]._id]
+            completedProjects:[projects[1]._id, projects[4]._id]
         },
         {
             username: 'Tobias Rhodes',

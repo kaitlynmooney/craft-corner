@@ -7,7 +7,7 @@ const projectSchema = new Schema({
         trim: true, 
     },
     materials:{
-        type:String,
+        type:Array,
         required: true
     },
     instructions :{
