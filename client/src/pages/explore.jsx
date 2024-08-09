@@ -1,13 +1,15 @@
 import React from "react";
 import Dropdown from "../components/Dropdown";
+import Hero from "../components/Hero";
 
 const Explore = () => {
   return (
     <div id="explore">
-      <p id="explore-feature">Featured Craft of the Week</p>
+      <Hero/>
+      {/* <p id="explore-feature">Featured Craft of the Week</p>
       <div className="featured-craft">
         <h1 id="featured-craft">Flower Pots</h1>
-      </div>
+      </div> */}
       <Dropdown id="dropdown" />
       <div className="container">
         <div className="column" id="popular">

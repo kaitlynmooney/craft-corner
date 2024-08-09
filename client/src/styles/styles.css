@@ -321,11 +321,16 @@ html {
 
 #featured-craft {
   font-weight: bold;
-  font-size: 60px;
+  font-size: 70px;
+}
+
+#featured-craft:hover {
+  color: white;
 }
 
 p {
-  font-size: 25px;
+  font-size: 40px;
+  font-weight: bold;
 }
 
 #search-button {
@@ -502,3 +507,25 @@ p {
   padding-top: 20px;
 }
 
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px; /* Adjust height as needed */
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire container */
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-color);
+  text-align: center;
+  z-index: 1; /* Ensures text is above the image */
+}
