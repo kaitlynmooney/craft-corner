@@ -225,9 +225,22 @@ html {
   text-align: center;
 }
 
+#option-container {
+  display: flex;
+  flex-direction: row;
+}
+
 #nextquestion {
   color: var(--background-color);
   background-color: var(--text-color);
   padding: 4px 15px 4px 15px;
   margin-top: 20px;
+}
+
+.button-options {
+  text-align: center;
+  border: 0.8px solid var(--text-color);
+  height: 150px;
+  width:150px;
+  border-radius: 15px;
 }

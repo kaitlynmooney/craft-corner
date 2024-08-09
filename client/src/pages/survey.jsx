@@ -64,13 +64,15 @@ const Survey = () => {
             {currentQuestion !== questions.length && (
                 <div className="inter" id="survey-page">
                     <h1>{questions[currentQuestion].question}</h1>
-                    {questions[currentQuestion].buttonOptions && questions[currentQuestion].buttonOptions.map((option) => (
-                        <button className="borders" key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
+                    {questions[currentQuestion].buttonOptions && questions[currentQuestion].buttonOptions.map((option, index) => (
+                      <div key={index} id="option-container">
+                        <button className="button-options" key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
+                      </div>
                     ))}
                     {currentQuestion === 0 ? (
                     <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>Start the Survey &#8594;</button>
                 ) : (
-                    <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>Next Question</button>
+                    <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>Next Question &#8594;</button>
                 )}
                 </div>
             )}
