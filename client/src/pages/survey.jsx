@@ -7,7 +7,7 @@ const Survey = () => {
 
     const questions = [
         {
-            question: `Welcome! Let's learn a bit more about you.`
+            question: <div dangerouslySetInnerHTML={{ __html: 'Welcome!<br>Let\'s learn a bit more about you.' }} />
         },
         {
             question: `I'm a...`,
@@ -62,12 +62,12 @@ const Survey = () => {
     return (
         <main>
             {currentQuestion !== questions.length && (
-                <div>
+                <div className="inter" id="survey-page" style={{ backgroundColor: 'var(--background-color)' }}>
                     <h1>{questions[currentQuestion].question}</h1>
                     {questions[currentQuestion].buttonOptions && questions[currentQuestion].buttonOptions.map((option) => (
-                        <button key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
+                        <button className="borders" key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
                     ))}
-                    <button onClick={() => handleNextQuestion('Next Question')}>Next Question</button>
+                    <button className="borders" id="nextquestion" type ="submit" onClick={() => handleNextQuestion('Next Question')}>Next Question</button>
                 </div>
             )}
         </main>

@@ -212,3 +212,21 @@ html {
     }
   }
 }
+
+/* SURVEY PAGE */
+#survey-page {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 350px;
+  text-align: center;
+}
+
+#nextquestion {
+  color: var(--background-color);
+  background-color: var(--text-color);
+  padding: 4px 15px 4px 15px;
+}
