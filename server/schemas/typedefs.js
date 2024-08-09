@@ -1,13 +1,13 @@
 // /* TYPEDEFS */
 // /* fix later on */
 const typeDefs = `
-
 type User {
   _id: ID
   username: String
   email: String
   password: String
   avatar: String
+  savedCrafts: [Craft]
 }
 
 type Project {
@@ -18,8 +18,8 @@ type Project {
   image:String
   pricePoint:String
   diffculty: String
-
 }
+
 type Craft {
   _id : ID
   name: String

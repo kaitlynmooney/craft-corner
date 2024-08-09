@@ -21,6 +21,7 @@ const Dashboard = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   const user = data?.me;
+  console.log(user);
 
   // If user not found, return error message
   if (!user)
