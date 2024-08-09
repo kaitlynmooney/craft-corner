@@ -17,7 +17,19 @@ const SingleProject = () => {
     }
     return(
         <div>
-            
+            <div><img></img></div>
+            <div>
+                <div>
+                    <btn>Price Point: {project.pricePoint}</btn>
+                    <btn>Skill Level : {project.difficulty}</btn>
+                    </div>
+                
+                <h1>{project.name}</h1>
+                <p>{project.instructions}</p>
+            </div>
+
         </div>
     )
 }
+
+export default SingleProject;
