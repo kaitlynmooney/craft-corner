@@ -32,6 +32,7 @@ query getSingleProject($projectId:ID!){
   project(projectId: $projectId) {
     _id
     name
+    materials
     instructions
     pricePoint
     difficulty
