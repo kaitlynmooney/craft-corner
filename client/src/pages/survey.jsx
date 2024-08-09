@@ -59,6 +59,16 @@ const Survey = () => {
         navigate('/dashboard'); // Redirect to the dashboard page
     }
 
+    document.querySelectorAll('.button-options').forEach(function(button) {
+        button.addEventListener('click', function() {
+            if (this.classList.contains('clicked')) {
+                this.classList.remove('clicked');
+            } else {
+                this.classList.add('clicked');
+            }
+        });
+    });
+
     return (
         <main>
             {currentQuestion !== questions.length && (

@@ -30,7 +30,7 @@ const router = createBrowserRouter([
 
         path: "/project/:projectId",
         element: <SingleCraft />
-      },
+      }, {
         path: "/survey",
         element: <Survey />,
       }, {
