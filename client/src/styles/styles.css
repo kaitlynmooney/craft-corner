@@ -326,66 +326,78 @@ p {
 }
 
 .pottery-btn {
-  background-image: url('https://imgur.com/nGXmgVB'); /* URL of the background image */
+  background-image: url('https://via.placeholder.com/150'); /* URL of the background image */
   background-size: cover; /* Ensures the image covers the button */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 60px 70px; /* Padding inside the button */
-  font-size: 16px; /* Font size */
+  height: 200px;
+  width: 200px;
+  font-size: 20px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
 }
 
 .crochet-btn {
-  background-image: url('https://imgur.com/UL5CsFA'); /* URL of the background image */
+  background-image: url('https://via.placeholder.com/150'); /* URL of the background image */
   background-size: cover; /* Ensures the image covers the button */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 60px 70px; /* Padding inside the button */
-  font-size: 16px; /* Font size */
+  height: 200px;
+  width: 200px;
+  font-size: 20px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
 }
 
 .glass-btn {
-  background-image: url('https://imgur.com/b2hCnxj'); /* URL of the background image */
+  background-image: url('https://via.placeholder.com/150'); /* URL of the background image */
   background-size: cover; /* Ensures the image covers the button */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 60px 70px; /* Padding inside the button */
-  font-size: 16px; /* Font size */
+  height: 200px;
+  width: 200px;
+  font-size: 20px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
 }
 .jewelry-btn {
-  background-image: url('https://imgur.com/Hbt9VY9'); /* URL of the background image */
+  background-image: url('https://via.placeholder.com/150'); /* URL of the background image */
   background-size: cover; /* Ensures the image covers the button */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 60px 70px; /* Padding inside the button */
-  font-size: 16px; /* Font size */
+  height: 200px;
+  width: 200px;
+  font-size: 20px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
 }
 .knitting-btn {
-  background-image: url('https://imgur.com/AWf9kbp'); /* URL of the background image */
+  background-image: url('https://via.placeholder.com/150'); /* URL of the background image */
   background-size: cover; /* Ensures the image covers the button */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 60px 70px; /* Padding inside the button */
-  font-size: 16px; /* Font size */
+  height: 200px;
+  width: 200px;
+  font-size: 20px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
 }
 .clay-btn {
-  background-image: url('https://imgur.com/bi3b7o6'); /* URL of the background image */
+  background-image: url('https://via.placeholder.com/150'); /* URL of the background image */
   background-size: cover; /* Ensures the image covers the button */
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 60px 70px; /* Padding inside the button */
-  font-size: 16px; /* Font size */
+  height: 200px;
+  width: 200px;
+  font-size: 20px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
 }
 
 .dropdown {
