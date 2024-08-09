@@ -6,7 +6,6 @@ export const QUERY_USER = gql`
       _id
       username
       email
-
     }
   }
 `;
@@ -16,25 +15,22 @@ export const QUERY_ME = gql`
     me {
       _id
       email
-
       password
       username
       avatar
-
-
-
     }
   }
 `;
 
 export const QUERY_SINGLE_PROJECT = gql`
 query getSingleProject($projectId:ID!){
-  project(projectId: $projectId) {
-    _id
-    name
-    materials
-    instructions
-    pricePoint
-    difficulty
+    project(projectId: $projectId) {
+      _id
+      name
+      materials
+      instructions
+      pricePoint
+      difficulty
+    }
   }
-}`
+`;
