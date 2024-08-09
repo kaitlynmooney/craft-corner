@@ -244,3 +244,23 @@ html {
   width:150px;
   border-radius: 15px;
 }
+
+/* EXPLORE PAGE */
+#explore {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 350px;
+  text-align: center;
+}
+
+#featured-craft {
+  font-weight: bold;
+  font-size: 60px;
+}
+
+p {
+  font-size: 25px;
+}
