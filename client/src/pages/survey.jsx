@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Survey = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -7,7 +7,7 @@ const Survey = () => {
 
     const questions = [
         {
-            question: `Welcome! Let's learn a bit more about you.`
+            question: <div dangerouslySetInnerHTML={{ __html: 'Welcome!<br>Let\'s learn a bit more about you.' }} />
         },
         {
             question: `I'm a...`,
@@ -53,21 +53,27 @@ const Survey = () => {
         setCurrentQuestion(currentQuestion + 1);
     };
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     if (currentQuestion === questions.length) {
-        history.push('/dashboard'); // Redirect to the dashboard page
+        navigate('/dashboard'); // Redirect to the dashboard page
     }
 
     return (
         <main>
             {currentQuestion !== questions.length && (
-                <div>
+                <div className="inter" id="survey-page">
                     <h1>{questions[currentQuestion].question}</h1>
-                    {questions[currentQuestion].buttonOptions.map((option) => (
-                    <button key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
+                    {questions[currentQuestion].buttonOptions && questions[currentQuestion].buttonOptions.map((option, index) => (
+                      <div key={index} id="option-container">
+                        <button className="button-options" key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
+                      </div>
                     ))}
-                    <button onClick={() => handleNextQuestion('Next Question')}>Next Question</button>
+                    {currentQuestion === 0 ? (
+                    <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>Start the Survey &#8594;</button>
+                ) : (
+                    <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>Next Question &#8594;</button>
+                )}
                 </div>
             )}
         </main>

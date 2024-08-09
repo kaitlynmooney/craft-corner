@@ -6,7 +6,12 @@ import App from "./App.jsx";
 import Error from "./pages/error.jsx";
 import Login from "./pages/login.jsx";
 import Home from "./pages/home.jsx";
+
+import SingleCraft from "./pages/singleCraft.jsx"
+
+import Survey from "./pages/survey.jsx";
 import Dashboard from "./pages/dashboard.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -23,9 +28,17 @@ const router = createBrowserRouter([
         element: <Login />,
       },
       {
+
+        path: "/project/:projectId",
+        element: <SingleCraft />
+      }, {
+        path: "/survey",
+        element: <Survey />,
+      }, {
         path: "/dashboard",
         element: <Dashboard />,
       },
+
     ],
   },
 ]);
