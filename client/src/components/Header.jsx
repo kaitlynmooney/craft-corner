@@ -11,7 +11,7 @@ export default function Header() {
         <div className="container bg--background-color">
           <div className="my-5 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <div className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <p className="display-4 mb-0 sofia" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)'}}>Craft Corner</p>
+                <a className="display-4 mb-0 sofia text-decoration-none" style={{ backgroundColor: 'var(--background-color)', color: 'var(--text-color)'}} href="/" role="button" id="logo">Craft Corner</a>
               </div>
 
               <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
