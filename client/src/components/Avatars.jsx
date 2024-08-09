@@ -1,20 +1,29 @@
 /* AVATARS */
-const Crafts = ({ title, crafts }) => {
-  // Returns array of crafts, called in dashboard component
+const Avatars = ({ showAvatars, onClose }) => {
+  // Returns modal of avatar choices
   return (
-    <div>
-      <h3>{title}</h3>
-      <div>
-        {/* Maps through each individual craft */}
-        {crafts?.map((craft, index) => (
-          <div key={index}>
-            <p>{craft.name}</p>
+    <div
+      className={`modal fade avatar-modal ${showAvatars ? "show" : ""}`}
+      style={{ display: showAvatars ? "block" : "none" }}
+      tabIndex="-1"
+      role="dialog"
+      aria-labelledby="AvatarModal"
+      aria-hidden={!showAvatars}
+    >
+      <div className="modal-dialog modal-lg">
+        <div className="modal-content">
+          <div className="modal-header">
+            <h5 className="modal-title">Pick an avatar</h5>
+            <button type="button" className="close" onClick={onClose}>
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
-        ))}
+          <div className="modal-body">{/* Your avatar selection logic */}</div>
+        </div>
       </div>
     </div>
   );
 };
 
 /* EXPORT */
-export default Crafts;
+export default Avatars;
