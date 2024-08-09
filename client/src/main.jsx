@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import App from "./App.jsx";
+import Error from "./pages/error.jsx";
 import Login from "./pages/login.jsx";
 import Home from "./pages/home.jsx";
 import Dashboard from "./pages/dashboard.jsx";
@@ -11,7 +12,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <h1 className="display-2">Wrong page!</h1>,
+    errorElement: <Error />,
     children: [
       {
         index: true,
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "/error",
+        element: <Error />,
       },
     ],
   },
