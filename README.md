@@ -12,6 +12,10 @@ N/A
 
 The website can be visited at http://craft-corner.onrender.com/. Please allow about a minute for the site to load, as periods of site inactivity cause slow connections to the website.
 
+From the Home page, users can choose to navigate to the "About" or "Login" pages or they can take our "Crafting Survey".
+
+On the Login page, users can sign up, sign in using an existing account, or sign in using Google OAuth 2.0. Once a user has successfully logged in, they will see an option to "Logout" and ... When the logout is clicked, the user will no longer see these options and will not have access to these pages.
+
 ## Credits
 
 [Guide to homepage scrolling animation](https://www.youtube.com/watch?v=nAjR0Oj0J8E)
