@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Survey = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
