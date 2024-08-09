@@ -16,7 +16,11 @@ const Profile = ({ user }) => {
   // Return profile info, including avatar, craft status, and number of completed crafts
   return (
     <div className="inter" id="profile">
-      <img src={`../../${user?.avatar}`} alt="User Avatar"></img>
+      <img
+        id="profile-img"
+        src={`../../${user?.avatar}`}
+        alt="User Avatar"
+      ></img>
       <div id="user-info">
         <h2>{user?.username}</h2>
         <p>Crafter Status: </p>
