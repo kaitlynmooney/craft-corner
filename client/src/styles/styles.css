@@ -12,6 +12,10 @@ html {
   color: var(--text-color);
 }
 
+#main-div {
+  background-color: var(--background-color);
+}
+
 /* STYLES */
 .no-borders {
   border: 0px;

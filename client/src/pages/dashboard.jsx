@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import Profile from "../components/Profile";
+import Crafts from "../components/Crafts";
 
 /* DASHBOARD */
 const Dashboard = () => {
