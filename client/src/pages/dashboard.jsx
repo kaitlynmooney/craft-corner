@@ -1,1 +1,2 @@
 //dashboard
+export default Dashboard;
