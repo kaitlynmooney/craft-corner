@@ -9,6 +9,7 @@ type User {
   password: String
   avatar: String
 }
+
 type Project {
     _id: ID
     name:String
@@ -24,6 +25,7 @@ type Craft {
     name: String
     description: String
 }
+
 type Auth {
   token: ID!
   user: User
