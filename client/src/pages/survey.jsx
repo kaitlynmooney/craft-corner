@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Survey = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
@@ -53,10 +53,10 @@ const Survey = () => {
         setCurrentQuestion(currentQuestion + 1);
     };
 
-    const history = useHistory();
+    const navigate = useNavigate();
 
     if (currentQuestion === questions.length) {
-        history.push('/dashboard'); // Redirect to the dashboard page
+        navigate('/dashboard'); // Redirect to the dashboard page
     }
 
     return (
@@ -64,8 +64,8 @@ const Survey = () => {
             {currentQuestion !== questions.length && (
                 <div>
                     <h1>{questions[currentQuestion].question}</h1>
-                    {questions[currentQuestion].buttonOptions.map((option) => (
-                    <button key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
+                    {questions[currentQuestion].buttonOptions && questions[currentQuestion].buttonOptions.map((option) => (
+                        <button key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
                     ))}
                     <button onClick={() => handleNextQuestion('Next Question')}>Next Question</button>
                 </div>
