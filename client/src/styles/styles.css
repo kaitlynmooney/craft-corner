@@ -178,8 +178,8 @@ html {
 #profile-img {
   border: 0.8px solid var(--text-color);
   border-radius: 50%;
-  height: 20vw;
-  margin: 20px 10px 10px 20px;
+  height: 18vw;
+  margin: 0px 0px 10px 0px;
 }
 
 #dashboard-inner {
@@ -190,7 +190,7 @@ html {
 
 #profile {
   flex: 1;
-  padding: 10px;
+  padding: 20px 10px 20px 10px;
 }
 
 #projects {

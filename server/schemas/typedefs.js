@@ -9,6 +9,7 @@ type User {
   password: String
   avatar: String
 }
+
   
 type Auth {
   token: ID!

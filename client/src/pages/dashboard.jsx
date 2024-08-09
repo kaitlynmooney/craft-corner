@@ -7,13 +7,22 @@ import Projects from "../components/Projects";
 
 /* DASHBOARD */
 const Dashboard = () => {
+  // Crafter status names
+  const statuses = [
+    "Newbie",
+    "Expert",
+    "Pro",
+    "Craft Master",
+    "Crafting Conoisseur",
+  ];
+
   // Get user data
   const { loading, error, data } = useQuery(QUERY_ME);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
   const user = data?.me;
 
-  //
+  // If user not found, return error message
   if (!user)
     return (
       <h1 className="inter title" id="dashboard-user-error">
@@ -31,7 +40,7 @@ const Dashboard = () => {
         </div>
         <div id="projects">
           <div>
-            <h2>My crafts:</h2>
+            <h2>Your crafts:</h2>
             <Projects crafts={user.ongoingProjects} />
           </div>
           <div>
