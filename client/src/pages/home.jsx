@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
+  // set timeout loading variable to true
+  // make array of source and title
+  // one iframe
+  // onload on last iframe
+  // loading set to false
+
   return (
     <div id="homepage">
       <div className="homepage-carousel">
