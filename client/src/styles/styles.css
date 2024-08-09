@@ -243,4 +243,18 @@ html {
   height: 150px;
   width:150px;
   border-radius: 15px;
+  margin: 10px;
+  transition: background-color 0.3s; /* Add a smooth transition effect */
+  background-color: var(--background-color); /* Initial background color */
+  color: var(--text-color); /* Initial text color */
+}
+
+.button-options:hover {
+  background-color: var(--text-color); /* Change the background color on hover */
+  color: var(--background-color); /* Change the text color on hover */
+}
+
+.button-options.clicked {
+  background-color: var(--text-color); /* Change the background color after click */
+  color: var(--background-color);
 }
