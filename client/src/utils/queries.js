@@ -30,3 +30,14 @@ export const QUERY_ME = gql`
     }
   }
 `;
+
+export const QUERY_SINGLE_PROJECT = gql`
+query getSingleProject($projectId:ID!){
+  project(projectId: $projectId) {
+    _id
+    name
+    instructions
+    pricePoint
+    difficulty
+  }
+}`
