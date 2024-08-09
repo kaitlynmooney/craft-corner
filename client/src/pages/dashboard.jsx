@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import Profile from "../components/Profile";
-import Crafts from "../components/Crafts";
+import Projects from "../components/Projects";
 
 /* DASHBOARD */
 const Dashboard = () => {
@@ -18,17 +18,21 @@ const Dashboard = () => {
 
   // Return dashboard, calls Profile and UserCrafts components
   return (
-    <div id="dashboard">
-      <h1>Hi {user.username}!</h1>
-      <div>
-        <Profile user={user} />
-        <div>
-          <h2>My crafts:</h2>
-          <Crafts crafts={user.ongoingProjects} />
+    <div className="inter" id="dashboard">
+      <h1 className="title">Hi {user.username}!</h1>
+      <div id="dashboard-inner">
+        <div className="borders" id="profile">
+          <Profile user={user} />
         </div>
-        <div>
-          <h2>Pick your next project:</h2>
-          <Crafts crafts={user.savedCrafts} />
+        <div id="projects">
+          <div>
+            <h2>My crafts:</h2>
+            <Projects crafts={user.ongoingProjects} />
+          </div>
+          <div>
+            <h2>Pick your next project:</h2>
+            <Projects crafts={user.savedCrafts} />
+          </div>
         </div>
       </div>
     </div>
