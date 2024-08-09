@@ -4,16 +4,6 @@ import { useNavigate } from 'react-router-dom';
 const Survey = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [userResponses, setUserResponses] = useState([]);
-    // const ButtonOptions = () => {
-    //     const [selectedOption, setSelectedOption] = useState(null);
-
-    //     const handleButtonClick = (value) => {
-    //         if (selectedOption === value) {
-    //             setSelectedOption(null); // Deselect the option if it's already selected
-    //         } else {
-    //             setSelectedOption(value); // Select the clicked option
-    //         }
-    //     };
 
     const questions = [
         {
@@ -95,13 +85,19 @@ const ButtonOptions = ({ options, handleUserResponse }) => {
     const handleButtonClick = (value) => {
         setSelectedOption(selectedOption === value ? null : value);
         handleUserResponse(value); // Store the user's response
+
+        if (selectedOption === value) {
+            setSelectedOption(null);
+        } else {
+            setSelectedOption(value);
+        }
     };
 
     return (
         <div id="option-container">
             {options && options.map(option => (
                 <button 
-                className={`button-options ${option.value === selectedOption ? 'selected' : ''}`}
+                className={`button-options ${option.value === selectedOption ? 'selected clicked' : ''}`}
                 key={option.value}
                 onClick={() => handleButtonClick(option.value)}
                 >
