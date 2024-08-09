@@ -7,6 +7,7 @@ type User {
   username: String
   email: String
   password: String
+  avatar: String
 }
   
 type Auth {

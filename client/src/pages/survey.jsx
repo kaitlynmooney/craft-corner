@@ -19,7 +19,7 @@ const Survey = () => {
             ]
         },
         {
-            question: `I'm interested in... (Choose up to 3)`,
+            question: <div dangerouslySetInnerHTML={{ __html: 'I\'m interested in...<br><h4>(Choose up to 3)</h4>' }} />,
             inputType: 'button',
             buttonOptions: [
                 { text: 'Sewing', value: 'Sewing' },
@@ -64,20 +64,65 @@ const Survey = () => {
             {currentQuestion !== questions.length && (
                 <div className="inter" id="survey-page">
                     <h1>{questions[currentQuestion].question}</h1>
-                    {questions[currentQuestion].buttonOptions && questions[currentQuestion].buttonOptions.map((option, index) => (
-                      <div key={index} id="option-container">
-                        <button className="button-options" key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
-                      </div>
-                    ))}
-                    {currentQuestion === 0 ? (
-                    <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>Start the Survey &#8594;</button>
-                ) : (
-                    <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>Next Question &#8594;</button>
-                )}
+                    <ButtonOptions
+                       options={questions[currentQuestion].buttonOptions}
+                       handleUserResponse={handleUserResponse}
+                       questionIndex={currentQuestion} // Pass the questionIndex as a prop
+                    />
+                   {currentQuestion === 0 ? (
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>
+                            Start the Survey &#8594;
+                        </button>
+                    ) : currentQuestion === 3 ? (
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Create my Dashboard')}>
+                            Create my Dashboard! &#8594;
+                        </button>
+                    ) : (
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>
+                            Next Question &#8594;
+                        </button>
+                    )}
                 </div>
             )}
         </main>
     );
-}
+};
+
+const ButtonOptions = ({ options, handleUserResponse, questionIndex }) => {
+    const [selectedOptions, setSelectedOptions] = useState([]);
+
+    const handleButtonClick = (value) => {
+        if (questionIndex === 0) {
+            // For the first question (index: 0), do not allow any selection
+            return;
+        } else if (questionIndex === 1 || questionIndex === 3) {
+            // For the second and fourth questions (index: 1 and 3), allow only 1 option selection
+            setSelectedOptions([value]);
+        } else if (questionIndex === 2) {
+            // For the third question (index: 2), allow up to 3 options selection
+            if (selectedOptions.includes(value)) {
+                setSelectedOptions(selectedOptions.filter(option => option !== value));
+            } else if (selectedOptions.length <= 3) {
+                setSelectedOptions([...selectedOptions, value]);
+            }
+        }
+        handleUserResponse(selectedOptions); // Store the user's response
+    };
+
+    return (
+        <div id="option-container">
+            {options && options.map(option => (
+                <button 
+                    className={`button-options ${selectedOptions.includes(option.value) ? 'selected clicked' : ''}`}
+                    key={option.value}
+                    onClick={() => handleButtonClick(option.value)}
+                >
+                    {option.text}
+                </button>
+            ))}
+        </div>
+    );
+};
+
 
 export default Survey;

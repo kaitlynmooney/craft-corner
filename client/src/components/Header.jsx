@@ -1,5 +1,5 @@
-// import { useState } from "react";
 // get loggedin and quiz values from...
+import Auth from "../utils/auth";
 
 export default function Header() {
   // const [ loggedIn, setloggedIn ] = useState();
@@ -16,13 +16,16 @@ export default function Header() {
 
               <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
                 {/* // login or signup button if user is not logged in */}
-                {/* {!loggedIn && <a className="btn btn-primary" href="#" role="button">Login/Signup</a>} */}
-                <a className="borders text-decoration-none" href="/login" role="button" id="login">
+                {!Auth.loggedIn() && <a className="borders text-decoration-none" href="/login" role="button" id="login">
                   Login/Signup
-                </a>
+                </a>}
+                {/* <a className="borders text-decoration-none" href="/login" role="button" id="login">
+                  Login/Signup
+                </a> */}
                 {/* // logout button if user is logged in */}
-                {/* {loggedIn && <a className="btn btn-primary" href="#" role="button">Logout</a>} */}
-                {/* // dashboard if user is logged in and has completed the quiz*/}
+                {Auth.loggedIn() && <a className="borders text-decoration-none" href="#" role="button" id="login">
+                  Logout
+                </a>}                {/* // dashboard if user is logged in and has completed the quiz*/}
                 {/* {loggedIn && quiz && <a className="btn btn-primary" href="#" role="button">Dashboard</a>} */}
                 {/* // explore if user is logged in and has completed the quiz */}
                 {/* {loggedIn && quiz && <a className="btn btn-primary" href="#" role="button">Explore</a>} */}

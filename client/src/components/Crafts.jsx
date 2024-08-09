@@ -6,7 +6,7 @@ const Crafts = ({ title, crafts }) => {
       <h3>{title}</h3>
       <div>
         {/* Maps through each individual craft */}
-        {crafts.map((craft, index) => (
+        {crafts?.map((craft, index) => (
           <div key={index}>
             <p>{craft.name}</p>
           </div>

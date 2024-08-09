@@ -1,6 +1,6 @@
 /* DEPENDENCIES */
 const { User } = require("../models");
-const { signToken, AuthenticationError } = require('../utils/auth');
+const { signToken, AuthenticationError } = require("../utils/auth");
 
 /* RESOLVERS */
 const resolvers = {
@@ -13,7 +13,8 @@ const resolvers = {
     },
     me: async (parent, args, context) => {
       if (context.user) {
-        return User.findOne({ _id: context.user._id });
+        const user = User.findOne({ _id: context.user._id });
+        return user;
       }
       throw AuthenticationError;
     },
@@ -27,13 +28,13 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-
+      console.log(user);
       if (!user) {
         throw AuthenticationError;
       }
 
       const correctPw = await user.isCorrectPassword(password);
-
+      console.log(correctPw);
       if (!correctPw) {
         throw AuthenticationError;
       }
