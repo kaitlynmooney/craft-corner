@@ -55,6 +55,21 @@ const resolvers = {
       const token = signToken(user);
       return { token, user };
     },
+    changeAvatar: async (parent, { username, avatar }) => {
+      try {
+        const user = await User.findOne({ username });
+        if (!user) {
+          throw new Error("User not found");
+        }
+
+        user.avatar = avatar;
+        await user.save();
+        return user;
+      } catch (error) {
+        console.error(error);
+        throw new Error("Failed to change avatar");
+      }
+    },
   },
 };
 

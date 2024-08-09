@@ -1,17 +1,27 @@
 /* DEPENDENCIES */
 import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
 import Avatars from "./Avatars";
-// import Image from "../../";
+import { CHANGE_AVATAR } from "../utils/mutations"; // Import your mutation
 
 /* USER PROFILE INFO */
 const Profile = ({ user }) => {
   const [showAvatars, setShowAvatars] = useState(false);
+  const [changeAvatar] = useMutation(CHANGE_AVATAR);
 
   // Function to handle the button click and toggle the avatar picker
   const handleShowAvatars = () => {
     setShowAvatars(!showAvatars);
   };
-  console.log(user);
+
+  // Function to handle changing of avatar
+  const handleAvatarChange = async (newAvatar) => {
+    try {
+      await updateUserAvatar({ variables: { avatar: newAvatar } });
+    } catch (error) {
+      console.error("Error changing avatar:", error);
+    }
+  };
 
   // Return profile info, including avatar, craft status, and number of completed crafts
   return (
@@ -22,16 +32,21 @@ const Profile = ({ user }) => {
         alt="User Avatar"
       ></img>
       <div id="user-info">
-        <h2>{user?.username}</h2>
+        <h2>{user.username}</h2>
         <p>Crafter Status: </p>
         {/* TODO: SET CRAFTER STATUS */}
-        <p>Completed Crafts: {user?.completedProjects?.length}</p>
+        <p>Completed Crafts: {user.completedProjects?.length}</p>
         <button onClick={handleShowAvatars} className="inter borders">
           Pick an avatar!
         </button>
       </div>
       {showAvatars && (
-        <Avatars showAvatars={showAvatars} onClose={handleShowAvatars} />
+        <Avatars
+          user={user}
+          showAvatars={showAvatars}
+          onClose={handleShowAvatars}
+          onAvatarChange={handleAvatarChange}
+        />
       )}
     </div>
   );

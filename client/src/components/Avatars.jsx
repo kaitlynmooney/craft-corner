@@ -1,3 +1,6 @@
+/* DEPENDENCIES */
+import React, { useState } from "react";
+
 /* STYLES */
 const styles = {
   avatar: {
@@ -7,8 +10,9 @@ const styles = {
   },
 };
 
-/* AVATARS */
-const Avatars = ({ showAvatars, onClose }) => {
+/* PICK AVATAR MODAL */
+const Avatars = ({ user, showAvatars, onClose, onAvatarChange }) => {
+  // All avatars
   const avatars = [
     "avatar-flower.jpeg",
     "avatar_white_flowers.png",
@@ -31,10 +35,14 @@ const Avatars = ({ showAvatars, onClose }) => {
     "avatar_strawberries.png",
     "avatar_plant.png",
   ];
+
+  const [chosenAvatar, setAvatar] = useState(user.avatar);
+
+  // Set avatar and close modal
   const handleAvatarSelect = (avatar) => {
-    // console.log("Selected Avatar:", avatar);
-    // // You can add logic here to set the selected avatar in the user's profile
-    // onClose(); // Close the modal after selection
+    setAvatar(avatar);
+    onAvatarChange(avatar);
+    onClose();
   };
 
   // Returns modal of avatar choices
@@ -61,7 +69,7 @@ const Avatars = ({ showAvatars, onClose }) => {
                 key={index}
                 src={`../../${avatar}`}
                 alt={`Avatar ${index + 1}`}
-                // onClick={() => handleSelectAvatar(avatar)}
+                onClick={() => handleSelectAvatar(avatar)}
                 className="borders"
                 style={styles.avatar}
               />
