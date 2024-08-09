@@ -1,5 +1,5 @@
 /* DEPENDENCIES */
-const { User } = require("../models");
+const { User, Project, Craft } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 
 /* RESOLVERS */
@@ -18,6 +18,22 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
+    crafts: async() => {
+        return Craft.find();
+    },
+    craft: async(parent, {name}) =>{
+        return Craft.findOne({name})
+    },
+    projects: async ()=> {
+        return Project.find();
+    },
+    project: async(parent, args, context) => {
+        if(context.project){
+        const project = Project.findOne({_id: context.project._id});
+        return project;
+        }
+       
+    }
   },
 
   Mutation: {
