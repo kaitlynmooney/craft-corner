@@ -9,7 +9,16 @@ type User {
   password: String
   avatar: String
 }
-  
+type Project {
+    _id: ID
+    name:String
+    materials:Array
+    instructions:String
+    image:String
+    pricePoint:String
+    diffculty: String
+
+}
 type Auth {
   token: ID!
   user: User
@@ -19,6 +28,8 @@ type Query {
   users: [User]
   user(username: String!): User
   me: User
+  project(projectId: ID!): Project
+
 }
 
 type Mutation {
