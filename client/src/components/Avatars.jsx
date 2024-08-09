@@ -1,5 +1,12 @@
 /* AVATARS */
 const Avatars = ({ showAvatars, onClose }) => {
+  const avatars = ["avatar-flower.jpeg"];
+  const handleAvatarSelect = (avatar) => {
+    // console.log("Selected Avatar:", avatar);
+    // // You can add logic here to set the selected avatar in the user's profile
+    // onClose(); // Close the modal after selection
+  };
+
   // Returns modal of avatar choices
   return (
     <div
@@ -18,7 +25,17 @@ const Avatars = ({ showAvatars, onClose }) => {
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
-          <div className="modal-body">{/* Your avatar selection logic */}</div>
+          <div className="modal-body">
+            {/* {avatars.map((avatar, index) => (
+              <img
+                key={index}
+                src={`../../${avatar}`}
+                alt={`Avatar ${index + 1}`}
+                onClick={() => handleSelectAvatar(avatar)}
+                style={{ cursor: "pointer", margin: "10px" }}
+              />
+            ))} */}
+          </div>
         </div>
       </div>
     </div>

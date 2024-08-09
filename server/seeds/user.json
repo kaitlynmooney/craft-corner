@@ -1,37 +1,38 @@
 [
-    {
-        "username": "Morticia Adams",
-        "email": "iliveinamansion@creepy.net",
-        "password": "ilovegomez3"
-    },
-    {
-        "username":"Tallulah Bankhead",
-        "email":"hollywoodstar@life.com",
-        "password":"itsme1"
-    },
-    {
-        "username": "Lucy Pevensie",
-        "email": "spareoom@narnia.net",
-        "password":"foundawardrobe2"
-    },
-    {
-        "username": "Sirius Black",
-        "email":"thegrim@hogwarts.edu",
-        "password": "moonywerewolf"
-    },
-    {
-        "username": "Tobias Rhodes",
-        "email": "forrestranger@oregon.gov",
-        "password": "iamgrouchy2"
-    },
-    {
-        "username": "Daniel Nathaniel",
-        "email":"waggingtail@dog.net",
-        "password":"woofbark2"
-    },
-    {
-        "username": "Peter Parker",
-        "email":"webslinger@avengers.com",
-        "password":"iamspiderman2"
-    }
+  {
+    "username": "Morticia Adams",
+    "email": "iliveinamansion@creepy.net",
+    "password": "ilovegomez3",
+    "avatar": "avatar-flower.jpeg"
+  },
+  {
+    "username": "Tallulah Bankhead",
+    "email": "hollywoodstar@life.com",
+    "password": "itsme1"
+  },
+  {
+    "username": "Lucy Pevensie",
+    "email": "spareoom@narnia.net",
+    "password": "foundawardrobe2"
+  },
+  {
+    "username": "Sirius Black",
+    "email": "thegrim@hogwarts.edu",
+    "password": "moonywerewolf"
+  },
+  {
+    "username": "Tobias Rhodes",
+    "email": "forrestranger@oregon.gov",
+    "password": "iamgrouchy2"
+  },
+  {
+    "username": "Daniel Nathaniel",
+    "email": "waggingtail@dog.net",
+    "password": "woofbark2"
+  },
+  {
+    "username": "Peter Parker",
+    "email": "webslinger@avengers.com",
+    "password": "iamspiderman2"
+  }
 ]

@@ -1,6 +1,7 @@
 /* DEPENDENCIES */
 import React, { useState } from "react";
 import Avatars from "./Avatars";
+// import Image from "../../";
 
 /* USER PROFILE INFO */
 const Profile = ({ user }) => {
@@ -10,11 +11,12 @@ const Profile = ({ user }) => {
   const handleShowAvatars = () => {
     setShowAvatars(!showAvatars);
   };
+  console.log(user);
 
   // Return profile info, including avatar, craft status, and number of completed crafts
   return (
-    <div id="profile">
-      {/* TODO: ADD AVATAR <div></div> */}
+    <div className="inter" id="profile">
+      <img src={`../../${user?.avatar}`} alt="User Avatar"></img>
       <div id="user-info">
         <h2>{user?.username}</h2>
         <p>Crafter Status: </p>
