@@ -249,9 +249,8 @@ html {
   height: 150px;
   width:150px;
   border-radius: 15px;
+  margin: 10px;
 }
-
-
 
 .button-options:hover {
   background-color: var(--text-color); /* Change the background color on hover */
