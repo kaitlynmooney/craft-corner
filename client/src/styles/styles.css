@@ -307,12 +307,14 @@ p {
   display: flex;
   justify-content: space-between; 
   padding: 10px;
+ 
 }
 
 .column {
   flex: 1; /* Each column takes equal space */
   margin: 0 10px; /* Space between columns */
   padding: 20px;
+  border-right: 2px solid var(--text-color);
 }
 
 .column:first-child {
@@ -329,7 +331,7 @@ p {
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 10px 20px; /* Padding inside the button */
+  padding: 60px 70px; /* Padding inside the button */
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
 }
@@ -340,7 +342,7 @@ p {
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 10px 20px; /* Padding inside the button */
+  padding: 60px 70px; /* Padding inside the button */
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
 }
@@ -351,7 +353,7 @@ p {
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 10px 20px; /* Padding inside the button */
+  padding: 60px 70px; /* Padding inside the button */
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
 }
@@ -361,7 +363,7 @@ p {
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 10px 20px; /* Padding inside the button */
+  padding: 60px 70px; /* Padding inside the button */
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
 }
@@ -371,7 +373,7 @@ p {
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 10px 20px; /* Padding inside the button */
+  padding: 60px 70px; /* Padding inside the button */
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
 }
@@ -381,7 +383,22 @@ p {
   background-position: center; /* Centers the image */
   background-repeat: no-repeat; /* Prevents repeating the image */
   color: white; /* Text color for visibility */
-  padding: 10px 20px; /* Padding inside the button */
+  padding: 60px 70px; /* Padding inside the button */
   font-size: 16px; /* Font size */
   cursor: pointer; /* Pointer cursor on hover */
+}
+
+.dropdown {
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 20px;
+}
+
+#featured-craft{
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 20px;
+}
+
+#explore-feature {
+  border-top: 2px solid var(--text-color);
+  padding-top: 20px;
 }

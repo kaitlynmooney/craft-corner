@@ -4,11 +4,11 @@ import Dropdown from "../components/Dropdown";
 const Explore = () => {
   return (
     <div id="explore">
-      <p>Featured Craft of the Week</p>
+      <p id="explore-feature">Featured Craft of the Week</p>
       <div className="featured-craft">
         <h1 id="featured-craft">Flower Pots</h1>
       </div>
-      <Dropdown />
+      <Dropdown id="dropdown" />
       <div className="container">
         <div className="column" id="popular">
           <p>Popular Crafts</p>
