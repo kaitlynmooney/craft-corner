@@ -1,6 +1,36 @@
+/* STYLES */
+const styles = {
+  avatar: {
+    width: "130px",
+    borderRadius: "50%",
+    margin: "10px",
+  },
+};
+
 /* AVATARS */
 const Avatars = ({ showAvatars, onClose }) => {
-  const avatars = ["avatar-flower.jpeg"];
+  const avatars = [
+    "avatar-flower.jpeg",
+    "avatar_white_flowers.png",
+    "avatar_pottery.png",
+    "avatar_embroidery.png",
+    "avatar_knitting.png",
+    "avatar_cats.png",
+    "avatar_black_cat.png",
+    "avatar_orange_cat.png",
+    "avatar_white_dog.png",
+    "avatar_corgi.png",
+    "avatar_bird.png",
+    "avatar_giraffe.png",
+    "avatar_bear.png",
+    "avatar_leopard.png",
+    "avatar_fish.png",
+    "avatar_yarn.png",
+    "avatar_pots.png",
+    "avatar_guitar.png",
+    "avatar_strawberries.png",
+    "avatar_plant.png",
+  ];
   const handleAvatarSelect = (avatar) => {
     // console.log("Selected Avatar:", avatar);
     // // You can add logic here to set the selected avatar in the user's profile
@@ -26,15 +56,16 @@ const Avatars = ({ showAvatars, onClose }) => {
             </button>
           </div>
           <div className="modal-body">
-            {/* {avatars.map((avatar, index) => (
+            {avatars.map((avatar, index) => (
               <img
                 key={index}
                 src={`../../${avatar}`}
                 alt={`Avatar ${index + 1}`}
-                onClick={() => handleSelectAvatar(avatar)}
-                style={{ cursor: "pointer", margin: "10px" }}
+                // onClick={() => handleSelectAvatar(avatar)}
+                className="borders"
+                style={styles.avatar}
               />
-            ))} */}
+            ))}
           </div>
         </div>
       </div>

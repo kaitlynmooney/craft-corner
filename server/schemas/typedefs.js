@@ -11,14 +11,13 @@ type User {
 }
 
 type Project {
-    _id: ID
-    name:String
-    materials: [String]
-    instructions:String
-    image:String
-    pricePoint:String
-    diffculty: String
-
+  _id: ID
+  name:String
+  materials: [String]
+  instructions:String
+  image:String
+  pricePoint:String
+  diffculty: String
 }
 type Craft {
     _id : ID
@@ -39,7 +38,6 @@ type Query {
   projects: [Project]
   craft(name: String!) :Craft
   crafts: [Craft]
-
 }
 
 type Mutation {

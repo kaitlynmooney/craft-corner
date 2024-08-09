@@ -18,22 +18,21 @@ const resolvers = {
       }
       throw AuthenticationError;
     },
-    crafts: async() => {
-        return Craft.find();
+    crafts: async () => {
+      return Craft.find();
     },
-    craft: async(parent, {name}) =>{
-        return Craft.findOne({name})
+    craft: async (parent, { name }) => {
+      return Craft.findOne({ name });
     },
-    projects: async ()=> {
-        return Project.find();
+    projects: async () => {
+      return Project.find();
     },
-    project: async(parent, args, context) => {
-        if(context.project){
-        const project = Project.findOne({_id: context.project._id});
+    project: async (parent, args, context) => {
+      if (context.project) {
+        const project = Project.findOne({ _id: context.project._id });
         return project;
-        }
-       
-    }
+      }
+    },
   },
 
   Mutation: {
@@ -44,13 +43,11 @@ const resolvers = {
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
-      console.log(user);
       if (!user) {
         throw AuthenticationError;
       }
 
       const correctPw = await user.isCorrectPassword(password);
-      console.log(correctPw);
       if (!correctPw) {
         throw AuthenticationError;
       }
