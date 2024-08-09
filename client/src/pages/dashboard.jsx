@@ -11,10 +11,15 @@ const Dashboard = () => {
   const { loading, error, data } = useQuery(QUERY_ME);
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error</p>;
-  console.log(data);
   const user = data?.me;
-  console.log(user);
-  if (!user) return <h2>It ain't here.</h2>;
+
+  //
+  if (!user)
+    return (
+      <h1 className="inter title" id="dashboard-user-error">
+        No user found.
+      </h1>
+    );
 
   // Return dashboard, calls Profile and UserCrafts components
   return (
