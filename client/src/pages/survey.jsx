@@ -65,8 +65,9 @@ const Survey = () => {
                 <div className="inter" id="survey-page">
                     <h1>{questions[currentQuestion].question}</h1>
                     <ButtonOptions
-                        options={questions[currentQuestion].buttonOptions}
-                        handleUserResponse={handleUserResponse}
+                       options={questions[currentQuestion].buttonOptions}
+                       handleUserResponse={handleUserResponse}
+                       questionIndex={currentQuestion} // Pass the questionIndex as a prop
                     />
                     {currentQuestion === 0 ? (
                         <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>Start the Survey &#8594;</button>
@@ -79,33 +80,41 @@ const Survey = () => {
     );
 };
 
-const ButtonOptions = ({ options, handleUserResponse }) => {
-    const [selectedOption, setSelectedOption] = useState(null);
+const ButtonOptions = ({ options, handleUserResponse, questionIndex }) => {
+    const [selectedOptions, setSelectedOptions] = useState([]);
 
     const handleButtonClick = (value) => {
-        setSelectedOption(selectedOption === value ? null : value);
-        handleUserResponse(value); // Store the user's response
-
-        if (selectedOption === value) {
-            setSelectedOption(null);
-        } else {
-            setSelectedOption(value);
+        if (questionIndex === 0) {
+            // For the first question (index: 0), do not allow any selection
+            return;
+        } else if (questionIndex === 1 || questionIndex === 3) {
+            // For the second and fourth questions (index: 1 and 3), allow only 1 option selection
+            setSelectedOptions([value]);
+        } else if (questionIndex === 2) {
+            // For the third question (index: 2), allow up to 3 options selection
+            if (selectedOptions.includes(value)) {
+                setSelectedOptions(selectedOptions.filter(option => option !== value));
+            } else if (selectedOptions.length < 3) {
+                setSelectedOptions([...selectedOptions, value]);
+            }
         }
+        handleUserResponse(selectedOptions); // Store the user's response
     };
 
     return (
         <div id="option-container">
             {options && options.map(option => (
                 <button 
-                className={`button-options ${option.value === selectedOption ? 'selected clicked' : ''}`}
-                key={option.value}
-                onClick={() => handleButtonClick(option.value)}
+                    className={`button-options ${selectedOptions.includes(option.value) ? 'selected clicked' : ''}`}
+                    key={option.value}
+                    onClick={() => handleButtonClick(option.value)}
                 >
                     {option.text}
                 </button>
             ))}
         </div>
     );
-}
+};
+
 
 export default Survey;
