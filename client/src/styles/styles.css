@@ -219,7 +219,7 @@ html {
   color: var(--text-color);
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   height: 350px;
   text-align: center;
@@ -229,4 +229,5 @@ html {
   color: var(--background-color);
   background-color: var(--text-color);
   padding: 4px 15px 4px 15px;
+  margin-top: 20px;
 }
