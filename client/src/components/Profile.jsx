@@ -9,6 +9,7 @@ const Profile = ({ user }) => {
         <p>Crafter Status: </p>
         {/* TODO: SET CRAFTER STATUS */}
         <p>Completed Crafts: {user?.completedProjects?.length}</p>
+        <button className="inter borders">Pick an avatar!</button>
       </div>
     </div>
   );
