@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
 import React from "react";
+import Header from "../components/Header";
 
 /* STYLES */
 const styles = {
@@ -20,6 +21,7 @@ const styles = {
 const Error = () => {
   return (
     <div>
+      <Header />
       <h1 className="inter" style={styles.heading}>
         This page doesn't exist!
       </h1>
