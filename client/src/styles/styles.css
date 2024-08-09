@@ -223,6 +223,9 @@ html {
   .homepage-carousel iframe {
     width: 60vw;
   }
+  .container {
+    grid-template-columns: 1fr; /* Stacks columns on top of each other */
+  }
 
   @keyframes slide {
     0% {
@@ -232,6 +235,7 @@ html {
       transform: translateX(calc(-37.3%));
     }
   }
+ 
 }
 
 /* TABLETS */
@@ -340,3 +344,161 @@ p {
   background-color: var(--background-color); /* Initial background color */
   color: var(--text-color); /* Initial text color */
 }
+
+.container {
+  display: flex;
+  justify-content: space-between; 
+  padding: 10px;
+ 
+}
+
+.column {
+  flex: 1; /* Each column takes equal space */
+  margin: 0 10px; /* Space between columns */
+  padding: 20px;
+  border-right: 2px solid var(--text-color);
+}
+
+.column:first-child {
+  margin-left: 0;
+}
+
+.column:last-child {
+  margin-right: 0;
+}
+
+.pottery-btn {
+  background-image: url('https://i.imgur.com/nGXmgVB.jpeg'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  height: 200px;
+  /* width: 200px; */
+  font-size: 20px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pottery-btn:hover {
+  opacity: 0.8; /* Slightly fade the button on hover */
+}
+
+.crochet-btn {
+  background-image: url('https://i.imgur.com/UL5CsFA.jpeg'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  height: 200px;
+  /* width: 200px; */
+  font-size: 20px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.crochet-btn:hover {
+  opacity: 0.8; /* Slightly fade the button on hover */
+}
+
+.glass-btn {
+  background-image: url('https://i.imgur.com/b2hCnxj.jpeg'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  height: 200px;
+  /* width: 200px; */
+  font-size: 20px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass-btn:hover {
+  opacity: 0.8; /* Slightly fade the button on hover */
+}
+
+.jewelry-btn {
+  background-image: url('https://i.imgur.com/Hbt9VY9.jpg'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  height: 200px;
+  /* width: 200px; */
+  font-size: 20px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.jewelry-btn:hover {
+  opacity: 0.8; /* Slightly fade the button on hover */
+}
+
+.knitting-btn {
+  background-image: url('https://i.imgur.com/AWf9kbp.jpeg'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  height: 200px;
+  /* width: 200px; */
+  font-size: 20px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.knitting-btn:hover {
+  opacity: 0.8; /* Slightly fade the button on hover */
+}
+
+.clay-btn {
+  background-image: url('https://i.imgur.com/bi3b7o6.jpg'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  height: 200px;
+  /* width: 200px; */
+  font-size: 20px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clay-btn:hover {
+  opacity: 0.8; /* Slightly fade the button on hover */
+}
+
+.dropdown {
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 20px;
+}
+
+#featured-craft{
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 20px;
+}
+
+#explore-feature {
+  border-top: 2px solid var(--text-color);
+  padding-top: 20px;
+}
+
