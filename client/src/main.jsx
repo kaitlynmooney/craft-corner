@@ -6,6 +6,7 @@ import App from "./App.jsx";
 import Login from "./pages/login.jsx";
 import Home from "./pages/home.jsx";
 import Survey from "./pages/survey.jsx";
+import Dashboard from "./pages/dashboard.jsx";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,9 @@ const router = createBrowserRouter([
       {
         path: "/survey",
         element: <Survey />,
+      }, {
+        path: "/dashboard",
+        element: <Dashboard />,
       },
     ],
   },
