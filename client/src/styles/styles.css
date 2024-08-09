@@ -35,6 +35,13 @@ html {
   display: none;
 }
 
+.title {
+  font-size: calc(20px + 2vw);
+  text-align: center;
+  font-weight: 300;
+  color: var(--text-color);
+}
+
 /* TEXT HOVER */
 #start-crafting:hover {
   color: var(--hover-color);
@@ -165,6 +172,34 @@ html {
   width: 100%;
 }
 
+/* DASHBOARD */
+#dashboard {
+  color: var(--text-color);
+}
+
+#profile-img {
+  border: 0.8px solid var(--text-color);
+  border-radius: 50%;
+  height: 18vw;
+  margin: 0px 0px 10px 0px;
+}
+
+#dashboard-inner {
+  display: flex;
+  gap: 40px;
+  margin: 30px 10vw 0px 10vw;
+}
+
+#profile {
+  flex: 1;
+  padding: 20px 10px 20px 10px;
+}
+
+#projects {
+  flex: 2;
+  padding: 10px;
+}
+
 /* EFFECTS */
 @keyframes fadeIn {
   to {
@@ -249,19 +284,23 @@ html {
   text-align: center;
   border: 0.8px solid var(--text-color);
   height: 150px;
-  width:150px;
+  width: 150px;
   border-radius: 15px;
 }
 
 
 
 .button-options:hover {
-  background-color: var(--text-color); /* Change the background color on hover */
+  background-color: var(
+    --text-color
+  ); /* Change the background color on hover */
   color: var(--background-color); /* Change the text color on hover */
 }
 
 .button-options.clicked {
-  background-color: var(--text-color); /* Change the background color after click */
+  background-color: var(
+    --text-color
+  ); /* Change the background color after click */
   color: var(--background-color);
 }
 

@@ -1,5 +1,5 @@
 /* CRAFTS */
-const Crafts = ({ title, crafts }) => {
+const Projects = ({ title, crafts }) => {
   // Returns array of crafts, called in dashboard component
   return (
     <div>
@@ -17,4 +17,4 @@ const Crafts = ({ title, crafts }) => {
 };
 
 /* EXPORT */
-export default Crafts;
+export default Projects;
