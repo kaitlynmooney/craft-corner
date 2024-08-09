@@ -2,9 +2,15 @@
 
 ## Description
 
+Visit Craft Corner [here](http://craft-corner.onrender.com/).
+
 ## Installation
 
+N/A
+
 ## Usage
+
+The website can be visited at http://craft-corner.onrender.com/. Please allow about a minute for the site to load, as periods of site inactivity cause slow connections to the website.
 
 ## Credits
 
