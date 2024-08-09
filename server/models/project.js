@@ -6,9 +6,16 @@ const projectSchema = new Schema({
         required: true, 
         trim: true, 
     },
+    materials:{
+        type:Array,
+        required: true
+    },
     instructions :{
         type: String, 
         required: true,
+    },
+    image:{
+        type: String
     },
     pricePoint: {
         type: String,
@@ -16,6 +23,11 @@ const projectSchema = new Schema({
     },
     difficulty: {
         type: String,
+        required: true
+    },
+    craft :{
+        type: Schema.Types.ObjectId,
+        ref: 'Craft',
         required: true
     }
 
