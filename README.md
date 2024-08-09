@@ -8,19 +8,21 @@
 
 ## Credits
 
+[Guide to homepage scrolling animation](https://www.youtube.com/watch?v=nAjR0Oj0J8E)
+
 ## Contributors
 
-Kaitlyn Mooney
-[Github](https://github.com/kaitlynmooney) <br>
+Kaitlyn Mooney <br>
+[Github](https://github.com/kaitlynmooney)
 
-Laura Waters
+Laura Waters <br>
 [Github](https://github.com/Laura-Waters)
 
 Violet Stanziani <br>
-[Github](https://github.com/floweringvi) <br>
+[Github](https://github.com/floweringvi)
 
 Gabrielle Belanger <br>
-[Github](https://github.com/gcbel) <br>
+[Github](https://github.com/gcbel)
 
 ## License
 
