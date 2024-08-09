@@ -12,12 +12,17 @@ type User {
 type Project {
     _id: ID
     name:String
-    materials:Array
+    materials: [String]
     instructions:String
     image:String
     pricePoint:String
     diffculty: String
 
+}
+type Craft {
+    _id : ID
+    name: String
+    description: String
 }
 type Auth {
   token: ID!
