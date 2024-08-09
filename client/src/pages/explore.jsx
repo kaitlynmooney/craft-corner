@@ -13,18 +13,20 @@ const Explore = () => {
         <div className="column" id="popular">
           <p>Popular Crafts</p>
           <a
-            className="borders text-decoration-none"
+            className="borders text-decoration-none pottery-btn"
+            href="#"
             id="explore-btn"
-            type="submit"
             role="button"
+            type="submit"
           >
             <div>Pottery</div>
           </a>
           <a
-            className="borders text-decoration-none"
+            className="borders text-decoration-none crochet-btn"
+            href="#"
             id="explore-btn"
-            type="submit"
             role="button"
+            type="submit"
           >
             <div>Crochet</div>
           </a>
@@ -32,18 +34,20 @@ const Explore = () => {
         <div className="column" id="new">
           <p>New Crafts</p>
           <a
-            className="borders text-decoration-none"
+            className="borders text-decoration-none glass-btn"
+            href="#"
             id="explore-btn"
-            type="submit"
             role="button"
+            type="submit"
           >
             <div>Stained Glass</div>
           </a>
           <a
-            className="borders text-decoration-none"
+            className="borders text-decoration-none jewelry-btn"
+            href="#"
             id="explore-btn"
-            type="submit"
             role="button"
+            type="submit"
           >
             <div>Jewelry</div>
           </a>
@@ -51,18 +55,20 @@ const Explore = () => {
         <div className="column" id="affordable">
           <p>Affordable Crafts</p>
           <a
-            className="borders text-decoration-none"
+            className="borders text-decoration-none knitting-btn"
+            href="#"
             id="explore-btn"
-            type="submit"
             role="button"
+            type="submit"
           >
             <div>Knitting</div>
           </a>
           <a
-            className="borders text-decoration-none"
+            className="borders text-decoration-none clay-btn"
+            href="#"
             id="explore-btn"
-            type="submit"
             role="button"
+            type="submit"
           >
             <div>Clay Modeling</div>
           </a>

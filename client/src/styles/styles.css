@@ -186,6 +186,9 @@ html {
   .homepage-carousel iframe {
     width: 60vw;
   }
+  .container {
+    grid-template-columns: 1fr; /* Stacks columns on top of each other */
+  }
 
   @keyframes slide {
     0% {
@@ -195,6 +198,7 @@ html {
       transform: translateX(calc(-37.3%));
     }
   }
+ 
 }
 
 /* TABLETS */
@@ -301,7 +305,7 @@ p {
 }
 .container {
   display: flex;
-  justify-content: space-between; /* Optional, adds space between columns */
+  justify-content: space-between; 
   padding: 10px;
 }
 
@@ -317,4 +321,67 @@ p {
 
 .column:last-child {
   margin-right: 0;
+}
+
+.pottery-btn {
+  background-image: url('https://imgur.com/nGXmgVB'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.crochet-btn {
+  background-image: url('https://imgur.com/UL5CsFA'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.glass-btn {
+  background-image: url('https://imgur.com/b2hCnxj'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+.jewelry-btn {
+  background-image: url('https://imgur.com/Hbt9VY9'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+.knitting-btn {
+  background-image: url('https://imgur.com/AWf9kbp'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+.clay-btn {
+  background-image: url('https://imgur.com/bi3b7o6'); /* URL of the background image */
+  background-size: cover; /* Ensures the image covers the button */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+  color: white; /* Text color for visibility */
+  padding: 10px 20px; /* Padding inside the button */
+  font-size: 16px; /* Font size */
+  cursor: pointer; /* Pointer cursor on hover */
 }
