@@ -4,6 +4,16 @@ import { useNavigate } from 'react-router-dom';
 const Survey = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [userResponses, setUserResponses] = useState([]);
+    // const ButtonOptions = () => {
+    //     const [selectedOption, setSelectedOption] = useState(null);
+
+    //     const handleButtonClick = (value) => {
+    //         if (selectedOption === value) {
+    //             setSelectedOption(null); // Deselect the option if it's already selected
+    //         } else {
+    //             setSelectedOption(value); // Select the clicked option
+    //         }
+    //     };
 
     const questions = [
         {
@@ -59,34 +69,46 @@ const Survey = () => {
         navigate('/dashboard'); // Redirect to the dashboard page
     }
 
-    document.querySelectorAll('.button-options').forEach(function(button) {
-        button.addEventListener('click', function() {
-            if (this.classList.contains('clicked')) {
-                this.classList.remove('clicked');
-            } else {
-                this.classList.add('clicked');
-            }
-        });
-    });
-
     return (
         <main>
             {currentQuestion !== questions.length && (
                 <div className="inter" id="survey-page">
                     <h1>{questions[currentQuestion].question}</h1>
-                    <div id="option-container">
-                        {questions[currentQuestion].buttonOptions && questions[currentQuestion].buttonOptions.map((option) => (
-                            <button className="button-options" key={option.value} onClick={() => handleUserResponse(option.value)}>{option.text}</button>
-                        ))}
-                    </div>
+                    <ButtonOptions
+                        options={questions[currentQuestion].buttonOptions}
+                        handleUserResponse={handleUserResponse}
+                    />
                     {currentQuestion === 0 ? (
-                    <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>Start the Survey &#8594;</button>
-                ) : (
-                    <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>Next Question &#8594;</button>
-                )}
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>Start the Survey &#8594;</button>
+                    ) : (
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>Next Question &#8594;</button>
+                    )}
                 </div>
             )}
         </main>
+    );
+};
+
+const ButtonOptions = ({ options, handleUserResponse }) => {
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    const handleButtonClick = (value) => {
+        setSelectedOption(selectedOption === value ? null : value);
+        handleUserResponse(value); // Store the user's response
+    };
+
+    return (
+        <div id="option-container">
+            {options && options.map(option => (
+                <button 
+                className={`button-options ${option.value === selectedOption ? 'selected' : ''}`}
+                key={option.value}
+                onClick={() => handleButtonClick(option.value)}
+                >
+                    {option.text}
+                </button>
+            ))}
+        </div>
     );
 }
 

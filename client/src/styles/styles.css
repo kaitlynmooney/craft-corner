@@ -228,6 +228,7 @@ html {
 #option-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #nextquestion {
