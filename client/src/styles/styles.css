@@ -299,3 +299,22 @@ p {
   background-color: var(--background-color); /* Initial background color */
   color: var(--text-color); /* Initial text color */
 }
+.container {
+  display: flex;
+  justify-content: space-between; /* Optional, adds space between columns */
+  padding: 10px;
+}
+
+.column {
+  flex: 1; /* Each column takes equal space */
+  margin: 0 10px; /* Space between columns */
+  padding: 20px;
+}
+
+.column:first-child {
+  margin-left: 0;
+}
+
+.column:last-child {
+  margin-right: 0;
+}
