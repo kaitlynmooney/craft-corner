@@ -94,7 +94,7 @@ const ButtonOptions = ({ options, handleUserResponse, questionIndex }) => {
             // For the third question (index: 2), allow up to 3 options selection
             if (selectedOptions.includes(value)) {
                 setSelectedOptions(selectedOptions.filter(option => option !== value));
-            } else if (selectedOptions.length < 3) {
+            } else if (selectedOptions.length <= 3) {
                 setSelectedOptions([...selectedOptions, value]);
             }
         }
