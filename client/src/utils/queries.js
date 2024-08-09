@@ -32,4 +32,5 @@ query getSingleProject($projectId:ID!){
     pricePoint
     difficulty
   }
+}
 `;
