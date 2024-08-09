@@ -29,10 +29,7 @@ const LoginPage = () => {
     console.log(formState);
     try {
       const { data } = await login({
-        variables: { 
-          'login_email': formState['login_email'],
-          'login_password': formState['login_password']
-        },
+        variables: { ...formState },
       });
       console.log(data);
       Auth.login(data.login.token);
@@ -42,8 +39,8 @@ const LoginPage = () => {
 
     // clear form values
     setFormState({
-      'login_email': '',
-      'login_password': '',
+      login_email: '',
+      login_password: '',
     });
   };
   return (
