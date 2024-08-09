@@ -10,19 +10,19 @@ type User {
   avatar: String
 }
 type Project {
-    _id: ID
-    name:String
-    materials: [String]
-    instructions:String
-    image:String
-    pricePoint:String
-    diffculty: String
+  _id: ID
+  name:String
+  materials: [String]
+  instructions:String
+  image:String
+  pricePoint:String
+  diffculty: String
 
 }
 type Craft {
-    _id : ID
-    name: String
-    description: String
+  _id : ID
+  name: String
+  description: String
 }
 type Auth {
   token: ID!
