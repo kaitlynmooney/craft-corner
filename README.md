@@ -8,6 +8,8 @@
 
 ## Credits
 
+Guide to video carousel: https://www.youtube.com/watch?v=nAjR0Oj0J8E
+
 ## Contributors
 
 Kaitlyn Mooney
