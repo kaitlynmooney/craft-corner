@@ -1,4 +1,6 @@
+/* USER PROFILE INFO */
 const Profile = ({ user }) => {
+  // Return profile info, including avatar, craft status, and number of completed crafts
   return (
     <div id="profile">
       {/* TODO: ADD AVATAR <div></div> */}
@@ -12,4 +14,5 @@ const Profile = ({ user }) => {
   );
 };
 
+/* EXPORT */
 export default Profile;
