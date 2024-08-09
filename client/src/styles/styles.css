@@ -1,8 +1,9 @@
 /* GLOBAL */
 :root {
   --background-color: #fffcf3;
+  --dark-background-color: #002350;
   --text-color: #023e8d;
-  --hover-color: #01214b;
+  --hover-color: #aa5124;
   --clear: #ffffff00;
 }
 
@@ -17,12 +18,22 @@ html {
 }
 
 .borders {
+  text-align: center;
   border: 0.8px solid var(--text-color);
   border-radius: 15px;
 }
 
+.hover-borders:hover {
+  border: 0.8px solid var(--hover-color);
+}
+
 .hidden {
   display: none;
+}
+
+/* TEXT HOVER */
+#start-crafting:hover {
+  color: var(--hover-color);
 }
 
 /* FONTS */
@@ -36,6 +47,61 @@ html {
   font-family: "Inter", sans-serif;
   font-optical-sizing: auto;
   font-variation-settings: "slnt" 0;
+}
+
+/* HOME PAGE */
+#homepage {
+  background: var(--background-color);
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.homepage-carousel {
+  background: var(--background-color);
+  display: flex;
+  flex-direction: row;
+  animation: slide 25s linear forwards;
+}
+
+.homepage-carousel iframe {
+  width: 90vw;
+  height: 600px;
+  margin: 0 20px 0px 20px;
+}
+
+#last-carousel-item {
+  width: 110vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#homepage-title {
+  font-size: calc(30px + 4vw);
+  color: var(--text-color);
+  margin: 0px;
+}
+
+#homepage-subtitle {
+  position: relative;
+  top: -10px;
+  font-weight: 300;
+  font-size: calc(20px + 1.5vw);
+  color: var(--text-color);
+  margin: 0px;
+}
+
+#start-crafting {
+  color: var(--text-color);
+  padding: 4px 15px 4px 15px;
+  font-size: calc(18px + 1vw);
+  background: var(--clear);
 }
 
 /* LOGIN PAGE */
@@ -91,4 +157,58 @@ html {
 #login-div input,
 #signup-div input {
   width: 100%;
+}
+
+/* EFFECTS */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-41.5%));
+    }
+  }
+}
+
+/* MOBILE */
+@media (min-width: 601px) {
+  .homepage-carousel iframe {
+    width: 60vw;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-37.3%));
+    }
+  }
+}
+
+/* TABLETS */
+@media (min-width: 800px) {
+  .homepage-carousel iframe {
+    width: 45vw;
+  }
+
+  #homepage-subtitle {
+    top: -20px;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-34.7%));
+    }
+  }
 }
