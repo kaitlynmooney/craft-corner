@@ -69,10 +69,18 @@ const Survey = () => {
                        handleUserResponse={handleUserResponse}
                        questionIndex={currentQuestion} // Pass the questionIndex as a prop
                     />
-                    {currentQuestion === 0 ? (
-                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>Start the Survey &#8594;</button>
+                   {currentQuestion === 0 ? (
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Start the Survey')}>
+                            Start the Survey &#8594;
+                        </button>
+                    ) : currentQuestion === 3 ? (
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Create my Dashboard')}>
+                            Create my Dashboard! &#8594;
+                        </button>
                     ) : (
-                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>Next Question &#8594;</button>
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Next Question')}>
+                            Next Question &#8594;
+                        </button>
                     )}
                 </div>
             )}
