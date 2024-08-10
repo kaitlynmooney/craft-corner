@@ -16,8 +16,11 @@ const Profile = ({ user }) => {
 
   // Function to handle changing of avatar
   const handleAvatarChange = async (newAvatar) => {
+    console.log("handleAvatarChange", newAvatar);
     try {
-      await updateUserAvatar({ variables: { avatar: newAvatar } });
+      await changeAvatar({
+        variables: { username: user.username, avatar: newAvatar },
+      });
     } catch (error) {
       console.error("Error changing avatar:", error);
     }
@@ -28,7 +31,7 @@ const Profile = ({ user }) => {
     <div className="inter" id="profile">
       <img
         id="profile-img"
-        src={`../../${user?.avatar}`}
+        src={`../../${user.avatar}`}
         alt="User Avatar"
       ></img>
       <div id="user-info">

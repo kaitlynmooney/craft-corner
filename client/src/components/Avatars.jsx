@@ -39,7 +39,7 @@ const Avatars = ({ user, showAvatars, onClose, onAvatarChange }) => {
   const [chosenAvatar, setAvatar] = useState(user.avatar);
 
   // Set avatar and close modal
-  const handleAvatarSelect = (avatar) => {
+  const handleSelectAvatar = (avatar) => {
     setAvatar(avatar);
     onAvatarChange(avatar);
     onClose();
