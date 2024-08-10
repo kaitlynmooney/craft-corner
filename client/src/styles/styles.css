@@ -175,48 +175,138 @@ html {
 /* DASHBOARD */
 #dashboard {
   color: var(--text-color);
-}
-
-#profile-img {
-  border: 0.8px solid var(--text-color);
-  border-radius: 50%;
-  height: 18vw;
-  margin: 0px 0px 10px 0px;
+  min-width: 300px;
 }
 
 #dashboard-inner {
   display: flex;
   flex-direction: column;
-  gap: 40px;
-  margin: 30px 10vw 0px 10vw;
+  gap: 10px;
+  margin: 30px 5vw 30px 5vw;
 }
 
 #profile {
-  padding: 20px 10px 20px 10px;
+  margin: 0 auto;
+  width: 300px;
+  padding: 6px 6px 6px 6px;
 }
 
 #projects {
   padding: 10px;
 }
 
+#inner-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile-img {
+  border: 0.8px solid var(--text-color);
+  border-radius: 50%;
+  height: 100px;
+  height: 100px;
+  margin: 0px 10px 0px 0px;
+}
+
+#user-info {
+  padding: 0px 20px 0px 10px;
+}
+
+#inner-profile h2 {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+#inner-profile p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+#change-avatar {
+  color: var(--background-color);
+  margin-top: 10px;
+  background-color: var(--text-color);
+  padding: 4px 15px 4px 15px;
+  font-size: 14px;
+}
+
+#change-avatar:hover {
+  color: var(--text-color);
+  background-color: var(--clear);
+  border: 0.8px solid var(--text-color);
+}
+
+/* MOBILE */
+@media (min-width: 446px) {
+  #profile {
+    width: 400px;
+    padding: 10px 10px 10px 10px;
+  }
+
+  #profile-img {
+    height: 150px;
+    height: 150px;
+  }
+
+  #user-info {
+    padding: 0px 20px 0px 10px;
+  }
+
+  #inner-profile h2 {
+    font-size: 20px;
+  }
+
+  #inner-profile p {
+    font-size: 16px;
+  }
+
+  #change-avatar {
+    font-size: 16px;
+  }
+}
+
 /* LARGE SCREENS */
-@media (min-width: 900px) {
+@media (min-width: 925px) {
   /* DASHBOARD */
   #dashboard-inner {
-    display: flex;
     flex-direction: row;
     gap: 40px;
-    margin: 30px 10vw 0px 10vw;
+    margin: 30px 10vw 30px 10vw;
   }
 
   #profile {
-    flex: 1;
-    padding: 20px 10px 20px 10px;
+    margin: 0;
+    padding: 15px 0px 15px 0px;
+    width: 280px;
   }
 
-  #projects {
-    flex: 2;
-    padding: 10px;
+  #inner-profile {
+    flex-direction: column;
+  }
+
+  #profile-img {
+    margin: 0px 0px 10px 0px;
+    height: 220px;
+    width: 220px;
+  }
+
+  #user-info {
+    padding: 0px;
+  }
+
+  #inner-profile h2 {
+    font-size: 24px;
+  }
+
+  #inner-profile p {
+    font-size: 18px;
+  }
+
+  #change-avatar {
+    font-size: 18px;
   }
 }
 
