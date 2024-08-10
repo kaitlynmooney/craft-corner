@@ -1,8 +1,8 @@
 /* DEPENDENCIES */
 import React, { useState } from "react";
 import { useMutation } from "@apollo/client";
+import { CHANGE_AVATAR } from "../utils/mutations";
 import Avatars from "./Avatars";
-import { CHANGE_AVATAR } from "../utils/mutations"; // Import your mutation
 
 /* USER PROFILE INFO */
 const Profile = ({ user }) => {
@@ -16,9 +16,8 @@ const Profile = ({ user }) => {
 
   // Function to handle changing of avatar
   const handleAvatarChange = async (newAvatar) => {
-    console.log("handleAvatarChange", newAvatar);
     try {
-      await changeAvatar({
+      const { data } = await changeAvatar({
         variables: { username: user.username, avatar: newAvatar },
       });
     } catch (error) {

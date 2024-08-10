@@ -56,8 +56,6 @@ const resolvers = {
       return { token, user };
     },
     changeAvatar: async (parent, { username, avatar }) => {
-      console.log("User:", username);
-      console.log("Avatar:", avatar);
       try {
         const user = await User.findOne({ username });
         if (!user) {
