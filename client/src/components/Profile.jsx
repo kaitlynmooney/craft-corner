@@ -6,6 +6,7 @@ import Avatars from "./Avatars";
 
 /* USER PROFILE INFO */
 const Profile = ({ user }) => {
+  console.log(user);
   const [showAvatars, setShowAvatars] = useState(false);
   const [changeAvatar] = useMutation(CHANGE_AVATAR);
 
