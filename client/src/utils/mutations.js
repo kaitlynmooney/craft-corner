@@ -23,3 +23,13 @@ export const ADD_USER = gql`
     }
   }
 `;
+
+export const CHANGE_AVATAR = gql`
+  mutation changeAvatar($username: String!, $avatar: String!) {
+    changeAvatar(username: $username, avatar: $avatar) {
+      _id
+      username
+      avatar
+    }
+  }
+`;
