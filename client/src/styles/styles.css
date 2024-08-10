@@ -179,48 +179,48 @@ html {
 /* DASHBOARD */
 #dashboard {
   color: var(--text-color);
+  min-width: 300px;
+}
+
+#dashboard-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 30px 5vw 30px 5vw;
+}
+
+#profile {
+  margin: 0 auto;
+  width: 300px;
+  padding: 6px 6px 6px 6px;
+}
+
+#projects {
+  padding: 10px;
+}
+
+#inner-profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 #profile-img {
   border: 0.8px solid var(--text-color);
   border-radius: 50%;
-  height: 18vw;
-  margin: 0px 0px 10px 0px;
+  height: 100px;
+  height: 100px;
+  margin: 0px 10px 0px 0px;
 }
 
-#dashboard-inner {
-  display: flex;
-  gap: 40px;
-  margin: 30px 10vw 0px 10vw;
+#user-info {
+  padding: 0px 20px 0px 10px;
 }
 
-#profile {
-  flex: 1;
-  padding: 20px 10px 20px 10px;
-}
-
-#projects {
-  flex: 2;
-  padding: 10px;
-}
-
-/* EFFECTS */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 600px) {
-  @keyframes slide {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(calc(-41.5%));
-    }
-  }
-}
+#inner-profile h2 {
+  font-size: 16px;
+  font-weight: 400;
 
 /* MOBILE */
 @media (min-width: 601px) {
@@ -239,27 +239,56 @@ html {
       transform: translateX(calc(-37.3%));
     }
   }
- 
 }
 
-/* TABLETS */
-@media (min-width: 800px) {
-  .homepage-carousel iframe {
-    width: 45vw;
-  }
+#inner-profile p {
+  font-size: 14px;
+  font-weight: 300;
+  margin-bottom: 5px;
+}
 
-  #homepage-subtitle {
-    top: -20px;
-  }
+#change-avatar {
+  color: var(--background-color);
+  margin-top: 10px;
+  background-color: var(--text-color);
+  padding: 4px 15px 4px 15px;
+  font-size: 14px;
+}
 
-  @keyframes slide {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(calc(-34.7%));
-    }
-  }
+#change-avatar:hover {
+  color: var(--text-color);
+  background-color: var(--clear);
+  border: 0.8px solid var(--text-color);
+}
+
+#avatar-modal-background {
+  background: #0023503d;
+  display: flex !important;
+}
+
+#avatar-modal {
+  background: var(--background-color);
+  border: 0.8px solid var(--text-color);
+}
+
+#avatar-modal-header {
+  border-bottom: 0.8px solid var(--text-color);
+  display: flex;
+  justify-content: space-between;
+}
+
+#avatar-modal-x {
+  background-color: var(--clear);
+  border: 0px;
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+  color: var(--text-color);
+}
+
+.avatar {
+  width: 80px;
+  margin: 6px;
 }
 
 /* SURVEY PAGE */
@@ -353,6 +382,154 @@ p {
   color: var(--text-color); /* Initial text color */
 }
 
+/* EFFECTS */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* LARGE MOBILE */
+@media (min-width: 446px) {
+  /* DASHBOARD */
+  #profile {
+    width: 400px;
+    padding: 10px 10px 10px 10px;
+  }
+
+  #profile-img {
+    height: 150px;
+    height: 150px;
+  }
+
+  #user-info {
+    padding: 0px 20px 0px 10px;
+  }
+
+  #inner-profile h2 {
+    font-size: 20px;
+  }
+
+  #inner-profile p {
+    font-size: 16px;
+  }
+
+  #change-avatar {
+    font-size: 16px;
+  }
+}
+
+/* SMALL SCREENS */
+@media (max-width: 600px) {
+  /* HOME PAGE */
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-41.5%));
+    }
+  }
+}
+
+/* MEDIUM SCREENS */
+@media (min-width: 601px) {
+  /* HOME PAGE */
+  .homepage-carousel iframe {
+    width: 60vw;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-37.3%));
+    }
+  }
+
+  /* DASHBOARD */
+  #avatar-modal-background {
+    align-items: center;
+  }
+
+  .avatar {
+    width: 100px;
+    margin: 7px;
+  }
+}
+
+/* TABLETS */
+@media (min-width: 800px) {
+  /* HOME PAGE */
+  .homepage-carousel iframe {
+    width: 45vw;
+  }
+
+  #homepage-subtitle {
+    top: -20px;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-34.7%));
+    }
+  }
+}
+
+/* LARGE SCREENS */
+@media (min-width: 925px) {
+  /* DASHBOARD */
+  #dashboard-inner {
+    flex-direction: row;
+    gap: 40px;
+    margin: 30px 10vw 30px 10vw;
+  }
+
+  #profile {
+    margin: 0;
+    padding: 15px 0px 15px 0px;
+    width: 280px;
+  }
+
+  #inner-profile {
+    flex-direction: column;
+  }
+
+  #profile-img {
+    margin: 0px 0px 10px 0px;
+    height: 220px;
+    width: 220px;
+  }
+
+  #user-info {
+    padding: 0px;
+  }
+
+  #inner-profile h2 {
+    font-size: 24px;
+  }
+
+  #inner-profile p {
+    font-size: 18px;
+  }
+
+  #change-avatar {
+    font-size: 18px;
+  }
+}
+
+/* DESKTOP */
+@media (max-width: 100px) {
+  /* DASHBOARD */
+  .avatar {
+    width: 120px;
+    margin: 10px;
+  }
+=======
 .container {
   display: flex;
   justify-content: space-between; 

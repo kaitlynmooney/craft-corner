@@ -60,6 +60,26 @@ const Profile = ({ user }) => {
   // Return profile info, including avatar, craft status, and number of completed crafts
   return (
     <div className="inter" id="profile">
+
+      <div id="inner-profile">
+        <img
+          id="profile-img"
+          src={`../../${user.avatar}`}
+          alt="User Avatar"
+        ></img>
+        <div id="user-info">
+          <h2>{user.username}</h2>
+          <p>Status: {crafterStatus}</p>
+          <p>Completed Crafts: {user.completedProjects?.length}</p>
+          <button
+            onClick={handleShowAvatars}
+            className="inter borders"
+            id="change-avatar"
+          >
+            Change picture
+          </button>
+        </div>
+
       <img
         id="profile-img"
         src={`../../${user.avatar}`}
@@ -72,6 +92,7 @@ const Profile = ({ user }) => {
         <button onClick={handleShowAvatars} className="inter borders">
           Pick an avatar!
         </button>
+
       </div>
       {showAvatars && (
         <Avatars

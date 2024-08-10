@@ -4,9 +4,7 @@ import React, { useState } from "react";
 /* STYLES */
 const styles = {
   avatar: {
-    width: "130px",
     borderRadius: "50%",
-    margin: "10px",
   },
 };
 
@@ -54,12 +52,18 @@ const Avatars = ({ user, showAvatars, onClose, onAvatarChange }) => {
       role="dialog"
       aria-labelledby="AvatarModal"
       aria-hidden={!showAvatars}
+      id="avatar-modal-background"
     >
       <div className="modal-dialog modal-lg">
-        <div className="modal-content">
-          <div className="modal-header">
+        <div className="modal-content" id="avatar-modal">
+          <div className="modal-header" id="avatar-modal-header">
             <h5 className="modal-title">Pick an avatar</h5>
-            <button type="button" className="close" onClick={onClose}>
+            <button
+              type="button"
+              className="close"
+              onClick={onClose}
+              id="avatar-modal-x"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -70,7 +74,7 @@ const Avatars = ({ user, showAvatars, onClose, onAvatarChange }) => {
                 src={`../../${avatar}`}
                 alt={`Avatar ${index + 1}`}
                 onClick={() => handleSelectAvatar(avatar)}
-                className="borders"
+                className="borders avatar"
                 style={styles.avatar}
               />
             ))}
