@@ -5,11 +5,7 @@ import Hero from "../components/Hero";
 const Explore = () => {
   return (
     <div id="explore">
-      <Hero/>
-      {/* <p id="explore-feature">Featured Craft of the Week</p>
-      <div className="featured-craft">
-        <h1 id="featured-craft">Flower Pots</h1>
-      </div> */}
+      <Hero />
       <Dropdown id="dropdown" />
       <div className="container">
         <div className="column" id="popular">

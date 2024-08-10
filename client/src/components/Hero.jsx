@@ -12,7 +12,9 @@ const Hero = () => {
       <div className="hero-content">
         <p id="explore-feature">Featured Craft of the Week</p>
         <div className="featured-craft">
-          <h1 id="featured-craft">Flower Pots</h1>
+          <h1 id="featured-craft" role="button">
+            Flower Pots
+          </h1>
         </div>
       </div>
     </div>
