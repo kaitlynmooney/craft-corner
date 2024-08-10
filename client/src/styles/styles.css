@@ -186,71 +186,37 @@ html {
 
 #dashboard-inner {
   display: flex;
+  flex-direction: column;
   gap: 40px;
   margin: 30px 10vw 0px 10vw;
 }
 
 #profile {
-  flex: 1;
   padding: 20px 10px 20px 10px;
 }
 
 #projects {
-  flex: 2;
   padding: 10px;
 }
 
-/* EFFECTS */
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
-}
-
-@media (max-width: 600px) {
-  @keyframes slide {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(calc(-41.5%));
-    }
-  }
-}
-
-/* MOBILE */
-@media (min-width: 601px) {
-  .homepage-carousel iframe {
-    width: 60vw;
+/* LARGE SCREENS */
+@media (min-width: 900px) {
+  /* DASHBOARD */
+  #dashboard-inner {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    margin: 30px 10vw 0px 10vw;
   }
 
-  @keyframes slide {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(calc(-37.3%));
-    }
-  }
-}
-
-/* TABLETS */
-@media (min-width: 800px) {
-  .homepage-carousel iframe {
-    width: 45vw;
+  #profile {
+    flex: 1;
+    padding: 20px 10px 20px 10px;
   }
 
-  #homepage-subtitle {
-    top: -20px;
-  }
-
-  @keyframes slide {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(calc(-34.7%));
-    }
+  #projects {
+    flex: 2;
+    padding: 10px;
   }
 }
 
@@ -287,8 +253,6 @@ html {
   width: 150px;
   border-radius: 15px;
 }
-
-
 
 .button-options:hover {
   background-color: var(
@@ -339,4 +303,62 @@ p {
   transition: background-color 0.3s; /* Add a smooth transition effect */
   background-color: var(--background-color); /* Initial background color */
   color: var(--text-color); /* Initial text color */
+}
+
+/* EFFECTS */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  /* HOME PAGE */
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-41.5%));
+    }
+  }
+}
+
+/* MEDIUM SCREENS */
+@media (min-width: 601px) {
+  /* HOME PAGE */
+  .homepage-carousel iframe {
+    width: 60vw;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-37.3%));
+    }
+  }
+}
+
+/* TABLETS */
+@media (min-width: 800px) {
+  /* HOME PAGE */
+  .homepage-carousel iframe {
+    width: 45vw;
+  }
+
+  #homepage-subtitle {
+    top: -20px;
+  }
+
+  @keyframes slide {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(calc(-34.7%));
+    }
+  }
 }
