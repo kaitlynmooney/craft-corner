@@ -1,7 +1,6 @@
 // /* TYPEDEFS */
 // /* fix later on */
 const typeDefs = `
-
 type User {
   _id: ID
   username: String
