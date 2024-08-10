@@ -41,9 +41,7 @@ const Signup = () => {
     <div className="inter" id="signup-section">
       <div id="signup-section-div">
         {data ? (
-          <p>
-            Success! You may now head <Link to="/">back to the homepage.</Link>
-          </p>
+            <Link to="/"></Link>
         ) : (
           <form onSubmit={handleFormSubmit}>
             <div className="borders" id="signup-div">
