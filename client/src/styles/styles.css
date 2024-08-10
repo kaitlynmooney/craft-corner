@@ -245,6 +245,7 @@ html {
 }
 
 #avatar-modal {
+  background: var(--background-color);
   border: 0.8px solid var(--text-color);
 }
 
