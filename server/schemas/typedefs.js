@@ -39,7 +39,7 @@ type Query {
   me: User
   project(projectId: ID!): Project
   projects: [Project]
-  craft(name: String!) :Craft
+  craft(name: String!): Craft
   crafts: [Craft]
 }
 
