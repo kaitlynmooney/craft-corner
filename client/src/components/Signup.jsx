@@ -38,60 +38,60 @@ const Signup = () => {
     }
   };
   return (
-    <div className="inter" id="login-page">
-      <div>
-      {data ? (
+    <div className="inter" id="signup-section">
+      <div id="signup-section-div">
+        {data ? (
           <p>
             Success! You may now head <Link to="/">back to the homepage.</Link>
           </p>
         ) : (
-        <form onSubmit={handleFormSubmit}>
-          <div className="hidden borders" id="signup-div">
-            <p>Username:</p>
-            <p className="hidden login-alert" id="signup-username-alert">
-              Please enter a username
-            </p>
-            <input
-              type="text"
-              className="borders"
-              id="signup-username"
-              name="signup_username"
-              value={formState.signup_username}
-              onChange={handleChange}
-            />
-            <p>Email:</p>
-            <p className="hidden login-alert" id="signup-email-alert">
-              Please enter a valid email
-            </p>
-            <input
-              type="text"
-              className="borders"
-              id="signup-email"
-              name="signup_email"
-              value={formState.signup_email}
-              onChange={handleChange}
-            />
-            <p>Password:</p>
-            <p className="hidden login-alert" id="signup-password-alert">
-              Please enter a password longer than 6 characters
-            </p>
-            <input
-              type="password"
-              className="borders"
-              id="signup-password"
-              name="signup_password"
-              value={formState.signup_password}
-              onChange={handleChange}
-            />
-            <button className="borders" id="signup" type="submit">
-              Sign Up
-            </button>
-            <p className="hidden login-alert" id="signup-alert">
-              Sorry, we were unable to create your account. Please try again.
-            </p>
-          </div>
-        </form>
-    )}
+          <form onSubmit={handleFormSubmit}>
+            <div className="borders" id="signup-div">
+              <p>Username:</p>
+              <p className="ogin-alert" id="signup-username-alert">
+                Please enter a username
+              </p>
+              <input
+                type="text"
+                className="borders"
+                id="signup-username"
+                name="signup_username"
+                value={formState.signup_username}
+                onChange={handleChange}
+              />
+              <p>Email:</p>
+              <p className="login-alert" id="signup-email-alert">
+                Please enter a valid email
+              </p>
+              <input
+                type="text"
+                className="borders"
+                id="signup-email"
+                name="signup_email"
+                value={formState.signup_email}
+                onChange={handleChange}
+              />
+              <p>Password:</p>
+              <p className="hidden login-alert" id="signup-password-alert">
+                Please enter a password longer than 6 characters
+              </p>
+              <input
+                type="password"
+                className="borders"
+                id="signup-password"
+                name="signup_password"
+                value={formState.signup_password}
+                onChange={handleChange}
+              />
+              <button className="borders" id="signup" type="submit">
+                Sign Up
+              </button>
+              <p className="hidden login-alert" id="signup-alert">
+                Sorry, we were unable to create your account. Please try again.
+              </p>
+            </div>
+          </form>
+        )}
         {error && (
           <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
         )}

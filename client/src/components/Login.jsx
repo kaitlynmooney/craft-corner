@@ -45,8 +45,8 @@ const Login = () => {
   };
 
   return (
-    <div className="inter" id="login-page">
-      <div id="login-main-div">
+    <div className="inter" id="login-section">
+      <div id="login-section-div">
         {data ? (
           <p>
             Success! You may now head <Link to="/">back to the homepage.</Link>
@@ -86,6 +86,11 @@ const Login = () => {
                 Log in
               </button>
             </div>
+          <div id="google-oauth-div">
+          <p className="borders" id="google-oauth">
+            Log in with Google
+          </p>
+        </div>
           </form>
         )}
         {error && (

@@ -31,11 +31,6 @@ const LoginPage = () => {
         {loginShow && <Login />}
         {signupShow && <Signup />}
       </div>
-      <div id="google-oauth-div">
-        <p className="borders" id="google-oauth">
-          Log in with Google
-        </p>
-      </div>
     </div>
   );
 };
