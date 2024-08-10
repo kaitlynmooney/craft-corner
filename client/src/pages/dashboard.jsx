@@ -7,15 +7,6 @@ import Projects from "../components/Projects";
 
 /* DASHBOARD */
 const Dashboard = () => {
-  // Crafter status names
-  const statuses = [
-    "Newbie",
-    "Expert",
-    "Pro",
-    "Craft Master",
-    "Crafting Conoisseur",
-  ];
-
   // Get user data
   const { loading, error, data } = useQuery(QUERY_ME);
   if (loading) return <p>Loading...</p>;

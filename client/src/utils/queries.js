@@ -18,6 +18,18 @@ export const QUERY_ME = gql`
       password
       username
       avatar
+      completedProjects {
+        _id
+        name
+      }
+      ongoingProjects {
+        _id
+        name
+      }
+      savedCrafts {
+        _id
+        name
+      }
     }
   }
 `;

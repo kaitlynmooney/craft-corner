@@ -8,15 +8,17 @@ type User {
   password: String
   avatar: String
   savedCrafts: [Craft]
+  completedProjects: [Project]
+  ongoingProjects: [Project]
 }
 
 type Project {
   _id: ID
   name:String
   materials: [String]
-  instructions:String
-  image:String
-  pricePoint:String
+  instructions: String
+  image: String
+  pricePoint: String
   diffculty: String
 }
 
