@@ -239,75 +239,33 @@ html {
   border: 0.8px solid var(--text-color);
 }
 
-/* MOBILE */
-@media (min-width: 446px) {
-  #profile {
-    width: 400px;
-    padding: 10px 10px 10px 10px;
-  }
-
-  #profile-img {
-    height: 150px;
-    height: 150px;
-  }
-
-  #user-info {
-    padding: 0px 20px 0px 10px;
-  }
-
-  #inner-profile h2 {
-    font-size: 20px;
-  }
-
-  #inner-profile p {
-    font-size: 16px;
-  }
-
-  #change-avatar {
-    font-size: 16px;
-  }
+#avatar-modal-background {
+  background: #0023503d;
+  display: flex !important;
 }
 
-/* LARGE SCREENS */
-@media (min-width: 925px) {
-  /* DASHBOARD */
-  #dashboard-inner {
-    flex-direction: row;
-    gap: 40px;
-    margin: 30px 10vw 30px 10vw;
-  }
+#avatar-modal {
+  border: 0.8px solid var(--text-color);
+}
 
-  #profile {
-    margin: 0;
-    padding: 15px 0px 15px 0px;
-    width: 280px;
-  }
+#avatar-modal-header {
+  border-bottom: 0.8px solid var(--text-color);
+  display: flex;
+  justify-content: space-between;
+}
 
-  #inner-profile {
-    flex-direction: column;
-  }
+#avatar-modal-x {
+  background-color: var(--clear);
+  border: 0px;
+  font-size: 30px;
+  margin: 0px;
+  padding: 0px;
+  color: var(--text-color);
+}
 
-  #profile-img {
-    margin: 0px 0px 10px 0px;
-    height: 220px;
-    width: 220px;
-  }
-
-  #user-info {
-    padding: 0px;
-  }
-
-  #inner-profile h2 {
-    font-size: 24px;
-  }
-
-  #inner-profile p {
-    font-size: 18px;
-  }
-
-  #change-avatar {
-    font-size: 18px;
-  }
+.avatar {
+  width: 80px;
+  margin: 6px;
 }
 
 /* SURVEY PAGE */
@@ -402,7 +360,37 @@ p {
   }
 }
 
-/* MOBILE */
+/* LARGE MOBILE */
+@media (min-width: 446px) {
+  /* DASHBOARD */
+  #profile {
+    width: 400px;
+    padding: 10px 10px 10px 10px;
+  }
+
+  #profile-img {
+    height: 150px;
+    height: 150px;
+  }
+
+  #user-info {
+    padding: 0px 20px 0px 10px;
+  }
+
+  #inner-profile h2 {
+    font-size: 20px;
+  }
+
+  #inner-profile p {
+    font-size: 16px;
+  }
+
+  #change-avatar {
+    font-size: 16px;
+  }
+}
+
+/* SMALL SCREENS */
 @media (max-width: 600px) {
   /* HOME PAGE */
   @keyframes slide {
@@ -430,6 +418,16 @@ p {
       transform: translateX(calc(-37.3%));
     }
   }
+
+  /* DASHBOARD */
+  #avatar-modal-background {
+    align-items: center;
+  }
+
+  .avatar {
+    width: 100px;
+    margin: 7px;
+  }
 }
 
 /* TABLETS */
@@ -450,5 +448,56 @@ p {
     100% {
       transform: translateX(calc(-34.7%));
     }
+  }
+}
+
+/* LARGE SCREENS */
+@media (min-width: 925px) {
+  /* DASHBOARD */
+  #dashboard-inner {
+    flex-direction: row;
+    gap: 40px;
+    margin: 30px 10vw 30px 10vw;
+  }
+
+  #profile {
+    margin: 0;
+    padding: 15px 0px 15px 0px;
+    width: 280px;
+  }
+
+  #inner-profile {
+    flex-direction: column;
+  }
+
+  #profile-img {
+    margin: 0px 0px 10px 0px;
+    height: 220px;
+    width: 220px;
+  }
+
+  #user-info {
+    padding: 0px;
+  }
+
+  #inner-profile h2 {
+    font-size: 24px;
+  }
+
+  #inner-profile p {
+    font-size: 18px;
+  }
+
+  #change-avatar {
+    font-size: 18px;
+  }
+}
+
+/* DESKTOP */
+@media (max-width: 100px) {
+  /* DASHBOARD */
+  .avatar {
+    width: 120px;
+    margin: 10px;
   }
 }
