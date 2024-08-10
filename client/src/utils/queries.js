@@ -33,4 +33,5 @@ export const QUERY_SINGLE_PROJECT = gql`
       difficulty
     }
   }
+}
 `;

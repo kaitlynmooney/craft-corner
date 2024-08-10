@@ -116,6 +116,8 @@ html {
 }
 
 /* LOGIN PAGE */
+#login-section,
+#signup-section,
 #login-page {
   background-color: var(--background-color);
   color: var(--text-color);
@@ -126,6 +128,8 @@ html {
   height: 350px;
 }
 
+#signup-section-div,
+#login-section-div,
 #login-main-div,
 #google-oauth-div {
   display: flex;
