@@ -24,7 +24,7 @@ const resolvers = {
     craft: async (parent, { name }) => {
       return Craft.findOne({ name });
     },
-    projects: async () => {
+    allProjects: async () => {
       return Project.find();
     },
     project: async (parent, { projectId }, context) => {

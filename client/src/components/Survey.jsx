@@ -43,10 +43,10 @@ const Survey = () => {
         }
     ];
 
-    const handleUserResponse = (response) => {
-        // Store the user's response for the current question
-        setUserResponses([...userResponses, response]);
-    };
+    // const handleUserResponse = (response) => {
+    //     // Store the user's response for the current question
+    //     setUserResponses([...userResponses, response]);
+    // };
 
     const handleNextQuestion = (response) => {
         setUserResponses([...userResponses, response]);
@@ -66,7 +66,7 @@ const Survey = () => {
                     <h1>{questions[currentQuestion].question}</h1>
                     <ButtonOptions
                        options={questions[currentQuestion].buttonOptions}
-                       handleUserResponse={handleUserResponse}
+                    //    handleUserResponse={handleUserResponse}
                        questionIndex={currentQuestion} // Pass the questionIndex as a prop
                     />
                    {currentQuestion === 0 ? (
@@ -88,7 +88,7 @@ const Survey = () => {
     );
 };
 
-const ButtonOptions = ({ options, handleUserResponse, questionIndex }) => {
+const ButtonOptions = ({ options, questionIndex }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
 
     const handleButtonClick = (value) => {
@@ -106,7 +106,7 @@ const ButtonOptions = ({ options, handleUserResponse, questionIndex }) => {
                 setSelectedOptions([...selectedOptions, value]);
             }
         }
-        handleUserResponse(selectedOptions); // Store the user's response
+        // handleUserResponse(selectedOptions); // Store the user's response
     };
 
     return (
