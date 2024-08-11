@@ -27,8 +27,9 @@ const Dashboard = () => {
 
   // Get recommended projects based on user preferences
   const recommendedProjectsDifficulty = getProjectsDifficulty(selectedDifficulty, projects);
-  // const recommendedProjectsPrice = getProjectsPrice(user.pricePoint, projects);
-  // const recommendedProjects = [...recommendedProjectsDifficulty, ...recommendedProjectsPrice];
+  const recommendedProjectsPrice = getProjectsPrice(user.pricePoint, projects);
+  const recommendedProjects = [...recommendedProjectsDifficulty, ...recommendedProjectsPrice];
+  const uniqueRecommendedProjects = Array.from(new Set(recommendedProjects));
 
   // Return dashboard, calls Profile and UserCrafts components
   return (
@@ -49,7 +50,7 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Recommended Projects:</h2>
-            <Projects crafts={recommendedProjectsDifficulty} />
+            <Projects crafts={uniqueRecommendedProjects} />
           </div>
         </div>
       </div>
