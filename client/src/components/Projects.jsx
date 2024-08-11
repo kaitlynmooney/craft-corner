@@ -1,20 +1,18 @@
-/* CRAFTS */
-const Projects = ({ title, crafts }) => {
-  // Returns array of crafts, called in dashboard component
+/* PROJECTS */
+const Projects = ({ crafts }) => {
   return (
-    <div>
-      <h3>{title}</h3>
-      <div>
-        {/* Maps through each individual craft */}
-        {crafts?.map((craft, index) => (
-          <div key={index}>
-            <p>{craft.name}</p>
-          </div>
-        ))}
+    <div id="option-container">
+    {/*Maps through each individual craft */}
+    {crafts?.map((craft, index) => (
+      <div key={index}>
+      <button className='button-options'>
+            {craft.name}
+      </button>
       </div>
+      ))}
     </div>
-  );
-};
+);
+}
 
 /* EXPORT */
 export default Projects;
