@@ -88,7 +88,7 @@ const Survey = () => {
     );
 };
 
-const ButtonOptions = ({ options, questionIndex }) => {
+const ButtonOptions = ({ options, handleUserResponse, questionIndex }) => {
     const [selectedOptions, setSelectedOptions] = useState([]);
 
     const handleButtonClick = (value) => {
