@@ -1,7 +1,7 @@
 /* PROJECTS */
 const Projects = ({ crafts }) => {
   return (
-    <div id="option-container">
+    <div id="project-container">
     {/*Maps through each individual craft */}
     {crafts?.map((craft, index) => (
       <div key={index}>
