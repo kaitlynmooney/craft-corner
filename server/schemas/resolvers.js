@@ -12,8 +12,11 @@ const resolvers = {
       return User.findOne({ username });
     },
     me: async (parent, args, context) => {
+      console.log('hello')
+      console.log(context.user)
       if (context.user) {
-        const user = User.findOne({ _id: context.user._id });
+        const user = User.findOne({ _id: context.user._id })
+        .populate('savedCrafts').populate('completedProjects').populate('ongoingProjects')
         return user;
       }
       throw AuthenticationError;
@@ -28,7 +31,7 @@ const resolvers = {
       return Project.find();
     },
     project: async (parent, { projectId }, context) => {
-      const project = Project.findOne({ _id: projectId });
+      const project = Project.findOne({ _id: projectId }).populate('craft')
       return project;
     },
   },

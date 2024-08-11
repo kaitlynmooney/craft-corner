@@ -19,7 +19,8 @@ type Project {
   instructions: String
   image: String
   pricePoint: String
-  diffculty: String
+  difficulty: String
+  craft: Craft
 }
 
 type Craft {
