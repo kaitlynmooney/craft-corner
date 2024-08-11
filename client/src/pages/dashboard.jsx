@@ -4,6 +4,7 @@ import { useQuery } from "@apollo/client";
 import { QUERY_ME } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
+import { getProjectsDifficulty, getProjectsPrice } from "../utils/recommendedProjects";
 
 /* DASHBOARD */
 const Dashboard = () => {
@@ -20,7 +21,10 @@ const Dashboard = () => {
       <h1 className="inter title" id="dashboard-user-error">
         No user found.
       </h1>
-    );
+  );
+
+  const recommendedProjectsDifficulty = getProjectsDifficulty(user.difficulty, user.allProjects);
+  const recommendedProjectsPrice = getProjectsPrice(user.pricePoint, user.allProjects);
 
   // Return dashboard, calls Profile and UserCrafts components
   return (
@@ -37,6 +41,10 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Pick your next project:</h2>
+            <Projects crafts={user.savedCrafts} />
+          </div>
+          <div>
+            <h2>Recommended Projects:</h2>
             <Projects crafts={user.savedCrafts} />
           </div>
         </div>
