@@ -25,6 +25,11 @@ const Dashboard = () => {
 
   // Get project data
   const { loading: projectsLoading, error: projectsError, data: projectsData } = useQuery(QUERY_ALL_PROJECTS);
+
+    // Error handling for project data
+    if (projectsLoading) return <p>Loading projects...</p>;
+    if (projectsError) return <p>Error fetching projects: {projectsError.message}</p>;
+    
   const projects = projectsData?.allProjects;
 
   // Get recommended projects based on user preferences
@@ -42,11 +47,11 @@ const Dashboard = () => {
         </div>
         <div id="projects">
           <div>
-            <h2>Your crafts:</h2>
+            <h2>Your In-Progress Crafts:</h2>
             <Projects crafts={user.ongoingProjects} />
           </div>
           <div>
-            <h2>Pick your next project:</h2>
+            <h2>Your Saved Crafts:</h2>
             <Projects crafts={user.savedCrafts} />
           </div>
           <div>
