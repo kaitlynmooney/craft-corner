@@ -19,7 +19,7 @@ type Project {
   instructions: String
   image: String
   pricePoint: String
-  diffculty: String
+  difficulty: String
 }
 
 type Craft {
@@ -38,7 +38,7 @@ type Query {
   user(username: String!): User
   me: User
   project(projectId: ID!): Project
-  projects: [Project]
+  allProjects: [Project]
   craft(name: String!): Craft
   crafts: [Craft]
 }
