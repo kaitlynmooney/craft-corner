@@ -1,7 +1,7 @@
 /* DEPENDENCIES */
 import React, { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { QUERY_ME } from "../utils/queries";
+import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
 import { getProjectsDifficulty, getProjectsPrice } from "../utils/recommendedProjects";
@@ -23,8 +23,14 @@ const Dashboard = () => {
       </h1>
   );
 
-  const recommendedProjectsDifficulty = getProjectsDifficulty(user.difficulty, user.allProjects);
-  const recommendedProjectsPrice = getProjectsPrice(user.pricePoint, user.allProjects);
+  // Get project data
+  const { loading: projectsLoading, error: projectsError, data: projectsData } = useQuery(QUERY_ALL_PROJECTS);
+  const projects = projectsData?.allProjects;
+
+  // Get recommended projects based on user preferences
+  const recommendedProjectsDifficulty = getProjectsDifficulty(user.difficulty, projects);
+  const recommendedProjectsPrice = getProjectsPrice(user.pricePoint, projects);
+  const recommendedProjects = [...recommendedProjectsDifficulty, ...recommendedProjectsPrice];
 
   // Return dashboard, calls Profile and UserCrafts components
   return (
@@ -45,7 +51,7 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Recommended Projects:</h2>
-            <Projects crafts={user.savedCrafts} />
+            <Projects crafts={recommendedProjects} />
           </div>
         </div>
       </div>
