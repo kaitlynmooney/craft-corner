@@ -35,8 +35,26 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_SINGLE_PROJECT = gql`
-  query getSingleProject($projectId: ID!) {
-    project(projectId: $projectId) {
+query Query($projectId: ID!) {
+  project(projectId: $projectId) {
+    name
+    _id
+    materials
+    pricePoint
+    instructions
+    difficulty
+    image
+    craft {
+      name
+      description
+    }
+  }
+}
+`;
+
+export const QUERY_ALL_PROJECTS = gql`
+  query {
+    allProjects {
       _id
       name
       materials
