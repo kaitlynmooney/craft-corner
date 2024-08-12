@@ -49,6 +49,8 @@ db.once("open", async () => {
   ]);
   console.log("Crafts seeded");
 
+  console.log(crafts)
+
   const projects = await Project.insertMany([
     {
       name: "Simple Scarf",

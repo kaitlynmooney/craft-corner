@@ -20,9 +20,7 @@ type Project {
   image: String
   pricePoint: String
   difficulty: String
-
   craft: Craft
-
 
 }
 
