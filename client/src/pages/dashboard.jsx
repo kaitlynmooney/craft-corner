@@ -1,5 +1,5 @@
 /* DEPENDENCIES */
-// import { useState } from 'react';
+import { useState } from 'react';
 import { useQuery } from "@apollo/client";
 import { useLocation } from 'react-router-dom';
 import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
@@ -11,6 +11,7 @@ import { getProjectsDifficulty, getProjectsPrice } from "../utils/recommendedPro
 
 /* DASHBOARD */
 const Dashboard = () => {
+  const [userProjects, setSavedProjects] = useState([]);
   const location = useLocation();
   const selectedDifficulty = location.state?.difficulty;
 
@@ -51,7 +52,7 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Your Saved Projects:</h2>
-            <SavedProjects savedProjects={savedProjects} allProjects={projects}/>
+            <SavedProjects savedProjects={savedProjects} allProjects={projects} setSavedProjects={setSavedProjects}/>
           </div>
           <div>
             <h2>Recommended Projects:</h2>
