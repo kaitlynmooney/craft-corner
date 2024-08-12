@@ -1,6 +1,8 @@
 import {useParams} from 'react-router-dom';
 import { useQuery } from '@apollo/client'; 
 
+import SingleProjHero from '../components/SingleProjHero';
+
 import { QUERY_SINGLE_PROJECT } from '../utils/queries'; 
 
 const SingleProject = () => {
@@ -18,8 +20,9 @@ const SingleProject = () => {
         return <div>Loading Craft Now!</div>;
     }
     return(
+        
         <div>
-            <div><img></img></div>
+            <SingleProjHero />
             <div>
                 <div>
                     {/* <btn>Price Point: {project.pricePoint}</btn>

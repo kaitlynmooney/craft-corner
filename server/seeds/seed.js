@@ -63,7 +63,7 @@ db.once("open", async () => {
             Repeat: Turn your work and continue single crocheting back and forth until the scarf reaches your desired length (usually around 60-70 inches). 
             Finish Off: Cut the yarn, leaving a tail, and use the tapestry needle to weave in the ends. 
             This project is perfect for getting comfortable with basic stitches and handling yarn, and by the end, you’ll have a cozy scarf to show off!`,
-      image: "coming soon",
+      image: "crochetScarf.jpg",
       pricePoint: "$",
       difficulty: "Newbie",
       craft: crafts[0]._id,
@@ -82,7 +82,7 @@ db.once("open", async () => {
                   4. Bind Off:Once the scarf is long enough, bind off the stitches to finish the edge.
                   5. Finish Off:Weave in any loose ends using the tapestry needle. 
                   This project is perfect for getting comfortable with the basics of knitting, and you’ll end up with a cozy, handmade scarf to keep you warm!`,
-      image: "coming soon",
+      image: "knitScarf.jpg",
       pricePoint: "$",
       difficulty: "Newbie",
       craft: crafts[1]._id,
@@ -104,7 +104,7 @@ db.once("open", async () => {
                 5. Assemble: Once all pieces are completed, seam them together as directed in the pattern. This may involve seaming the sides, attaching sleeves, and adding a collar or finishing edges. 
                 6. Finish: Weave in all ends, block the sweater to open up the cable patterns and set the shape, and make any final adjustments. 
                 This project involves complex techniques and patience but results in a beautiful, custom-fit sweater that showcases advanced knitting skills. `,
-      image: "coming soon",
+      image: "cableSweater.jpg",
       pricePoint: "$$$",
       difficulty: "Pro",
       craft: crafts[1]._id,
@@ -127,7 +127,7 @@ db.once("open", async () => {
                 5. Finish and Dry: Let your painting dry completely. You can add a final layer or details if desired, or leave it as is.
                 6. Display: Once dry, your painting is ready to be displayed or framed! 
                 This project is all about having fun and experimenting with colors and techniques, making it perfect for beginners to get comfortable with painting. `,
-      image: "coming soon",
+      image: "abstractPainting.jpg",
       pricePoint: "$",
       difficulty: "Newbie",
       craft: crafts[2]._id,
@@ -153,7 +153,7 @@ db.once("open", async () => {
                  6. Final Touches: Add final details and highlights to bring the portrait to life. Adjust any areas that need more definition or correction.
                  7. Dry and Varnish:Let the painting dry completely (especially if using oils). Apply varnish if desired for a protective finish. 
                  This project requires advanced skills and patience but results in a stunning, life like portrait that showcases your mastery of painting techniques. `,
-      image: "coming soon",
+      image: "realisticPainting.jpg",
       pricePoint: "$$-$$$",
       difficulty: "Casual/Pro",
       craft: crafts[2]._id,
@@ -172,7 +172,7 @@ db.once("open", async () => {
                 3. Create the Pinch Pot: - Press your thumb into the center of the ball to create a deep indentation.- Gently pinch the clay around the edges with your fingers to form the sides of the pot, working from the bottom up. Smooth out any rough spots. 
                 4. Shape and Refine: - Use your fingers or sculpting tools to refine the shape and make the rim even.- You can also add texture or patterns by pressing objects or tools into the clay. 5. Dry the Pot:- Allow the pot to dry completely according to the clay’s instructions (air-dry clay may take 24-48 hours; oven-bake clay needs to be baked as per package instructions).6. Decorate (optional): - Once dry, paint your pot with acrylic paints and let it dry. You can add designs or patterns as desired.
                 7. Finish:- If you like, you can apply a sealant to protect the paint and give the pot a glossy finish.This project is perfect for beginners as it introduces basic techniques and gives you a functional piece to enjoy or give as a gift `,
-      image: "coming soon",
+      image: "pinch-pot.jpeg",
       pricePoint: "$-$$",
       difficulty: "Newbie",
       craft: crafts[3]._id,
@@ -198,7 +198,7 @@ db.once("open", async () => {
                 8. Finish and Display: - Once fully cooled, inspect the sculpture and add any final touches or clean-ups. 
                 
                 Your sculpture is now ready to display or use as a centerpiece.This project requires advanced skills in sculpting, firing, and finishing, and it results in a highly detailed and refined ceramic piece that showcases your expertise in clay modeling. `,
-      image: "coming soon",
+      image: "ceramicSculpture.jpg",
       pricePoint: "$$-$$$",
       difficulty: "Pro",
       craft: crafts[3]._id,
@@ -220,7 +220,7 @@ db.once("open", async () => {
                  5. Finish: - If you’re adding a clasp, thread the cord through the clasp or extender and secure with crimp beads, or use knots to secure the ends if not using a clasp. 
                  6. Wear and Enjoy: - Your beaded bracelet is ready to wear! Adjust and make sure it fits comfortably.
                  This project is ideal for beginners as it involves basic techniques like stringing, knotting, and simple finishing, and results in a stylish, custom-made bracelet`,
-      image: "coming soon",
+      image: "beadBracelet.jpg",
       pricePoint: "$",
       difficulty: "Newbie",
       craft: crafts[4]._id,
@@ -244,7 +244,7 @@ db.once("open", async () => {
                  6. Polish: - Use polishing supplies to shine and finish the pendant. This step enhances the appearance and ensures a professional look. 
                  7. Attach to Chain: - Use jump rings and a clasp to attach the pendant to a chain. Ensure all connections are secure.
                   8. Final Adjustments: - Inspect the necklace for any final adjustments or touch-ups needed before wearing or presenting.This project combines advanced metalworking, design skills, and gemstone setting techniques, resulting in a beautifully crafted and unique pendant necklace. `,
-      image: "coming soon",
+      image: "gemstonePendant.jpg",
       pricePoint: "$$-$$$",
       difficulty: "Casual/Pro",
       craft: crafts[4]._id,
@@ -270,7 +270,7 @@ db.once("open", async () => {
                 7. Add Hangers: - Attach jump rings or other hangers to the suncatcher for hanging. 
                 8. Display: - Hang your suncatcher in a sunny window and enjoy the beautiful light effects! 
                 This project is a perfect introduction to stained glass making, allowing you to practice cutting, foiling, and soldering techniques while creating a decorative and functional piece `,
-      image: "coming soon",
+      image: "sunCatcher.jpeg",
       pricePoint: "$$-",
       difficulty: "Newbie",
       craft: crafts[5]._id,
@@ -297,7 +297,7 @@ db.once("open", async () => {
                 7. Clean and Finish: - Clean the finished panel thoroughly to remove any flux residue. Polish the glass and solder joints for a clean, professional finish. 
                 8. Install: - Install the panel in its intended location. This may involve mounting it in a window frame or hanging it as a decorative piece.
                  This project challenges your skills in every aspect of stained glass making, including complex cutting, precise soldering, and custom framing, resulting in a stunning and functional work of art `,
-      image: "coming soon",
+      image: "stainedGlassPanel.jpg",
       pricePoint: "$$$",
       difficulty: "Pro",
       craft: crafts[5]._id,
@@ -321,7 +321,7 @@ db.once("open", async () => {
                 7. Fire (if needed): - If using clay that requires firing, arrange for it to be fired in a kiln. Follow the firing instructions based on the clay and glaze used. 
                 8. Finish: - After firing (if applicable), your bowl is ready to use or display! 
                 This beginner project helps you get familiar with basic hand-building techniques and allows for creativity in shaping and decorating your pottery `,
-      image: "coming soon",
+      image: "handBowl.jpg",
       pricePoint: "$",
       difficulty: "Newbie",
       craft: crafts[6]._id,
@@ -345,7 +345,7 @@ db.once("open", async () => {
                  7. Glaze Fire: - Fire the glazed vase in the kiln to glaze temperature (usually around 2,200°F or 1,200°C). This second firing melts the glaze and creates the final finish. 
                  8. Finish and Inspect: - After firing, inspect the vase for any imperfections or adjustments needed. Clean any kiln residue and make any final touches. 
                  This project challenges your skills in wheel throwing, trimming, glazing, and firing, resulting in a sophisticated and finely crafted ceramic vase.`,
-      image: "coming soon",
+      image: "thrownVase.jpg",
       pricePoint: "$$$",
       difficulty: "Pro",
       craft: crafts[6]._id,
