@@ -13,15 +13,22 @@ const SavedProjects = ({ savedProjects, allProjects, setSavedProjects }) => {
         }
     };
 
+    const handleDivClick = (projectId, event) => {
+        if (!event.target.classList.contains('btn-close')) {
+            // Navigate to the project details page if the close button was not clicked
+            window.location.href = `/project/${projectId}`;
+        }
+    };
+
     return (
         <div id="project-container">
           {savedProjects && savedProjects.length > 0 ? (
             savedProjects.map((projectId) => (
-                <div key={projectId}>
-                    <div className='button-options'>
-                        <button type="button" className="btn-close" aria-label="Close" onClick={() => handleRemoveProject(projectId)}></button>
-                        <label>{allProjects.find((p) => p._id === projectId)?.name}</label>
-                    </div>
+                <div key={projectId} onClick={(event) => handleDivClick(projectId, event)}>
+                        <button className='button-options'>
+                            <button type="button" className="btn-close" aria-label="Close" onClick={() => handleRemoveProject(projectId)}></button>
+                            <label>{allProjects.find((p) => p._id === projectId)?.name}</label>
+                        </button>
                 </div>
             ))
           ) : (

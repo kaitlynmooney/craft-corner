@@ -71,6 +71,7 @@ const Projects = ({ user, projects }) => {
     <div id="project-container">
       {projects && projects.map((project, index) => (
         <div key={project.id}>
+          <a href={`/project/${project._id}`}>
           <button className='button-options'>
             <div className="form-check heart-checkbox">
               <input
@@ -86,6 +87,7 @@ const Projects = ({ user, projects }) => {
               </label>
             </div>
           </button>
+          </a>
         </div>
       ))}
     </div>
