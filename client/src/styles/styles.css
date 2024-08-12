@@ -382,6 +382,10 @@ html {
   color: white; /* Change color of heart symbol when checked */
 }
 
+.form-check {
+  padding: 0 !important;
+}
+
 
 /* EXPLORE PAGE */
 #explore {
