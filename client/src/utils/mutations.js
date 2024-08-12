@@ -33,3 +33,13 @@ export const CHANGE_AVATAR = gql`
     }
   }
 `;
+
+export const SURVEY_COMPLETE = gql`
+  mutation surveyCompletion($username: String!, $surveyComplete: Boolean!) {
+    changeAvatar(username: $username, surveyComplete: $surveyComplete) {
+      _id
+      username
+      surveyComplete
+    }
+  }
+`;
