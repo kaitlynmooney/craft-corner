@@ -72,6 +72,21 @@ const resolvers = {
         throw new Error("Failed to change avatar");
       }
     },
+    addSurveyPricePoint: async(parent, { username, surveyPricePoint }) => {
+      try {
+        const user = await User.findOne({ username });
+        if (!user) {
+          throw new Error("User not found");
+        }
+
+        user.surveyPricePoint = surveyPricePoint;
+        await user.save();
+        return user;
+      } catch (error) {
+        console.error(error);
+        throw new Error("Failed to save survey price point")
+      }
+    },
   },
 };
 

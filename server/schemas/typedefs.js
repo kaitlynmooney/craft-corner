@@ -10,6 +10,7 @@ type User {
   savedCrafts: [Craft]
   completedProjects: [Project]
   ongoingProjects: [Project]
+  surveyPricePoint: String
 }
 
 type Project {
@@ -51,7 +52,7 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
   changeAvatar(username: String!, avatar: String!): User
-  addSurveyPrice(username: String!, surveyPricePoint: String): User
+  addSurveyPricePoint(username: String!, surveyPricePoint: String): User
 }
 `;
 
