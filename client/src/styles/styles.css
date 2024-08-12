@@ -808,3 +808,26 @@ p {
   text-align: center;
   z-index: 1; /* Ensures text is above the image */
 }
+
+/* SingleProject  */
+
+.project-image {
+  margin: 30px;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+}
+
+.project-instructions {
+  font-size: 20px;
+  font-family: serif;
+  font-weight: 300;
+}
+
+.line-buffers{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.materials-list{
+  list-style-type:none;
+}

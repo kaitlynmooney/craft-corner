@@ -31,7 +31,8 @@ const resolvers = {
       return Project.find();
     },
     project: async (parent, { projectId }, context) => {
-      const project = Project.findOne({ _id: projectId }).populate('craft')
+      const project = await Project.findOne({ _id: projectId }).populate('craft')
+      console.log(project)
       return project;
     },
   },

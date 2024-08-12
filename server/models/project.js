@@ -11,7 +11,7 @@ const projectSchema = new Schema({
     required: true,
   },
   instructions: {
-    type: String,
+    type: Array,
     required: true,
   },
   image: {

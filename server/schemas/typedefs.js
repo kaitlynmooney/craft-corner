@@ -16,7 +16,7 @@ type Project {
   _id: ID
   name:String
   materials: [String]
-  instructions: String
+  instructions: [String]
   image: String
   pricePoint: String
   difficulty: String
