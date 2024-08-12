@@ -10,9 +10,6 @@ const SingleProject = () => {
     variables: { projectId },
   });
 
-  const { loading, data } = useQuery(QUERY_SINGLE_PROJECT, {
-    variables: { projectId: projectId },
-  });
   console.log(data);
   // console.log(data?.project?.materials)
 
