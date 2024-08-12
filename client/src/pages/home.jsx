@@ -1,56 +1,51 @@
+/* DEPENDENCIES */
 import React, { useEffect, useState } from "react";
 
+/* HOMEPAGE */
 const Home = () => {
-  // set timeout loading variable to true
-  // make array of source and title
-  // one iframe
-  // onload on last iframe
-  // loading set to false
+  const [loading, setLoading] = useState(true);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 4000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  // When videos are loaded, move off loading screen
+  const handleLoad = () => {
+    setLoading(false);
+  };
+
+  // If videos are loading, show loading screen
+  if (loading) {
+    return (
+      <div className="loading-screen">
+        <p>Loading...</p>
+      </div>
+    );
+  }
+
+  // If videos are loaded, show videos
   return (
     <div id="homepage">
-      <div className="homepage-carousel">
+      <div id="homepage-video">
         <iframe
-          src="https://player.vimeo.com/video/996398991?autoplay=1&loop=1&background=1"
+          src={`https://player.vimeo.com/video/997208559?autoplay=1&loop=1&background=1`}
           allow="autoplay; fullscreen"
-          title="jewelry_making"
+          title="Various crafts"
+          onLoad={() => handleLoad()}
         ></iframe>
-        <iframe
-          src="https://player.vimeo.com/video/996398975?autoplay=1&loop=1&background=1"
-          allow="autoplay; fullscreen"
-          title="crocheting"
-        ></iframe>
-        <iframe
-          src="https://player.vimeo.com/video/996390689?autoplay=1&loop=1&background=1"
-          allow="autoplay; fullscreen"
-          title="painting"
-        ></iframe>
-        <iframe
-          src="https://player.vimeo.com/video/996399006?autoplay=1&loop=1&background=1"
-          allow="autoplay; fullscreen"
-          title="knitting"
-        ></iframe>
-        <iframe
-          src="https://player.vimeo.com/video/996400649?autoplay=1&loop=1&background=1"
-          allow="autoplay; fullscreen"
-          title="pottery"
-        ></iframe>
-        <div id="last-carousel-item">
-          <p className="sofia" id="homepage-title">
-            Craft Corner
-          </p>
-          <p className="inter" id="homepage-subtitle">
-            Let's get crafty.
-          </p>
-        </div>
       </div>
       <div id="homepage-content">
         <button className="borders hover-borders" id="start-crafting">
-          Start crafting
+          Take survey
         </button>
       </div>
     </div>
   );
 };
 
+/* EXPORT */
 export default Home;
