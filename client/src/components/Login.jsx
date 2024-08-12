@@ -3,9 +3,9 @@ import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
 import { Link } from "react-router-dom";
-
 import Auth from "../utils/auth";
 
+/* LOGIN */
 const Login = () => {
   const [formState, setFormState] = useState({
     login_email: "",
@@ -13,7 +13,7 @@ const Login = () => {
   });
   const [login, { error, data }] = useMutation(LOGIN_USER);
 
-  // update state based on form input changes
+  // Update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -23,7 +23,7 @@ const Login = () => {
     });
   };
 
-  // submit form
+  // Submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -55,9 +55,6 @@ const Login = () => {
           <form onSubmit={handleFormSubmit}>
             <div className="borders" id="login-div">
               <p>Email:</p>
-              <p className="hidden login-alert" id="login-email-alert">
-                Please enter your email
-              </p>
               <input
                 type="text"
                 className="borders"
@@ -67,9 +64,6 @@ const Login = () => {
                 onChange={handleChange}
               />
               <p>Password:</p>
-              <p className="hidden login-alert" id="login-password-alert">
-                Please enter your password
-              </p>
               <input
                 type="password"
                 className="borders"
@@ -78,23 +72,17 @@ const Login = () => {
                 value={formState.login_password}
                 onChange={handleChange}
               />
-              <p className="hidden login-alert" id="login-alert">
-                Sorry, the email or password you entered does not match any
-                existing account. Please try again!
-              </p>
-              <button className="borders" id="login" type="submit">
+              {error && (
+                <p className="login-alert" id="login-alert">
+                  Sorry, the email or password you entered does not match any
+                  existing account. Please try again!
+                </p>
+              )}
+              <button className="dark-button" id="login-button" type="submit">
                 Log in
               </button>
             </div>
-          <div id="google-oauth-div">
-          <p className="borders" id="google-oauth">
-            Log in with Google
-          </p>
-        </div>
           </form>
-        )}
-        {error && (
-          <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
         )}
       </div>
     </div>

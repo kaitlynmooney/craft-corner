@@ -8,7 +8,7 @@ import Avatars from "./Avatars";
 const Profile = ({ user }) => {
   // Crafter status names
   const statuses = [
-    "Glu Gun Guru",
+    "Glue Gun Guru",
     "Stitch Witch",
     "Thread Tamer",
     "Crafting Connoisseur",
@@ -59,7 +59,7 @@ const Profile = ({ user }) => {
 
   // Return profile info, including avatar, craft status, and number of completed crafts
   return (
-    <div className="inter" id="profile">
+    <div>
       <div id="inner-profile">
         <img
           id="profile-img"

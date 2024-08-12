@@ -1,10 +1,13 @@
-import {useParams} from 'react-router-dom';
-import { useQuery } from '@apollo/client'; 
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+o
+import SingleProjHero from '../components/SingleProjHero';
 
 import { QUERY_SINGLE_PROJECT } from '../utils/queries'; 
 
+
 const SingleProject = () => {
-    const {projectId} = useParams();
+  const { projectId } = useParams();
 
     const { loading, data } = useQuery(QUERY_SINGLE_PROJECT, {
         variables : {projectId :projectId},
@@ -12,26 +15,69 @@ const SingleProject = () => {
     console.log(data)
     // console.log(data?.project?.materials)
 
-    const project = data?.project || {};
+  const project = data?.project || {};
 
-    if(loading) {
-        return <div>Loading Craft Now!</div>;
-    }
+
+     if (loading) {
+    return <div className="loading-spinner"></div>;
+  }
     return(
-        <div>
-            <div><img></img></div>
-            <div>
-                <div>
-                    {/* <btn>Price Point: {project.pricePoint}</btn>
-                    <btn>Skill Level : {project.difficulty}</btn> */}
-                    </div>
-                
-                <h1>{project.name}</h1>
-                <p>{project.instructions}</p>
-            </div>
+        
+        <div className="container">
+             
+            <SingleProjHero />
 
-        </div>
-    )
-}
+            
+
+            <div className="row">
+
+        
+
+
+          <div className="col">
+            <img className="project-image borders "  src={`/images/${project.image}`} alt="Selected projects photo"></img>
+          </div>
+
+          <div className="col order-1 ">
+          <h1 className="title line-buffers">Materials</h1>
+
+          {project.materials.map((material, index) => (
+            <ul className=" inter project-instructions materials-list" key ={index}>
+                <li><input type="checkbox"></input> {material}</li>
+            </ul>
+             ))}
+           <h2 className="title line-buffers">Instructions</h2>
+
+           {project.instructions.map((instruction, index) => (
+            <ul className="inter project-instructions materials-list" key={index}>
+                <li>{instruction}</li>
+            </ul>
+
+           ))}
+           
+              
+
+          </div>
+          
+         
+
+          
+
+
+          
+
+
+
+    
+               
+            </div>
+           
+                
+               
+
+
+  
+  );
+};
 
 export default SingleProject;

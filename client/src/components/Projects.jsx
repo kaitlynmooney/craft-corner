@@ -1,5 +1,6 @@
 /* PROJECTS */
 import { useState, useEffect } from 'react';
+import SavedProjects from './SavedProjects'; // Import the SavedProjects component
 
 const Projects = ({ user, projects }) => {
   const initialCheckedItems = projects ? new Array(projects.length).fill(false) : [];
@@ -19,22 +20,21 @@ const Projects = ({ user, projects }) => {
     }
   }, []);
 
+  // Update savedProjects when checkedItems change
+  useEffect(() => {
+    const updatedSavedProjects = projects
+      .filter((_, idx) => checkedItems[idx])
+      .map(project => project.id);
+
+    setSavedProjects(updatedSavedProjects);
+    setCheckedRecommendedProjects(updatedSavedProjects);
+  }, [checkedItems, projects]);
+
   // Handle checkbox change for a specific index
   const handleCheckboxChange = (index) => {
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = !newCheckedItems[index];
     setCheckedItems(newCheckedItems);
-
-    const updatedSavedProjects = projects
-      .filter((_, idx) => newCheckedItems[idx])
-      .map(project => project.id);
-
-    setSavedProjects(updatedSavedProjects);
-    setCheckedRecommendedProjects(
-      newCheckedItems
-        .map((isChecked, idx) => isChecked ? projects[idx].id : null)
-        .filter(id => id !== null)
-    );
   };
 
   // Update local storage when checkedItems change
@@ -62,10 +62,10 @@ const Projects = ({ user, projects }) => {
           </button>
         </div>
       ))}
+      {/* Pass the savedProjects as a prop to SavedProjects */}
+      <SavedProjects savedProjects={savedProjects} />
     </div>
   );
 };
 
-
-/* EXPORT */
 export default Projects;
