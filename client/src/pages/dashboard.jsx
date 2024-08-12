@@ -9,7 +9,7 @@ import Projects from "../components/Projects";
 const Dashboard = () => {
   // Get user data
   const { loading, error, data } = useQuery(QUERY_ME);
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <div className="loading-spinner"></div>;
   if (error) return <p>Error</p>;
   const user = data?.me;
   console.log(user);

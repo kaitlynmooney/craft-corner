@@ -37,11 +37,6 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <img
-        src="../background-img.jpg"
-        alt="Knit texture"
-        id="background-image"
-      ></img>
       <div id="main-div">
         <Header />
         <Outlet />
