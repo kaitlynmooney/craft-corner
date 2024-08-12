@@ -44,6 +44,12 @@ const userSchema = new Schema({
       default: [],
     },
   ],
+  surveyComplete: [
+    {
+      type: Boolean,
+      default: false,
+    }
+  ]
 });
 
 userSchema.pre("save", async function (next) {
