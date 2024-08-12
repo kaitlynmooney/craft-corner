@@ -1,6 +1,7 @@
 // get loggedin and quiz values from...
 import Auth from "../utils/auth";
 import { getProjectsPrice } from "../utils/recommendedProjects";
+import { QUERY_ME } from "../utils/queries";
 
 
 export default function Header() {
@@ -11,9 +12,10 @@ export default function Header() {
     Auth.logout();
   };
 
+  const { data: userData } = useQuery(QUERY_ME);
+
   const user = userData?.me;
-  const projects = projectsData?.allProjects;
-  const recommendedProjectsPrice = getProjectsPrice(user?.pricePoint, projects);
+  const recommendedProjectsPrice = getProjectsPrice(user?.pricePoint);
 
   return (
     <header>
@@ -60,7 +62,7 @@ export default function Header() {
                 </a>
               )}{" "}
               {/* // dashboard if user is logged in and has completed the quiz*/}
-              {Auth.loggedIn() && (
+              {Auth.loggedIn() && recommendedProjectsPrice (
                 <a
                   className="borders text-decoration-none"
                   href="#"
