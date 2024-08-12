@@ -1,7 +1,8 @@
 /* DEPENDENCIES */
-import Login from "../components/login";
 import { useState } from "react";
+import Login from "../components/login";
 import Signup from "../components/Signup";
+import GoogleOAuth from "../components/GoogleOAuth";
 
 /* LOGIN PAGE */
 const LoginPage = () => {
@@ -35,11 +36,7 @@ const LoginPage = () => {
       <div id="login-main-div">
         {loginShow && <Login />}
         {signupShow && <Signup />}
-        <div id="google-oauth-div">
-          <p className="borders" id="google-oauth">
-            <i class="fa-brands fa-google"></i> Log in with Google
-          </p>
-        </div>
+        <GoogleOAuth />
       </div>
     </div>
   );

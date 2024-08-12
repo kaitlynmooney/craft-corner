@@ -46,9 +46,6 @@ const Signup = () => {
           <form onSubmit={handleFormSubmit}>
             <div className="borders" id="signup-div">
               <p>Username:</p>
-              <p className="ogin-alert hidden" id="signup-username-alert">
-                Please enter a username
-              </p>
               <input
                 type="text"
                 className="borders"
@@ -58,9 +55,6 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <p>Email:</p>
-              <p className="login-alert hidden" id="signup-email-alert">
-                Please enter a valid email
-              </p>
               <input
                 type="text"
                 className="borders"
@@ -70,9 +64,6 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <p>Password:</p>
-              <p className="hidden login-alert" id="signup-password-alert">
-                Please enter a password longer than 6 characters
-              </p>
               <input
                 type="password"
                 className="borders"

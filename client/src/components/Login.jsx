@@ -55,9 +55,6 @@ const Login = () => {
           <form onSubmit={handleFormSubmit}>
             <div className="borders" id="login-div">
               <p>Email:</p>
-              <p className="hidden login-alert" id="login-email-alert">
-                Please enter your email
-              </p>
               <input
                 type="text"
                 className="borders"
@@ -67,9 +64,6 @@ const Login = () => {
                 onChange={handleChange}
               />
               <p>Password:</p>
-              <p className="hidden login-alert" id="login-password-alert">
-                Please enter your password
-              </p>
               <input
                 type="password"
                 className="borders"
