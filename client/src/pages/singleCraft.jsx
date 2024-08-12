@@ -21,27 +21,49 @@ const SingleProject = () => {
     }
     return(
         
-        <div>
-             <h1>{project.name}</h1>
+        <div className="container">
+             
             <SingleProjHero />
-            <div>
-            {project.materials.map((material, index) => (
-            <ul key ={index}>
-                <li>{material}</li>
-            </ul>
-          ))}
+
+            
+
+            <div className="row">
+
+        
 
 
-          <div>
-            <img src={`/images/${project.image}`} alt="Selected projects photo"></img>
+          <div className="col">
+            <img className="project-image borders "  src={`/images/${project.image}`} alt="Selected projects photo"></img>
           </div>
+
+          <div className="col order-1 ">
+          <h1 className="title line-buffers">Materials</h1>
+
+          {project.materials.map((material, index) => (
+            <ul className="project-instructions materials-list" key ={index}>
+                <li><input type="checkbox"></input> {material}</li>
+            </ul>
+             ))}
+           <h2 className="title line-buffers">Instructions</h2>
+              <p className="inter project-instructions">{project.instructions}</p>
+
+          </div>
+          
+         
+
+          
+
+
+          
+
+
 
     
                
             </div>
            
                 
-                <p>{project.instructions}</p>
+               
 
         </div>
     )
