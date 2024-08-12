@@ -10,6 +10,7 @@ type User {
   savedCrafts: [Craft]
   completedProjects: [Project]
   ongoingProjects: [Project]
+  surveyComplete: Boolean
 }
 
 type Project {
@@ -51,6 +52,7 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
   changeAvatar(username: String!, avatar: String!): User
+  surveyCompletion(username: String!, surveyComplete: Boolean!): User
 }
 `;
 
