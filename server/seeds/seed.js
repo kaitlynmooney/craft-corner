@@ -68,7 +68,7 @@ db.once("open", async () => {
       image: "coming soon",
       pricePoint: "$",
       difficulty: "Newbie",
-      craft: crafts[0]
+      craft: crafts[0]._id,
     },
     {
       name: "Simple Garter Stich Scarf",
