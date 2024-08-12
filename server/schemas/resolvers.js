@@ -12,11 +12,11 @@ const resolvers = {
       return User.findOne({ username });
     },
     me: async (parent, args, context) => {
-      console.log('hello')
-      console.log(context.user)
       if (context.user) {
         const user = User.findOne({ _id: context.user._id })
-        .populate('savedCrafts').populate('completedProjects').populate('ongoingProjects')
+          .populate("savedCrafts")
+          .populate("completedProjects")
+          .populate("ongoingProjects");
         return user;
       }
       throw AuthenticationError;
@@ -28,11 +28,13 @@ const resolvers = {
       return Craft.findOne({ name });
     },
     allProjects: async () => {
-      return await Project.find().populate('craft');
+      return await Project.find().populate("craft");
     },
     project: async (parent, { projectId }, context) => {
-      const project = await Project.findOne({ _id: projectId }).populate('craft')
-      console.log(project)
+      const project = await Project.findOne({ _id: projectId }).populate(
+        "craft"
+      );
+      console.log(project);
       return project;
     },
   },
