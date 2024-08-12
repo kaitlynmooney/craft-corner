@@ -5,6 +5,7 @@ import { useLocation } from 'react-router-dom';
 import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
+import SavedProjects from "../components/savedProjects";
 import { getProjectsDifficulty, getProjectsPrice } from "../utils/recommendedProjects";
 
 /* DASHBOARD */
@@ -47,7 +48,7 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Your Saved Projects:</h2>
-            <Projects user={user} projects={user.savedProjects} />
+            <SavedProjects />
           </div>
           <div>
             <h2>Recommended Projects:</h2>
