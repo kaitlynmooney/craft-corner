@@ -40,12 +40,20 @@ const SingleProject = () => {
           <h1 className="title line-buffers">Materials</h1>
 
           {project.materials.map((material, index) => (
-            <ul className="project-instructions materials-list" key ={index}>
+            <ul className=" inter project-instructions materials-list" key ={index}>
                 <li><input type="checkbox"></input> {material}</li>
             </ul>
              ))}
            <h2 className="title line-buffers">Instructions</h2>
-              <p className="inter project-instructions">{project.instructions}</p>
+
+           {project.instructions.map((instruction, index) => (
+            <ul className="inter project-instructions materials-list" key={index}>
+                <li>{instruction}</li>
+            </ul>
+
+           ))}
+           
+              
 
           </div>
           
