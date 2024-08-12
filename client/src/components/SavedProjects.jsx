@@ -7,6 +7,7 @@ const SavedProjects = ({ savedProjects }) => {
                 <div key={projectId}>
                 <button className='button-options'>
                   <button type="button" className="btn-close" aria-label="Close"></button>
+                  <label>{projectId.name}</label>
                 </button>
               </div>
             ))

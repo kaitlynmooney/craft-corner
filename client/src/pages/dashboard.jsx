@@ -6,6 +6,7 @@ import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
 import SavedProjects from "../components/savedProjects";
+import { getSavedProjects } from '../utils/savedProjects';
 import { getProjectsDifficulty, getProjectsPrice } from "../utils/recommendedProjects";
 
 /* DASHBOARD */
@@ -32,6 +33,8 @@ const Dashboard = () => {
   const recommendedProjects = [...recommendedProjectsDifficulty, ...recommendedProjectsPrice];
   const uniqueRecommendedProjects = Array.from(new Set(recommendedProjects));
 
+  const savedProjects = getSavedProjects();
+
 
   // Return dashboard, calls Profile and Projects components
   return (
@@ -48,7 +51,7 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Your Saved Projects:</h2>
-            <SavedProjects />
+            <SavedProjects savedProjects={savedProjects}/>
           </div>
           <div>
             <h2>Recommended Projects:</h2>

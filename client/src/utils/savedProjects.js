@@ -1,4 +1,4 @@
- export const getSavedProjects = () => {
+export const getSavedProjects = () => {
     // Retrieve the JSON string from local storage
     const storedCheckedProjectIds = localStorage.getItem('checkedProjectIds');
   
@@ -24,5 +24,5 @@
   
     // Return the new array of saved projects
     return savedProjects;
-  };
+};
   
