@@ -51,7 +51,7 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Your Saved Projects:</h2>
-            <SavedProjects savedProjects={savedProjects}/>
+            <SavedProjects savedProjects={savedProjects} allProjects={projects}/>
           </div>
           <div>
             <h2>Recommended Projects:</h2>
