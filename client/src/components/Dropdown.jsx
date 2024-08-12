@@ -16,9 +16,6 @@ const Dropdown = () => {
     console.log("category", category);
   };
 
-  // Get project data
-  // const { projectId } = useParams();
-
   // step 1 query all projects to receive projects array
   const {
     loading: projectsLoading,
@@ -29,7 +26,7 @@ const Dropdown = () => {
   const allProjects = data?.allProjects;
   console.log(allProjects);
 
-  // step 2 map through results of querty and plug in to html elements
+  // step 2 map through results of query and plug in to html elements
   const filteredArray = allProjects?.filter(
     (project) => project.craft.name === category
   );
@@ -56,25 +53,25 @@ const Dropdown = () => {
         className={`dropdown-menu ${isOpen ? "show" : ""}`}
         aria-labelledby="search-button"
       >
-        <a onClick={categoryHandler} className="dropdown-item">
+        <a onClick={categoryHandler} className="dropdown-item" href="">
           Crochet
         </a>
-        <a className="dropdown-item" href="#">
+        <a onClick={categoryHandler} className="dropdown-item" href="#">
           Knitting
         </a>
-        <a className="dropdown-item" href="#">
+        <a onClick={categoryHandler} className="dropdown-item" href="#">
           Painting
         </a>
-        <a className="dropdown-item" href="#">
+        <a onClick={categoryHandler} className="dropdown-item" href="#">
           Clay Modeling
         </a>
-        <a className="dropdown-item" href="#">
+        <a onClick={categoryHandler} className="dropdown-item" href="#">
           Jewelry
         </a>
-        <a className="dropdown-item" href="#">
+        <a onClick={categoryHandler} className="dropdown-item" href="#">
           Stained Glass
         </a>
-        <a className="dropdown-item" href="#">
+        <a onClick={categoryHandler} className="dropdown-item" href="#">
           Pottery
         </a>
       </div>
