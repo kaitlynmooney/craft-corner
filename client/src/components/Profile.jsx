@@ -87,6 +87,7 @@ const Profile = ({ user }) => {
           onAvatarChange={handleAvatarChange}
         />
       )}
+      <div className="borders">Create a new project</div>
     </div>
   );
 };

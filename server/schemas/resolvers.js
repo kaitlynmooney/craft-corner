@@ -74,6 +74,23 @@ const resolvers = {
         throw new Error("Failed to change avatar");
       }
     },
+    createProject: async (
+      parent,
+      { name, materials, instructions, pricePoint, difficulty, craft }
+    ) => {
+      const newProject = new Project({
+        name,
+        materials,
+        instructions,
+        pricePoint,
+        difficulty,
+        craft,
+      });
+      return await newProject.save();
+    },
+    deleteProject: async (parent, { id }) => {
+      return await Project.findByIdAndDelete(id);
+    },
   },
 };
 

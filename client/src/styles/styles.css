@@ -549,6 +549,80 @@ p {
   color: var(--text-color); /* Initial text color */
 }
 
+/* NEW PROJECT PAGE */
+#new-proj {
+  margin: 0px 10vw 40px 10vw;
+}
+
+#new-project-form {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 80vw;
+  min-width: 280px;
+  padding: 10px 20px 20px 20px;
+}
+
+#new-project-form p {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 350;
+  text-align: left;
+  margin: 0px;
+}
+
+.instruction {
+  margin: 12px 0px 2px 0px !important;
+}
+
+.sub-instruction {
+  font-size: 14px !important;
+}
+
+#new-project-form input {
+  width: 100%;
+  border-radius: 15px;
+  border: 0.8px solid var(--text-color);
+  padding: 4px 10px 4px 10px;
+  background-color: var(--clear);
+}
+
+#create-project {
+  font-size: 20px;
+  margin: 10px 0px 0px 0px;
+  padding: 4px 20px 4px 20px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+#price-point,
+#difficulty,
+#craft-type {
+  color: var(--text-color);
+  background-color: var(--clear);
+  text-align: left;
+}
+
+@media (max-width: 340px) {
+  #new-proj {
+    margin: 0 auto;
+  }
+
+  #new-project-form {
+    width: 280px;
+  }
+}
+
+@media (min-width: 600px) {
+  #new-proj {
+    margin: 0px 20vw 40px 20vw;
+  }
+
+  #new-project-form {
+    width: 60vw;
+  }
+}
+
 /* EFFECTS */
 @keyframes fadeIn {
   to {
