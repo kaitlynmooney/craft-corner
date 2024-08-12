@@ -84,14 +84,14 @@ const Signup = () => {
               <button className="dark-button" id="signup-button" type="submit">
                 Sign Up
               </button>
-              <p className="hidden login-alert" id="signup-alert">
-                Sorry, we were unable to create your account. Please try again.
-              </p>
+              {error && (
+                <p className="login-alert" id="signup-alert">
+                  Sorry, we were unable to create your account. Please add a
+                  username, valid email, and password.
+                </p>
+              )}
             </div>
           </form>
-        )}
-        {error && (
-          <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
         )}
       </div>
     </div>
