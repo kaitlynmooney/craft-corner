@@ -27,7 +27,7 @@ const SavedProjects = ({ savedProjects, allProjects, setSavedProjects }) => {
                 <div key={projectId} onClick={(event) => handleDivClick(projectId, event)}>
                         <button className='button-options'>
                             <button type="button" className="btn-close" aria-label="Close" onClick={() => handleRemoveProject(projectId)}></button>
-                            <label>{allProjects.find((p) => p._id === projectId)?.name}</label>
+                            <label id='label'>{allProjects.find((p) => p._id === projectId)?.name}</label>
                         </button>
                 </div>
             ))
