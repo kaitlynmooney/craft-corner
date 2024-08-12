@@ -22,16 +22,26 @@ const SingleProject = () => {
     return(
         
         <div>
+             <h1>{project.name}</h1>
             <SingleProjHero />
             <div>
-                <div>
-                    {/* <btn>Price Point: {project.pricePoint}</btn>
-                    <btn>Skill Level : {project.difficulty}</btn> */}
-                    </div>
-                
-                <h1>{project.name}</h1>
-                <p>{project.instructions}</p>
+            {project.materials.map((material, index) => (
+            <ul key ={index}>
+                <li>{material}</li>
+            </ul>
+          ))}
+
+
+          <div>
+            <img src={`/images/${project.image}`} alt="Selected projects photo"></img>
+          </div>
+
+    
+               
             </div>
+           
+                
+                <p>{project.instructions}</p>
 
         </div>
     )

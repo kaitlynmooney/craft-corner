@@ -16,11 +16,12 @@ const SingleProjHero =() => {
     // console.log(data?.project?.materials)
 
     const project = data?.project || {};
+    console.log(project)
 
     return(
         <div className="hero">
         <img
-          src={project.image}
+          src={`/images/${project.image}`}
           alt="Image of featured project"
           className="hero-image"
         />
