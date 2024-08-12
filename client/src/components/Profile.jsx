@@ -59,7 +59,7 @@ const Profile = ({ user }) => {
 
   // Return profile info, including avatar, craft status, and number of completed crafts
   return (
-    <div className="inter" id="profile">
+    <div>
       <div id="inner-profile">
         <img
           id="profile-img"
