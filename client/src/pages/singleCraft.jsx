@@ -1,12 +1,14 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
-import SingleProjHero from "../components/SingleProjHero";
-
-import { QUERY_SINGLE_PROJECT } from "../utils/queries";
+import SingleProjHero from '../components/SingleProjHero';
+import { QUERY_SINGLE_PROJECT } from '../utils/queries'; 
 
 const SingleProject = () => {
   const { projectId } = useParams();
+  const { loading, error, data } = useQuery(QUERY_SINGLE_PROJECT, {
+    variables: { projectId },
+  });
 
   const { loading, data } = useQuery(QUERY_SINGLE_PROJECT, {
     variables: { projectId: projectId },
@@ -19,6 +21,13 @@ const SingleProject = () => {
   if (loading) {
     return <div className="loading-spinner"></div>;
   }
+   // Handle errors in the query
+  if (error) return <div className="error-message">Error: {error.message}</div>;
+  
+   // Ensure materials and instructions are defined and are arrays
+  const materials = Array.isArray(project.materials) ? project.materials : [];
+  const instructions = Array.isArray(project.instructions) ? project.instructions : [];
+  
   return (
     <div>
         <SingleProjHero />
@@ -65,7 +74,9 @@ const SingleProject = () => {
       </div>
     </div>
     </div>
+
   );
 };
 
 export default SingleProject;
+

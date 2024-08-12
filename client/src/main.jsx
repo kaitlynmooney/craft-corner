@@ -9,7 +9,7 @@ import Home from "./pages/home.jsx";
 
 import SingleCraft from "./pages/singleCraft.jsx"
 
-import SurveyPage from "./pages/surveyPage.jsx";
+import SurveyPage from "./pages/SurveyPage.jsx";
 import Dashboard from "./pages/dashboard.jsx";
 import Explore from "./pages/explore.jsx";
 
