@@ -41,12 +41,12 @@ const Signup = () => {
     <div className="inter" id="signup-section">
       <div id="signup-section-div">
         {data ? (
-            <Link to="/"></Link>
+          <Link to="/"></Link>
         ) : (
           <form onSubmit={handleFormSubmit}>
             <div className="borders" id="signup-div">
               <p>Username:</p>
-              <p className="ogin-alert" id="signup-username-alert">
+              <p className="ogin-alert hidden" id="signup-username-alert">
                 Please enter a username
               </p>
               <input
@@ -58,7 +58,7 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <p>Email:</p>
-              <p className="login-alert" id="signup-email-alert">
+              <p className="login-alert hidden" id="signup-email-alert">
                 Please enter a valid email
               </p>
               <input
@@ -81,7 +81,7 @@ const Signup = () => {
                 value={formState.signup_password}
                 onChange={handleChange}
               />
-              <button className="borders" id="signup" type="submit">
+              <button className="dark-button" id="signup-button" type="submit">
                 Sign Up
               </button>
               <p className="hidden login-alert" id="signup-alert">
