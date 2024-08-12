@@ -41,14 +41,11 @@ const Signup = () => {
     <div className="inter" id="signup-section">
       <div id="signup-section-div">
         {data ? (
-            <Link to="/"></Link>
+          <Link to="/"></Link>
         ) : (
           <form onSubmit={handleFormSubmit}>
             <div className="borders" id="signup-div">
               <p>Username:</p>
-              <p className="ogin-alert" id="signup-username-alert">
-                Please enter a username
-              </p>
               <input
                 type="text"
                 className="borders"
@@ -58,9 +55,6 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <p>Email:</p>
-              <p className="login-alert" id="signup-email-alert">
-                Please enter a valid email
-              </p>
               <input
                 type="text"
                 className="borders"
@@ -70,9 +64,6 @@ const Signup = () => {
                 onChange={handleChange}
               />
               <p>Password:</p>
-              <p className="hidden login-alert" id="signup-password-alert">
-                Please enter a password longer than 6 characters
-              </p>
               <input
                 type="password"
                 className="borders"
@@ -81,17 +72,17 @@ const Signup = () => {
                 value={formState.signup_password}
                 onChange={handleChange}
               />
-              <button className="borders" id="signup" type="submit">
+              <button className="dark-button" id="signup-button" type="submit">
                 Sign Up
               </button>
-              <p className="hidden login-alert" id="signup-alert">
-                Sorry, we were unable to create your account. Please try again.
-              </p>
+              {error && (
+                <p className="login-alert" id="signup-alert">
+                  Sorry, we were unable to create your account. Please add a
+                  username, valid email, and password.
+                </p>
+              )}
             </div>
           </form>
-        )}
-        {error && (
-          <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
         )}
       </div>
     </div>

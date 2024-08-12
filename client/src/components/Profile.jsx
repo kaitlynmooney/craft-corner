@@ -8,7 +8,7 @@ import Avatars from "./Avatars";
 const Profile = ({ user }) => {
   // Crafter status names
   const statuses = [
-    "Glu Gun Guru",
+    "Glue Gun Guru",
     "Stitch Witch",
     "Thread Tamer",
     "Crafting Connoisseur",
