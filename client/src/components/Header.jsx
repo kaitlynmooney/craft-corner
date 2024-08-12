@@ -2,7 +2,7 @@
 import Auth from "../utils/auth";
 import { getProjectsPrice } from "../utils/recommendedProjects";
 import { QUERY_ME } from "../utils/queries";
-
+import { useQuery } from "@apollo/client";
 
 export default function Header() {
   // const [ loggedIn, setloggedIn ] = useState();
@@ -15,7 +15,10 @@ export default function Header() {
   const { data: userData } = useQuery(QUERY_ME);
 
   const user = userData?.me;
+  console.log(user);
+
   const recommendedProjectsPrice = getProjectsPrice(user?.pricePoint);
+  console.log(recommendedProjectsPrice);
 
   return (
     <header>
@@ -62,7 +65,7 @@ export default function Header() {
                 </a>
               )}{" "}
               {/* // dashboard if user is logged in and has completed the quiz*/}
-              {Auth.loggedIn() && recommendedProjectsPrice (
+              {Auth.loggedIn() && recommendedProjectsPrice.length > 0 && (
                 <a
                   className="borders text-decoration-none"
                   href="#"
@@ -71,7 +74,9 @@ export default function Header() {
                 >
                   Dashboard
                 </a>
-              )}              {/* // explore if user is logged in and has completed the quiz */}
+              )}              
+              
+              {/* // explore if user is logged in and has completed the quiz */}
               {/* {loggedIn && quiz && <a className="btn btn-primary" href="#" role="button">Explore</a>} */}
               {/* // quiz if user is logged in and has not completed the quiz */}
               {/* {loggedIn && !quiz && <a className="btn btn-primary" href="#" role="button">Quiz</a>} */}
