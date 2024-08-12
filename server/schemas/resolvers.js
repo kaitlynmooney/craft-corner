@@ -22,13 +22,13 @@ const resolvers = {
       throw AuthenticationError;
     },
     crafts: async () => {
-      return Craft.find();
+      return Craft.find().populate();
     },
     craft: async (parent, { name }) => {
       return Craft.findOne({ name });
     },
     allProjects: async () => {
-      return Project.find();
+      return await Project.find().populate('craft');
     },
     project: async (parent, { projectId }, context) => {
       const project = Project.findOne({ _id: projectId }).populate('craft')

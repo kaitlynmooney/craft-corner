@@ -64,3 +64,18 @@ export const QUERY_ALL_PROJECTS = gql`
     }
   }
 `;
+export const QUERY_ALL_PROJECTS_CRAFTS = gql`
+  query {
+    allProjects {
+      _id
+      name
+      materials
+      instructions
+      pricePoint
+      difficulty
+      craft {
+        name
+      }
+    }
+  }
+`;
