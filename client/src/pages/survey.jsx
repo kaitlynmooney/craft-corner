@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const Survey = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [userResponses, setUserResponses] = useState([]);
+    const [createDashboard, setCreateDashboard] = useState(false);
 
     const questions = [
         {
@@ -74,7 +75,7 @@ const Survey = () => {
                             Start the Survey &#8594;
                         </button>
                     ) : currentQuestion === 3 ? (
-                        <button className="borders" id="nextquestion" type="submit" onClick={() => handleNextQuestion('Create my Dashboard')}>
+                        <button className="borders" id="nextquestion" type="submit" onClick={() => {handleNextQuestion('Create my Dashboard'); setCreateDashboard(true)}}>
                             Create my Dashboard! &#8594;
                         </button>
                     ) : (
