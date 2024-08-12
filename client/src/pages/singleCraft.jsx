@@ -1,12 +1,13 @@
-import {useParams} from 'react-router-dom';
-import { useQuery } from '@apollo/client'; 
-
+import { useParams } from "react-router-dom";
+import { useQuery } from "@apollo/client";
+o
 import SingleProjHero from '../components/SingleProjHero';
 
 import { QUERY_SINGLE_PROJECT } from '../utils/queries'; 
 
+
 const SingleProject = () => {
-    const {projectId} = useParams();
+  const { projectId } = useParams();
 
     const { loading, data } = useQuery(QUERY_SINGLE_PROJECT, {
         variables : {projectId :projectId},
@@ -14,11 +15,12 @@ const SingleProject = () => {
     console.log(data)
     // console.log(data?.project?.materials)
 
-    const project = data?.project || {};
+  const project = data?.project || {};
 
-    if(loading) {
-        return <div>Loading Craft Now!</div>;
-    }
+
+     if (loading) {
+    return <div className="loading-spinner"></div>;
+  }
     return(
         
         <div className="container">
@@ -73,8 +75,9 @@ const SingleProject = () => {
                 
                
 
-        </div>
-    )
-}
+
+  
+  );
+};
 
 export default SingleProject;

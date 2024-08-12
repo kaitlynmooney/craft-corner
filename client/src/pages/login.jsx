@@ -1,35 +1,42 @@
 /* DEPENDENCIES */
-import Login from '../components/login';
-import { useState } from 'react';
-import Signup from '../components/Signup';
+import { useState } from "react";
+import Login from "../components/login";
+import Signup from "../components/Signup";
+import GoogleOAuth from "../components/GoogleOAuth";
 
 /* LOGIN PAGE */
 const LoginPage = () => {
+  const [loginShow, setLoginShow] = useState(true);
+  const [signupShow, setSignupShow] = useState(false);
 
-  const [ loginShow, setLoginShow ] = useState(true);
-  const [ signupShow, setSignupShow ] = useState(false);
-  
   return (
     <div className="inter" id="login-page">
-      <div>
-        <button 
-          className="no-borders" 
-          id="show-login-button" 
-          onClick={ () => {setLoginShow(true); setSignupShow(false)}}
-          >
+      <div id="show-login-buttons">
+        <button
+          className="no-borders"
+          id="show-login-button"
+          onClick={() => {
+            setLoginShow(true);
+            setSignupShow(false);
+          }}
+        >
           Log in
         </button>
-        <button 
-          className="no-borders" 
+        <button
+          className="no-borders"
           id="show-signup-button"
-          onClick={ () => {setLoginShow(false); setSignupShow(true)}}
-          >
+          onClick={() => {
+            setLoginShow(false);
+            setSignupShow(true);
+          }}
+        >
           Sign up
         </button>
       </div>
       <div id="login-main-div">
         {loginShow && <Login />}
         {signupShow && <Signup />}
+        <GoogleOAuth />
       </div>
     </div>
   );

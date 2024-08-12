@@ -1,50 +1,50 @@
 /* GLOBAL */
 :root {
-    --background-color: #fffcf3;
-    --dark-background-color: #002350;
-    --text-color: #023e8d;
-    --hover-color: #aa5124;
-    --clear: #ffffff00;
-  }
-  
-  html {
-    background-color: var(--background-color);
-    color: var(--text-color);
-  }
-  
-  /* STYLES */
-  .no-borders {
-    border: 0px;
-  }
-  
-  .borders {
-    text-align: center;
-    border: 0.8px solid var(--text-color);
-    border-radius: 15px;
-  }
-  
-  .hover-borders:hover {
-    border: 0.8px solid var(--hover-color);
-  }
-  
-  .hidden {
-    display: none;
-  }
-  
-  /* TEXT HOVER */
-  #start-crafting:hover {
-    color: var(--hover-color);
-  }
-  
-  /* FONTS */
-  .sofia {
-    font-family: "Princess Sofia", cursive;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  .inter {
-    font-family: "Inter", sans-serif;
-    font-optical-sizing: auto;
-    font-variation-settings: "slnt" 0;
-  }
+  --background-color: #fffcf3;
+  --dark-background-color: #002350;
+  --text-color: #023e8d;
+  --hover-color: #aa5124;
+  --clear: #ffffff00;
+}
+
+html {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* STYLES */
+.no-borders {
+  border: 0px;
+}
+
+.borders {
+  text-align: center;
+  border: 0.8px solid var(--text-color);
+  border-radius: 15px;
+}
+
+.hover-borders:hover {
+  border: 0.8px solid var(--hover-color);
+}
+
+.hidden {
+  display: none;
+}
+
+/* TEXT HOVER */
+#start-crafting:hover {
+  color: var(--hover-color);
+}
+
+/* FONTS */
+.sofia {
+  font-family: "Princess Sofia", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.inter {
+  font-family: "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0;
+}
