@@ -51,3 +51,16 @@ query Query($projectId: ID!) {
   }
 }
 `;
+
+export const QUERY_ALL_PROJECTS = gql`
+  query {
+    allProjects {
+      _id
+      name
+      materials
+      instructions
+      pricePoint
+      difficulty
+    }
+  }
+`;
