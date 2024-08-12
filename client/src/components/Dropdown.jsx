@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { QUERY_ALL_PROJECTS } from "../utils/queries";
+import Projects from "../components/Projects";
+
 
 const Dropdown = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -6,6 +9,15 @@ const Dropdown = () => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
+
+// Get project data
+const { loading: projectsLoading, error: projectsError, data: projectsData } = useQuery(QUERY_ALL_PROJECTS);
+const projects = projectsData?.allProjects;
+
+// Handle loading and error states
+if (userLoading || projectsLoading) return <p>Loading...</p>;
+if (userError|| projectsError) throw Error;
+
 
   return (
     <div className="dropdown">
