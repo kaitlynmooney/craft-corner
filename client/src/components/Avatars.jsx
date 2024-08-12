@@ -1,10 +1,46 @@
-/* AVATARS */
-const Avatars = ({ showAvatars, onClose }) => {
-  const avatars = ["avatar-flower.jpeg"];
-  const handleAvatarSelect = (avatar) => {
-    // console.log("Selected Avatar:", avatar);
-    // // You can add logic here to set the selected avatar in the user's profile
-    // onClose(); // Close the modal after selection
+/* DEPENDENCIES */
+import React, { useState } from "react";
+
+/* STYLES */
+const styles = {
+  avatar: {
+    borderRadius: "50%",
+  },
+};
+
+/* PICK AVATAR MODAL */
+const Avatars = ({ user, showAvatars, onClose, onAvatarChange }) => {
+  // All avatars
+  const avatars = [
+    "avatar-flower.jpeg",
+    "avatar_white_flowers.png",
+    "avatar_pottery.png",
+    "avatar_embroidery.png",
+    "avatar_knitting.png",
+    "avatar_cats.png",
+    "avatar_black_cat.png",
+    "avatar_orange_cat.png",
+    "avatar_white_dog.png",
+    "avatar_corgi.png",
+    "avatar_bird.png",
+    "avatar_giraffe.png",
+    "avatar_bear.png",
+    "avatar_leopard.png",
+    "avatar_fish.png",
+    "avatar_yarn.png",
+    "avatar_pots.png",
+    "avatar_guitar.png",
+    "avatar_strawberries.png",
+    "avatar_plant.png",
+  ];
+
+  const [chosenAvatar, setAvatar] = useState(user.avatar);
+
+  // Set avatar and close modal
+  const handleSelectAvatar = (avatar) => {
+    setAvatar(avatar);
+    onAvatarChange(avatar);
+    onClose();
   };
 
   // Returns modal of avatar choices
@@ -16,25 +52,32 @@ const Avatars = ({ showAvatars, onClose }) => {
       role="dialog"
       aria-labelledby="AvatarModal"
       aria-hidden={!showAvatars}
+      id="avatar-modal-background"
     >
       <div className="modal-dialog modal-lg">
-        <div className="modal-content">
-          <div className="modal-header">
+        <div className="modal-content" id="avatar-modal">
+          <div className="modal-header" id="avatar-modal-header">
             <h5 className="modal-title">Pick an avatar</h5>
-            <button type="button" className="close" onClick={onClose}>
+            <button
+              type="button"
+              className="close"
+              onClick={onClose}
+              id="avatar-modal-x"
+            >
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div className="modal-body">
-            {/* {avatars.map((avatar, index) => (
+            {avatars.map((avatar, index) => (
               <img
                 key={index}
                 src={`../../${avatar}`}
                 alt={`Avatar ${index + 1}`}
                 onClick={() => handleSelectAvatar(avatar)}
-                style={{ cursor: "pointer", margin: "10px" }}
+                className="borders avatar"
+                style={styles.avatar}
               />
-            ))} */}
+            ))}
           </div>
         </div>
       </div>

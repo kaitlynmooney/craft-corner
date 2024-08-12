@@ -9,6 +9,8 @@ const SingleProject = () => {
     const { loading, data } = useQuery(QUERY_SINGLE_PROJECT, {
         variables : {projectId :projectId},
     });
+    console.log(data)
+    // console.log(data?.project?.materials)
 
     const project = data?.project || {};
 
@@ -20,8 +22,8 @@ const SingleProject = () => {
             <div><img></img></div>
             <div>
                 <div>
-                    <btn>Price Point: {project.pricePoint}</btn>
-                    <btn>Skill Level : {project.difficulty}</btn>
+                    {/* <btn>Price Point: {project.pricePoint}</btn>
+                    <btn>Skill Level : {project.difficulty}</btn> */}
                     </div>
                 
                 <h1>{project.name}</h1>

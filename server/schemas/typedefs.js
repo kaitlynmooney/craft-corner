@@ -8,16 +8,22 @@ type User {
   password: String
   avatar: String
   savedCrafts: [Craft]
+  completedProjects: [Project]
+  ongoingProjects: [Project]
 }
 
 type Project {
   _id: ID
   name:String
   materials: [String]
-  instructions:String
-  image:String
-  pricePoint:String
-  diffculty: String
+  instructions: String
+  image: String
+  pricePoint: String
+  difficulty: String
+
+  craft: Craft
+
+
 }
 
 type Craft {
@@ -36,15 +42,15 @@ type Query {
   user(username: String!): User
   me: User
   project(projectId: ID!): Project
-  projects: [Project]
-  craft(name: String!) :Craft
+  allProjects: [Project]
+  craft(name: String!): Craft
   crafts: [Craft]
-
 }
 
 type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
+  changeAvatar(username: String!, avatar: String!): User
 }
 `;
 
