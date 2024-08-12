@@ -89,6 +89,11 @@ body {
   font-variation-settings: "slnt" 0;
 }
 
+/* HEADER */
+header {
+  min-width: 300px;
+}
+
 /* HOME PAGE */
 #homepage {
   background: var(--clear);
@@ -144,6 +149,10 @@ body {
 }
 
 /* LOGIN PAGE */
+#login-page {
+  min-width: 300px;
+}
+
 #show-login-buttons {
   min-width: 300px;
   display: flex;
@@ -245,6 +254,14 @@ body {
   width: 100%;
   background-color: var(--clear);
   color: var(--text-color);
+}
+
+.login-alert {
+  color: var(--text-color);
+  font-size: 16px !important;
+  max-width: 300px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /* DASHBOARD */

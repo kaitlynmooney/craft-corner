@@ -78,18 +78,17 @@ const Login = () => {
                 value={formState.login_password}
                 onChange={handleChange}
               />
-              <p className="hidden login-alert" id="login-alert">
-                Sorry, the email or password you entered does not match any
-                existing account. Please try again!
-              </p>
+              {error && (
+                <p className="login-alert" id="login-alert">
+                  Sorry, the email or password you entered does not match any
+                  existing account. Please try again!
+                </p>
+              )}
               <button className="dark-button" id="login-button" type="submit">
                 Log in
               </button>
             </div>
           </form>
-        )}
-        {error && (
-          <div className="my-3 p-3 bg-danger text-white">{error.message}</div>
         )}
       </div>
     </div>
