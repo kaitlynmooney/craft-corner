@@ -355,33 +355,31 @@ html {
 }
 
 .heart-checkbox label {
-  position: relative;
   cursor: pointer;
+}
+
+.heart-checkbox input[type="checkbox"]:hover + label:before {
+  color: white;
 }
 
 .heart-checkbox label:before {
   content: '\2665'; /* Unicode for heart symbol */
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 6px;
+  top: 6px;
   width: 25px;
   height: 25px;
   border: 1px solid #ccc;
   border-radius: 50%;
   text-align: center;
   line-height: 25px;
+  color: var(--text-color);
+  background-color: var(--clear);
 }
 
 .heart-checkbox input[type="checkbox"]:checked + label:before {
   background-color: red; /* Change color when checked */
   color: white; /* Change color of heart symbol when checked */
-}
-
-.heart-checkbox {
-  position: absolute;
-  top: 10%;
-  right: 10%;
-
 }
 
 
