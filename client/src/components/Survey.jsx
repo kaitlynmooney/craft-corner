@@ -1,9 +1,12 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useMutation } from "@apollo/client";
+import { ADD_SURVEYPRICEPOINT } from "../utils/mutations";
 
 const Survey = () => {
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [userResponses, setUserResponses] = useState([]);
+    const [saveSurveyPricePoint] = useMutation(ADD_SURVEYPRICEPOINT);
 
     const questions = [
         {
@@ -52,6 +55,15 @@ const Survey = () => {
         setUserResponses([...userResponses, response]);
         setCurrentQuestion(currentQuestion + 1);
     };
+
+// function to handle saving the answer to the pricepoint question
+    const handleSaveSurveyPricePoint = async (response) => {
+        console.log(response);
+        try{
+            const { data } = await saveSurveyPricePoint
+        }
+
+    }
 
     const navigate = useNavigate();
 
