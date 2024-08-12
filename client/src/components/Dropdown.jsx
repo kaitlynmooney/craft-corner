@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { QUERY_ALL_PROJECTS_CRAFTS } from "../utils/queries";
-import Projects from "../components/Projects";
-import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 const Dropdown = () => {
