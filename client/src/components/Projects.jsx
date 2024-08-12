@@ -6,10 +6,11 @@ const Projects = ({ crafts }) => {
     {crafts?.map((craft, index) => (
       <div key={index}>
       <button className='button-options'>
-            <div className="form-check">
-              <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault"/>
-              {craft.name}
-            </div>
+      <div className="form-check heart-checkbox">
+        <input className="form-check-input" type="checkbox" value="" id="flexCheckDefault_heart"/>
+        <label htmlFor="flexCheckDefault_heart"></label>
+        {craft.name}
+      </div>
       </button>
       </div>
       ))}

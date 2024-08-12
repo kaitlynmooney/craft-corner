@@ -348,6 +348,36 @@ html {
   color: var(--background-color);
 }
 
+/* HEART CHECKBOXES */
+.heart-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.heart-checkbox label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 30px;
+}
+
+.heart-checkbox label:before {
+  content: '\2665'; /* Unicode for heart symbol */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 25px;
+}
+
+.heart-checkbox input[type="checkbox"]:checked + label:before {
+  background-color: red; /* Change color when checked */
+  color: white; /* Change color of heart symbol when checked */
+}
+
+
 /* EXPLORE PAGE */
 #explore {
   background-color: var(--background-color);
