@@ -51,6 +51,7 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
   changeAvatar(username: String!, avatar: String!): User
+  addSurveyPrice(username: String!, surveyPricePoint: String): User
 }
 `;
 
