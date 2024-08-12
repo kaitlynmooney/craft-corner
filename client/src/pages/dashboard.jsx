@@ -1,4 +1,5 @@
 /* DEPENDENCIES */
+// import { useState } from 'react';
 import { useQuery } from "@apollo/client";
 import { useLocation } from 'react-router-dom';
 import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
@@ -30,6 +31,7 @@ const Dashboard = () => {
   const recommendedProjects = [...recommendedProjectsDifficulty, ...recommendedProjectsPrice];
   const uniqueRecommendedProjects = Array.from(new Set(recommendedProjects));
 
+
   // Return dashboard, calls Profile and Projects components
   return (
     <div className="inter" id="dashboard">
@@ -49,7 +51,7 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Recommended Projects:</h2>
-            <Projects user={user} projects={uniqueRecommendedProjects} />
+            <Projects user={user} projects={uniqueRecommendedProjects}/>
         </div>
         </div>
       </div>

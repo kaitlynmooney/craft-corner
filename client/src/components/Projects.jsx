@@ -5,22 +5,26 @@ const Projects = ({ user, projects }) => {
   const initialCheckedItems = projects ? new Array(projects.length).fill(false) : [];
   const [checkedItems, setCheckedItems] = useState(initialCheckedItems);
   const [savedProjects, setSavedProjects] = useState(user?.savedProjects || []);
+  const [checkedRecommendedProjects, setCheckedRecommendedProjects] = useState([]);
+
 
   // Handle checkbox change for a specific index
   const handleCheckboxChange = (index) => {
-   const newCheckedItems = [...checkedItems];
-   newCheckedItems[index] = !newCheckedItems[index];
-   setCheckedItems(newCheckedItems);
+    const newCheckedItems = [...checkedItems];
+    newCheckedItems[index] = !newCheckedItems[index];
+    setCheckedItems(newCheckedItems);
 
-   if (projects && projects[index]) {
-     const projectId = projects[index].id;
-     if (newCheckedItems[index]) {
-       setSavedProjects([...savedProjects, projectId]);
-     } else {
-       setSavedProjects(savedProjects.filter((id) => id !== projectId));
-     }
-   }
- };
+    if (projects && projects[index]) {
+      const projectId = projects[index].id;
+      if (newCheckedItems[index]) {
+        setSavedProjects([...savedProjects, projectId]);
+        setCheckedRecommendedProjects([...checkedRecommendedProjects, projectId]); // Update checked recommended projects
+      } else {
+        setSavedProjects(savedProjects.filter((id) => id !== projectId));
+        setCheckedRecommendedProjects(checkedRecommendedProjects.filter((id) => id !== projectId)); // Update checked recommended projects
+      }
+    }
+  };
 
   return (
    <div id="project-container">
