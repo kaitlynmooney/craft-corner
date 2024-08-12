@@ -9,7 +9,7 @@ import Home from "./pages/home.jsx";
 
 import SingleCraft from "./pages/singleCraft.jsx"
 
-import Survey from "./pages/survey.jsx";
+import SurveyPage from "./pages/surveyPage.jsx";
 import Dashboard from "./pages/dashboard.jsx";
 import Explore from "./pages/explore.jsx";
 
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
       }, 
       {
         path: "/survey",
-        element: <Survey />,
+        element: <SurveyPage />,
       }, 
       {
         path: "/dashboard",

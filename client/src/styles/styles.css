@@ -388,6 +388,13 @@ header {
   justify-content: center;
 }
 
+#project-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
 #nextquestion {
   color: var(--background-color);
   background-color: var(--text-color);
