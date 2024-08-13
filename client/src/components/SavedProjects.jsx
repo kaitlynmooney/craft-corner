@@ -1,3 +1,6 @@
+import { DndProvider, useDrag } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
+
 const SavedProjects = ({ savedProjects, allProjects, setSavedProjects }) => {
     const handleRemoveProject = (projectId) => {
         // Remove the project ID from saved projects
@@ -20,22 +23,40 @@ const SavedProjects = ({ savedProjects, allProjects, setSavedProjects }) => {
         }
     };
 
+    // Define a draggable project component
+    // Define a draggable project component
+const DraggableProject = ({ project }) => {
+    const [{ isDragging }, drag] = useDrag({
+        type: 'PROJECT',
+        item: { project },
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging(),
+        }),
+    });
+
     return (
-        <div id="project-container">
-          {savedProjects && savedProjects.length > 0 ? (
-            savedProjects.map((projectId) => (
-                <div key={projectId} onClick={(event) => handleDivClick(projectId, event)}>
-                        <button className='button-options'>
-                            <button type="button" className="btn-close" aria-label="Close" onClick={() => handleRemoveProject(projectId)}></button>
-                            <label id='label'>{allProjects.find((p) => p._id === projectId)?.name}</label>
-                        </button>
-                </div>
-            ))
-          ) : (
-            <h4>No saved projects yet!</h4>
-          )}
+        <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1 }}>
+            <div onClick={(event) => handleDivClick(project._id, event)}>
+                <button className='button-options'>
+                    <button type="button" className="btn-close" aria-label="Close" onClick={() => handleRemoveProject(project._id)}></button>
+                    <label id='label'>{project.name}</label>
+                </button>
+            </div>
         </div>
     );
+};
+
+return (
+    <div id="project-container">
+        {savedProjects && savedProjects.length > 0 ? (
+            savedProjects.map((projectId) => (
+                <DraggableProject key={projectId} project={allProjects.find((p) => p._id === projectId)} />
+            ))
+        ) : (
+            <h4>No saved projects yet!</h4>
+        )}
+    </div>
+);
 }
 
 export default SavedProjects;

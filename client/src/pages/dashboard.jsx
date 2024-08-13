@@ -8,6 +8,8 @@ import Profile from "../components/Profile";
 import Projects from "../components/Projects";
 import { getSavedProjects } from '../utils/savedProjects';
 import SavedProjects from "../components/SavedProjects";
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 import {
   getProjectsDifficulty,
   getProjectsPrice,
@@ -73,6 +75,7 @@ const Dashboard = () => {
     <div className="inter" id="dashboard">
       <h1 className="title">Hi {user.username}!</h1>
       <div id="dashboard-inner">
+      <DndProvider backend={HTML5Backend}>
         <div>
           <div className="borders" id="profile">
             <Profile user={user} />
@@ -106,6 +109,7 @@ const Dashboard = () => {
             <Projects user={user} projects={uniqueRecommendedProjects} />
           </div>
         </div>
+        </DndProvider>
       </div>
     </div>
   );
