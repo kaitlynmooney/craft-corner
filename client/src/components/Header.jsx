@@ -128,8 +128,6 @@ export default function Header() {
   }
 
   const user = userData?.me;
-  console.log(`header data`, userData);
-  console.log(`header user`, user);
   if (Auth.loggedIn()) {
     return <HeaderContent user={user} />;
   }

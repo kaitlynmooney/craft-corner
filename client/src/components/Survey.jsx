@@ -94,8 +94,6 @@ const Survey = () => {
 
   // function to handle saving the answer to the pricepoint question
   const handleSaveSurveyPricePoint = async (response) => {
-    console.log("handleSaveSurvey", user.username);
-    console.log("handleSaveSurvey 2", response[0]);
     try {
       const { data } = await saveSurveyPricePoint({
         variables: { username: user.username, surveyPricePoint: response[0] },

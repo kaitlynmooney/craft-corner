@@ -47,7 +47,6 @@ const CreateProject = () => {
       },
     })
       .then((response) => {
-        console.log("Project created!", response.data.createProject);
         setSuccess("Your project has been created successfully!");
 
         // Add to authored projects array
@@ -60,8 +59,6 @@ const CreateProject = () => {
           authoredProjects: updatedAuthoredProjects,
         };
         setUser(updatedUser);
-        console.log(updatedUser);
-        console.log(user);
 
         // Reset the form
         setName("");

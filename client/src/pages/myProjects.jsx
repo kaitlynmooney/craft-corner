@@ -76,8 +76,6 @@ const MyProjects = () => {
     );
   }
 
-  console.log(projects);
-
   return (
     <div id="my-projs-page">
       <h2 className="title" id="my-projects-title">
