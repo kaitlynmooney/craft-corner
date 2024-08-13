@@ -1,13 +1,16 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { useMutation } from "@apollo/client";
 import { ADD_SURVEYPRICEPOINT } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 
+
 const Survey = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userResponses, setUserResponses] = useState([]);
+
   const [saveSurveyPricePoint] = useMutation(ADD_SURVEYPRICEPOINT);
 
   const {
@@ -25,6 +28,7 @@ const Survey = () => {
   }
 
   const user = userData?.me;
+
 
   const questions = [
     {
@@ -72,11 +76,13 @@ const Survey = () => {
         { text: "$10–20", value: 1 },
         { text: "$20–80", value: 2 },
         { text: "$100+", value: 3 },
+
       ],
     },
   ];
 
   const handleUserResponse = (response) => {
+
     if (currentQuestion === 3) {
         handleSaveSurveyPricePoint(response);        
     } else {
@@ -197,5 +203,6 @@ export const ButtonOptions = ({
     </div>
   );
 };
+
 
 export default Survey;

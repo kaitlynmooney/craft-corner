@@ -30,6 +30,13 @@ const userSchema = new Schema({
       default: [],
     },
   ],
+  authoredProjects: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Project",
+      default: [],
+    },
+  ],
   completedProjects: [
     {
       type: Schema.Types.ObjectId,

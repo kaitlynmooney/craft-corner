@@ -26,6 +26,10 @@ export const QUERY_ME = gql`
         _id
         name
       }
+      authoredProjects {
+        _id
+        name
+      }
       savedCrafts {
         _id
         name
@@ -36,21 +40,21 @@ export const QUERY_ME = gql`
 `;
 
 export const QUERY_SINGLE_PROJECT = gql`
-query Query($projectId: ID!) {
-  project(projectId: $projectId) {
-    name
-    _id
-    materials
-    pricePoint
-    instructions
-    difficulty
-    image
-    craft {
+  query Query($projectId: ID!) {
+    project(projectId: $projectId) {
       name
-      description
+      _id
+      materials
+      pricePoint
+      instructions
+      difficulty
+      image
+      craft {
+        name
+        description
+      }
     }
   }
-}
 `;
 
 export const QUERY_ALL_PROJECTS = gql`
@@ -62,6 +66,21 @@ export const QUERY_ALL_PROJECTS = gql`
       instructions
       pricePoint
       difficulty
+    }
+  }
+`;
+export const QUERY_ALL_PROJECTS_CRAFTS = gql`
+  query {
+    allProjects {
+      _id
+      name
+      materials
+      instructions
+      pricePoint
+      difficulty
+      craft {
+        name
+      }
     }
   }
 `;

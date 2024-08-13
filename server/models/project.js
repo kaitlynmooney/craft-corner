@@ -30,6 +30,10 @@ const projectSchema = new Schema({
     ref: "Craft",
     required: true,
   },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
 });
 
 const Project = model("Project", projectSchema);
