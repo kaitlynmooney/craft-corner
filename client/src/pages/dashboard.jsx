@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
-
+import { getSavedProjects } from '../utils/savedProjects';
 import SavedProjects from "../components/SavedProjects";
 import {
   getProjectsDifficulty,
