@@ -37,91 +37,90 @@ const Explore = () => {
   if (projectsError) throw Error;
 
   return (
-      <div id="explore">
-        <Hero />
-        <Dropdown
-          id="dropdown"
-          category={category}
-          setCategory={setCategory}
-          categoryHandler={categoryHandler}
-        />
-        {category ? (
-          <Projects projects={filteredArray} />
-        ) : (
-          <div className="container">
-            <div className="column" id="popular">
-              <p>Popular Crafts</p>
-              <a
-                className="borders text-decoration-none pottery-btn"
-                href="#"
-                id="explore-btn"
-                role="button"
-                type="submit"
-                onClick={categoryHandler}
-              >
-                <div>Pottery</div>
-              </a>
-              <a
-                className="borders text-decoration-none crochet-btn"
-                href="#"
-                id="explore-btn"
-                role="button"
-                type="submit"
-                onClick={categoryHandler}
-              >
-                <div>Crochet</div>
-              </a>
-            </div>
-            <div className="column" id="new">
-              <p>New Crafts</p>
-              <a
-                className="borders text-decoration-none glass-btn"
-                href="#"
-                id="explore-btn"
-                role="button"
-                type="submit"
-                onClick={categoryHandler}
-              >
-                <div>Stained Glass</div>
-              </a>
-              <a
-                className="borders text-decoration-none jewelry-btn"
-                href="#"
-                id="explore-btn"
-                role="button"
-                type="submit"
-                onClick={categoryHandler}
-              >
-                <div>Jewelry</div>
-              </a>
-            </div>
-            <div className="column" id="affordable">
-              <p>Affordable Crafts</p>
-              <a
-                className="borders text-decoration-none knitting-btn"
-                href="#"
-                id="explore-btn"
-                role="button"
-                type="submit"
-                onClick={categoryHandler}
-              >
-                <div>Knitting</div>
-              </a>
-              <a
-                className="borders text-decoration-none clay-btn"
-                href="#"
-                id="explore-btn"
-                role="button"
-                type="submit"
-                onClick={categoryHandler}
-              >
-                <div>Clay Modeling</div>
-              </a>
-            </div>
+    <div id="explore">
+      <Hero />
+      <Dropdown
+        id="dropdown"
+        category={category}
+        setCategory={setCategory}
+        categoryHandler={categoryHandler}
+      />
+      {category ? (
+        <Projects projects={filteredArray} />
+      ) : (
+        <div className="container">
+          <div className="column" id="popular">
+            <p>Popular Crafts</p>
+            <a
+              className="borders text-decoration-none pottery-btn"
+              href="#"
+              id="explore-btn"
+              role="button"
+              type="submit"
+              onClick={categoryHandler}
+            >
+              <div>Pottery</div>
+            </a>
+            <a
+              className="borders text-decoration-none crochet-btn"
+              href="#"
+              id="explore-btn"
+              role="button"
+              type="submit"
+              onClick={categoryHandler}
+            >
+              <div>Crochet</div>
+            </a>
           </div>
-        )}
-      </div>
-    </>
+          <div className="column" id="new">
+            <p>New Crafts</p>
+            <a
+              className="borders text-decoration-none glass-btn"
+              href="#"
+              id="explore-btn"
+              role="button"
+              type="submit"
+              onClick={categoryHandler}
+            >
+              <div>Stained Glass</div>
+            </a>
+            <a
+              className="borders text-decoration-none jewelry-btn"
+              href="#"
+              id="explore-btn"
+              role="button"
+              type="submit"
+              onClick={categoryHandler}
+            >
+              <div>Jewelry</div>
+            </a>
+          </div>
+          <div className="column" id="affordable">
+            <p>Affordable Crafts</p>
+            <a
+              className="borders text-decoration-none knitting-btn"
+              href="#"
+              id="explore-btn"
+              role="button"
+              type="submit"
+              onClick={categoryHandler}
+            >
+              <div>Knitting</div>
+            </a>
+            <a
+              className="borders text-decoration-none clay-btn"
+              href="#"
+              id="explore-btn"
+              role="button"
+              type="submit"
+              onClick={categoryHandler}
+            >
+              <div>Clay Modeling</div>
+            </a>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 export default Explore;

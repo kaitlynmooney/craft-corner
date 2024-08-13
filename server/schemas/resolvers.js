@@ -12,23 +12,22 @@ const resolvers = {
       return User.findOne({ username });
     },
     me: async (parent, args, context) => {
-
-      console.log("hello in me query");
-      console.log(`me query context user`, context.user);
+      // console.log("hello in me query");
+      // console.log(`me query context user`, context.user);
       if (context.user) {
-        try{
-        const user = await User.findOne({ _id: context.user._id })
-          .populate("savedCrafts")
-          .populate("authoredProjects")
-          .populate("completedProjects")
-          .populate("ongoingProjects");
-          console.log(user);
+        try {
+          const user = await User.findOne({ _id: context.user._id })
+            .populate("savedCrafts")
+            .populate("authoredProjects")
+            .populate("completedProjects")
+            .populate("ongoingProjects");
+          // console.log(user);
 
-        return user;
-      } catch (error){
-        console.error("Error fetching user data:", error);
-        throw new Error("Error fetching user data");
-      }
+          return user;
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+          throw new Error("Error fetching user data");
+        }
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -87,13 +86,16 @@ const resolvers = {
 
     addSurveyPricePoint: async (parent, { username, surveyPricePoint }) => {
       try {
+        console.log("User (before):", username);
         const user = await User.findOne({ username });
         if (!user) {
           throw new Error("User not found");
         }
 
+        console.log("Survey Price Point:", surveyPricePoint);
         user.surveyPricePoint = surveyPricePoint;
         await user.save();
+        console.log("User (after):", user);
         return user;
       } catch (error) {
         console.error(error);
@@ -172,7 +174,7 @@ const resolvers = {
       return project;
     },
   },
-}
+};
 
 /* EXPORTS */
 module.exports = resolvers;
