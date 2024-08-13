@@ -11,6 +11,7 @@ const Survey = () => {
   const [userResponses, setUserResponses] = useState([]);
 
   const [saveSurveyPricePoint] = useMutation(ADD_SURVEYPRICEPOINT);
+  const navigate = useNavigate();
 
   const {
     loading: userLoading,
@@ -102,8 +103,6 @@ const Survey = () => {
       console.error("error saving price point", error);
     }
   };
-
-  const navigate = useNavigate();
 
   if (currentQuestion === questions.length) {
     navigate("/dashboard"); // Redirect to the dashboard page
