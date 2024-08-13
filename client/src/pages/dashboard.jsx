@@ -26,7 +26,7 @@ const Dashboard = () => {
   const [userProjects, setSavedProjects] = useState([]);
   const [inProgressProjects, setInProgressProjects] = useState([]);
   const savedProjects = getSavedProjects();
-  const [draggedItems, setDraggedItems] = useState(JSON.parse(localStorage.getItem('draggedItems')) || Array(projects.length).fill(false));
+  const [draggedItems, setDraggedItems] = useState([]);
 
   const {
     loading: userLoading,
