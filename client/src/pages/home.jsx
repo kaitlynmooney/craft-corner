@@ -35,7 +35,7 @@ const Home = () => {
       </div>
       <div id="homepage-content">
         <button className="borders" id="start-crafting">
-          Take survey
+          Start Crafting! &#8594;
         </button>
       </div>
     </div>

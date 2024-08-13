@@ -126,17 +126,16 @@ header {
 }
 
 #start-crafting {
-  color: var(--text-color);
-  padding: 5px 25px 5px 25px;
-  font-size: calc(24px);
-  background: var(--background-color);
+  color: var(--background-color);
+  background-color: var(--text-color);
   margin: 30px 0px 40px 0px;
   border-radius: 30px;
+  padding: 4px 15px 4px 15px;
 }
 
 #start-crafting:hover {
-  color: var(--background-color);
-  background-color: var(--text-color);
+  color: var(--text-color);
+  background: var(--background-color);
 }
 
 .loading-spinner {
@@ -216,14 +215,6 @@ header {
 
 #homepage-content {
   margin-top: 20px;
-}
-
-#start-crafting {
-  color: var(--text-color);
-  padding: 4px 15px 4px 15px;
-  font-size: calc(16px + 1vw);
-  background: var(--background-color);
-  margin: 30px 0px 40px 0px;
 }
 
 .loading-spinner {
