@@ -450,6 +450,7 @@ db.once("open", async () => {
       savedCrafts: [crafts[0]._id],
       completedProjects: [projects[0]._id, projects[6]._id],
       ongoingProjects: [projects[11]._id, projects[5]._id],
+      surveyPricePoint: 1
     },
   ]);
   console.log("Users are seeded!");

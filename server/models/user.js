@@ -51,6 +51,11 @@ const userSchema = new Schema({
       default: [],
     },
   ],
+  surveyPricePoint: 
+    {
+      type: Number,
+      default: 0,
+    },
 });
 
 userSchema.pre("save", async function (next) {

@@ -10,6 +10,7 @@ type User {
   authoredProjects: [Project]
   completedProjects: [Project]
   ongoingProjects: [Project]
+  surveyPricePoint: Int
 }
 
 type Project {
@@ -49,6 +50,9 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
   changeAvatar(username: String!, avatar: String!): User
+
+  addSurveyPricePoint(username: String!, surveyPricePoint: Int): User
+
   createProject(
     name: String!,
     materials: [String]!,
@@ -59,6 +63,7 @@ type Mutation {
     authorId: ID!
   ): Project
   deleteProject(id: ID!): Project
+
 }
 `;
 
