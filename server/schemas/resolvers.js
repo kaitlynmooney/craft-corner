@@ -35,6 +35,7 @@ const resolvers = {
       console.log(project)
       return project;
     },
+
   },
 
   Mutation: {
@@ -42,6 +43,10 @@ const resolvers = {
       const user = await User.create({ username, email, password });
       const token = signToken(user);
       return { token, user };
+    },
+    addProject: async (parent, {projectId, userId}) => {
+      const user = await User.findOneAndUpdate({_id:userId}, { $push: {ongoingProjects: projectId}})
+
     },
     login: async (parent, { email, password }) => {
       const user = await User.findOne({ email });
