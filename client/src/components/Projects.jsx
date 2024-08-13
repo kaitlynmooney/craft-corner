@@ -68,28 +68,27 @@ const Projects = ({ user, projects }) => {
 
   return (
     <div id="project-container">
-      {projects &&
-        projects.map((project, index) => (
-          <div key={project._id}>
-            <a href={`/project/${project._id}`}>
-              <button className="button-options">
-                <div className="form-check heart-checkbox">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id={`flexCheckDefault_heart_${project._id}`} // Use project.id for unique ID
-                    checked={checkedItems[index]}
-                    onChange={() => handleCheckboxChange(index)}
-                  />
-                  <label htmlFor={`flexCheckDefault_heart_${project._id}`}>
-                    {project.name}
-                  </label>
-                </div>
-              </button>
-            </a>
-          </div>
-        ))}
+      {projects && projects.map((project, index) => (
+        <div key={project._id}>
+          <a href={`/project/${project._id}`}>
+          <button className='button-options'>
+            <div className="form-check heart-checkbox">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id={`flexCheckDefault_heart_${project._id}`} // Use project.id for unique ID
+                checked={checkedItems[index]}
+                onChange={() => handleCheckboxChange(index)}
+              />
+              <label htmlFor={`flexCheckDefault_heart_${project._id}`}>
+                {project.name}
+              </label>
+            </div>
+          </button>
+          </a>
+        </div>
+      ))}
     </div>
   );
 };
