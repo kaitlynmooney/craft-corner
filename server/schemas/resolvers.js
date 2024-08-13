@@ -12,15 +12,25 @@ const resolvers = {
       return User.findOne({ username });
     },
     me: async (parent, args, context) => {
+
+      console.log("hello in me query");
+      console.log(`me query context user`, context.user);
       if (context.user) {
-        const user = User.findOne({ _id: context.user._id })
+        try{
+        const user = await User.findOne({ _id: context.user._id })
           .populate("savedCrafts")
           .populate("authoredProjects")
           .populate("completedProjects")
           .populate("ongoingProjects");
+          console.log(user);
+
         return user;
+      } catch (error){
+        console.error("Error fetching user data:", error);
+        throw new Error("Error fetching user data");
       }
-      throw AuthenticationError;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
     crafts: async () => {
       return Craft.find().populate();
@@ -74,6 +84,23 @@ const resolvers = {
         throw new Error("Failed to change avatar");
       }
     },
+
+    addSurveyPricePoint: async (parent, { username, surveyPricePoint }) => {
+      try {
+        const user = await User.findOne({ username });
+        if (!user) {
+          throw new Error("User not found");
+        }
+
+        user.surveyPricePoint = surveyPricePoint;
+        await user.save();
+        return user;
+      } catch (error) {
+        console.error(error);
+        throw new Error("Failed to save survey price point");
+      }
+    },
+
     createProject: async (
       parent,
       { name, materials, instructions, pricePoint, difficulty, craft, authorId }
@@ -145,7 +172,7 @@ const resolvers = {
       return project;
     },
   },
-};
+}
 
 /* EXPORTS */
 module.exports = resolvers;

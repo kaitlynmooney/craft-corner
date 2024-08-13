@@ -1,9 +1,34 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { useMutation } from "@apollo/client";
+import { ADD_SURVEYPRICEPOINT } from "../utils/mutations";
+import { QUERY_ME } from "../utils/queries";
+import { useQuery } from "@apollo/client";
+
+
 const Survey = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userResponses, setUserResponses] = useState([]);
+
+  const [saveSurveyPricePoint] = useMutation(ADD_SURVEYPRICEPOINT);
+
+  const {
+    loading: userLoading,
+    error: userError,
+    data: userData,
+  } = useQuery(QUERY_ME);
+
+  if (userLoading) {
+    return <p>Loading...</p>;
+  }
+
+  if (userError) {
+    throw new Error("Error fetching data");
+  }
+
+  const user = userData?.me;
+
 
   const questions = [
     {
@@ -48,21 +73,40 @@ const Survey = () => {
       question: `My ideal price point for a new craft is...`,
       inputType: "button",
       buttonOptions: [
-        { text: "$10–20", value: "$" },
-        { text: "$20–80", value: "$$" },
-        { text: "$100+", value: "$$$" },
+        { text: "$10–20", value: 1 },
+        { text: "$20–80", value: 2 },
+        { text: "$100+", value: 3 },
+
       ],
     },
   ];
 
   const handleUserResponse = (response) => {
-    // Store the user's response for the current question
-    setUserResponses([...userResponses, response]);
+
+    if (currentQuestion === 3) {
+        handleSaveSurveyPricePoint(response);        
+    } else {
+          // Store the user's response for the current question
+    setUserResponses([...userResponses, response]);  
+    }
+
   };
 
   const handleNextQuestion = (response) => {
     setUserResponses([...userResponses, response]);
     setCurrentQuestion(currentQuestion + 1);
+  };
+
+  // function to handle saving the answer to the pricepoint question
+  const handleSaveSurveyPricePoint = async (response) => {
+    console.log(response);
+    try {
+      const { data } = await saveSurveyPricePoint({
+        variables: { username: user.username, surveyPricePoint: response },
+      });
+    } catch (error) {
+      console.error("error saving price point", error);
+    }
   };
 
   const navigate = useNavigate();
@@ -159,5 +203,6 @@ export const ButtonOptions = ({
     </div>
   );
 };
+
 
 export default Survey;
