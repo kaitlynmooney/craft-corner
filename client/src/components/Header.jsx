@@ -1,25 +1,34 @@
 // get loggedin and quiz values from...
 import Auth from "../utils/auth";
-import { getProjectsPrice } from "../utils/recommendedProjects";
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 
 export default function Header() {
   // const [ loggedIn, setloggedIn ] = useState();
-  // const [ quiz, setQuiz ] = useState();
+  // const [ quiz, setQuiz ] = useState();    
+  const { loading: userLoading, error: userError, data: userData } = useQuery(QUERY_ME);
+    if (userLoading) {
+      return <p>Loading...</p>;
+    }
+  
+    if (userError) {
+      throw new Error("Error fetching data");
+  }
+
+  const user = userData?.me;
+
   const logout = (event) => {
     event.preventDefault();
     Auth.logout();
   };
 
-  const { data: userData } = useQuery(QUERY_ME);
+  if (Auth.loggedIn() && user && user.surveyPricePoint) {
+    return (
 
-  const user = userData?.me;
-  console.log(user);
+    )
 
-  const recommendedProjectsPrice = getProjectsPrice(user?.pricePoint);
-  console.log(recommendedProjectsPrice);
-
+    }
+  
   return (
     <header>
       <div className="px-3 py-2 text-white">
@@ -65,7 +74,7 @@ export default function Header() {
                 </a>
               )}{" "}
               {/* // dashboard if user is logged in and has completed the quiz*/}
-              {Auth.loggedIn() && recommendedProjectsPrice.length > 0 && (
+              {Auth.loggedIn() && user && user.surveyPricePoint && (
                 <a
                   className="borders text-decoration-none"
                   href="#"
