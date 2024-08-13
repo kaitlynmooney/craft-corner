@@ -8,8 +8,9 @@ function HeaderContent({ user }) {
     event.preventDefault();
     Auth.logout();
   };
+
   // if logged in and completed survey show explore, dashboard and logout
-  if (user?.surveyPricePoint) {
+  if (user?.surveyPricePoint > 0) {
     return (
       <header>
         <div className="px-3 py-2 text-white">
@@ -141,17 +142,17 @@ export default function Header() {
         </a>
       </div>
 
-            <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
-              <a
-                className="borders text-decoration-none"
-                href="/login"
-                role="button"
-                id="login"
-              >
-                Login/Signup
-              </a>
-            </div>
-          {/* </div> */}
+      <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
+        <a
+          className="borders text-decoration-none"
+          href="/login"
+          role="button"
+          id="login"
+        >
+          Login/Signup
+        </a>
+      </div>
+      {/* </div> */}
       {/* //   </div> */}
 
       {/* // </div> */}
