@@ -45,7 +45,7 @@ function HeaderContent({ user }) {
               <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
                 <a
                   className="borders text-decoration-none"
-                  href="#"
+                  href="/dashboard"
                   role="button"
                   id="exploreButton"
                 >
@@ -55,7 +55,6 @@ function HeaderContent({ user }) {
               <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
                 <a
                   className="borders text-decoration-none"
-                  href="#"
                   role="button"
                   id="logout"
                   onClick={logout}
@@ -94,7 +93,6 @@ function HeaderContent({ user }) {
                 {/* // logout button if user is logged in */}
                 <a
                   className="borders text-decoration-none"
-                  href="#"
                   role="button"
                   id="logout"
                   onClick={logout}
@@ -124,7 +122,7 @@ export default function Header() {
   const { loading: userLoading, data: userData } = useQuery(QUERY_ME);
 
   if (userLoading) {
-    return <p>Loading...</p>;
+    return <div className="loading-spinner"></div>;
   }
 
   const user = userData?.me;
