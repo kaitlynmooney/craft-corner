@@ -59,7 +59,7 @@ const Explore = () => {
               type="submit"
               onClick={categoryHandler}
             >
-              <div>Pottery</div>
+              <div id="column-title">Pottery</div>
             </a>
             <a
               className="borders text-decoration-none crochet-btn"
@@ -69,7 +69,7 @@ const Explore = () => {
               type="submit"
               onClick={categoryHandler}
             >
-              <div>Crochet</div>
+              <div id="column-title">Crochet</div>
             </a>
           </div>
           <div className="column" id="new">
@@ -82,7 +82,7 @@ const Explore = () => {
               type="submit"
               onClick={categoryHandler}
             >
-              <div>Stained Glass</div>
+              <div id="column-title">Stained Glass</div>
             </a>
             <a
               className="borders text-decoration-none jewelry-btn"
@@ -92,7 +92,7 @@ const Explore = () => {
               type="submit"
               onClick={categoryHandler}
             >
-              <div>Jewelry</div>
+              <div id="column-title">Jewelry</div>
             </a>
           </div>
           <div className="column" id="affordable">
@@ -105,7 +105,7 @@ const Explore = () => {
               type="submit"
               onClick={categoryHandler}
             >
-              <div>Knitting</div>
+              <div id="column-title">Knitting</div>
             </a>
             <a
               className="borders text-decoration-none clay-btn"
@@ -115,7 +115,7 @@ const Explore = () => {
               type="submit"
               onClick={categoryHandler}
             >
-              <div>Clay Modeling</div>
+              <div id="column-title">Clay Modeling</div>
             </a>
           </div>
         </div>
