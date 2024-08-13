@@ -34,7 +34,7 @@ function HeaderContent({ user }) {
               <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
                 <a
                   className="borders text-decoration-none"
-                  href="#"
+                  href="/explore"
                   role="button"
                   id="exploreButton"
                 >
@@ -105,7 +105,7 @@ function HeaderContent({ user }) {
                 {/* // quiz if user is logged in and has not completed the quiz */}
                 <a
                   className="borders text-decoration-none"
-                  href="#"
+                  href="/survey"
                   role="button"
                   id="survey"
                 >
