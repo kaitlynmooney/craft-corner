@@ -127,8 +127,6 @@ export default function Header() {
   }
 
   const user = userData?.me;
-  console.log(`header data`, userData);
-  console.log(`header user`, user);
   if (Auth.loggedIn()) {
     return <HeaderContent user={user} />;
   }
@@ -141,17 +139,17 @@ export default function Header() {
         </a>
       </div>
 
-            <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
-              <a
-                className="borders text-decoration-none"
-                href="/login"
-                role="button"
-                id="login"
-              >
-                Login/Signup
-              </a>
-            </div>
-          {/* </div> */}
+      <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
+        <a
+          className="borders text-decoration-none"
+          href="/login"
+          role="button"
+          id="login"
+        >
+          Login/Signup
+        </a>
+      </div>
+      {/* </div> */}
       {/* //   </div> */}
 
       {/* // </div> */}

@@ -57,13 +57,11 @@ const Dashboard = () => {
 
   // Navigates to new project page on click
   const handleNewProject = () => {
-    console.log(user);
     navigate("/new-project", { state: { user } });
   };
 
   // Navigates to my projects page on click
   const handleMyProjects = () => {
-    console.log(user);
     navigate("/my-projects", { state: { user } });
   };
 

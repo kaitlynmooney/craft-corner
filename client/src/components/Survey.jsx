@@ -6,7 +6,6 @@ import { ADD_SURVEYPRICEPOINT } from "../utils/mutations";
 import { QUERY_ME } from "../utils/queries";
 import { useQuery } from "@apollo/client";
 
-
 const Survey = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userResponses, setUserResponses] = useState([]);
@@ -28,7 +27,6 @@ const Survey = () => {
   }
 
   const user = userData?.me;
-
 
   const questions = [
     {
@@ -76,20 +74,17 @@ const Survey = () => {
         { text: "$10–20", value: 1 },
         { text: "$20–80", value: 2 },
         { text: "$100+", value: 3 },
-
       ],
     },
   ];
 
   const handleUserResponse = (response) => {
-
     if (currentQuestion === 3) {
-        handleSaveSurveyPricePoint(response);        
+      handleSaveSurveyPricePoint(response);
     } else {
-          // Store the user's response for the current question
-    setUserResponses([...userResponses, response]);  
+      // Store the user's response for the current question
+      setUserResponses([...userResponses, response]);
     }
-
   };
 
   const handleNextQuestion = (response) => {
@@ -99,7 +94,6 @@ const Survey = () => {
 
   // function to handle saving the answer to the pricepoint question
   const handleSaveSurveyPricePoint = async (response) => {
-    console.log(response);
     try {
       const { data } = await saveSurveyPricePoint({
         variables: { username: user.username, surveyPricePoint: response },
@@ -203,6 +197,5 @@ export const ButtonOptions = ({
     </div>
   );
 };
-
 
 export default Survey;
