@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { LOGIN_USER } from "../utils/mutations";
-import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 import { useNavigate } from "react-router-dom";
 
@@ -15,7 +14,8 @@ const Login = () => {
     login_email: "",
     login_password: "",
   });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  // const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error }] = useMutation(LOGIN_USER);
 
   // Update state based on form input changes
   const handleChange = (event) => {
