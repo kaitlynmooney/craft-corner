@@ -27,7 +27,7 @@ const Home = () => {
 
   // If videos are loaded, show videos
   return (
-    <div id="homepage">
+    <div id="homepage" className='bg-image'>
       <div id="homepage-video">
         {!loading ? (
           <iframe

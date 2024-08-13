@@ -150,6 +150,12 @@ header {
   left: calc(50% - 40px);
 }
 
+.bg-image {
+  background-image: url(client/public/images/ThreadPattern.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
