@@ -18,7 +18,7 @@ function HeaderContent({ user }) {
             <div className="my-5 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <div className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                 <a
-                  className="display-4 mb-0 sofia text-decoration-none"
+                  className="display-4 mb-0 sofia text-decoration-none "
                   style={{
                     backgroundColor: "var(--background-color)",
                     color: "var(--text-color)",
