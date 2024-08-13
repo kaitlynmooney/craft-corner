@@ -3,9 +3,11 @@ import { useQuery, useMutation } from "@apollo/client";
 
 import { QUERY_ME } from "../utils/queries";
 import { QUERY_SINGLE_PROJECT } from "../utils/queries";
+import { ADD_PROJECT } from "../utils/mutations";
 
-const AddButton = ({projectId}) => {
-  const { userId} = useParams();
+const AddButton = ({ projectId }) => {
+  const { userId } = useParams();
+  const [addProject] = useMutation(ADD_PROJECT);
   console.log("projectIdButton", projectId);
 
   const {
@@ -23,26 +25,29 @@ const AddButton = ({projectId}) => {
   });
 
   const user = userData?.me || {};
+  console.log("projectData", projectData);
   const project = projectData?.project || {};
   console.log("project", project);
 
   console.log(user);
 
-  let ongoingProj = user.ongoingProjects.map((ongoingProjects) => ({
-    ...ongoingProjects,
-    selected: false,
-  }));
-  const projectLength = ongoingProj.length
+  //   let ongoingProj = user?.ongoingProjects.map((ongoingProjects) => ({
+  //     ...ongoingProjects,
+  //     selected: false,
+  //   }));
+  //   const projectLength = ongoingProj.length
 
-  const handleAddClick = (event) => {
-    let ongoingProj = user.ongoingProjects.map((ongoingProjects) => ({
-      ...ongoingProjects,
-      selected: false,
-    }));
-    ongoingProj.push(...project);
-    console.log(ongoingProj);
+  const handleAddClick = async (event) => {
+    try {
+      const { data } = await addProject({
+        variables: { projectId, userId: user._id },
+      });
+      console.log("ongoingProjects", data.addProject.ongoingProjects);
+    } catch (err) {
+      console.log(err);
+    }
   };
- 
+
   console.log(user);
 
   if (loading) {
@@ -60,7 +65,7 @@ const AddButton = ({projectId}) => {
       >
         Add To Ongoing Projects!
         <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-          {projectLength}
+          {/* {projectLength} */}
           <span className="visually-hidden">number of ongoingprojects</span>
         </span>
       </button>

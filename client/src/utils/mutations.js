@@ -13,8 +13,16 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($signup_username: String!, $signup_email: String!, $signup_password: String!) {
-    addUser(username: $signup_username, email: $signup_email, password: $signup_password) {
+  mutation addUser(
+    $signup_username: String!
+    $signup_email: String!
+    $signup_password: String!
+  ) {
+    addUser(
+      username: $signup_username
+      email: $signup_email
+      password: $signup_password
+    ) {
       token
       user {
         _id
@@ -30,6 +38,16 @@ export const CHANGE_AVATAR = gql`
       _id
       username
       avatar
+    }
+  }
+`;
+export const ADD_PROJECT = gql`
+  mutation Mutation($projectId: ID!, $userId: ID!) {
+    addProject(projectId: $projectId, userId: $userId) {
+      ongoingProjects {
+        _id
+        name
+      }
     }
   }
 `;
