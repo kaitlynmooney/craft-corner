@@ -49,7 +49,8 @@ export const CREATE_PROJECT = gql`
     $instructions: [String]!
     $pricePoint: String!
     $difficulty: String!
-    $craft: ID!
+    $craft: String!
+    $authorId: ID!
   ) {
     createProject(
       name: $name
@@ -58,6 +59,7 @@ export const CREATE_PROJECT = gql`
       pricePoint: $pricePoint
       difficulty: $difficulty
       craft: $craft
+      authorId: $authorId
     ) {
       id
       name

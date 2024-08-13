@@ -550,6 +550,18 @@ p {
 }
 
 /* NEW PROJECT PAGE */
+#create-new-proj-button {
+  width: 230px;
+  padding: 6px 15px 6px 15px;
+  margin: 15px auto 15px auto;
+  font-size: 18px;
+}
+
+#create-new-proj-button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
 #new-proj {
   margin: 0px 10vw 40px 10vw;
 }
@@ -585,6 +597,7 @@ p {
   border: 0.8px solid var(--text-color);
   padding: 4px 10px 4px 10px;
   background-color: var(--clear);
+  color: var(--text-color);
 }
 
 #create-project {

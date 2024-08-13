@@ -7,20 +7,21 @@ type User {
   password: String
   avatar: String
   savedCrafts: [Craft]
+  authoredProjects: [Project]
   completedProjects: [Project]
   ongoingProjects: [Project]
 }
 
 type Project {
   _id: ID
-  name:String
+  name: String
   materials: [String]
   instructions: [String]
   image: String
   pricePoint: String
   difficulty: String
   craft: Craft
-
+  author: User
 }
 
 type Craft {
@@ -54,7 +55,8 @@ type Mutation {
     instructions: [String]!,
     pricePoint: String!,
     difficulty: String!,
-    craft: ID!
+    craft: String!
+    authorId: ID!
   ): Project
   deleteProject(id: ID!): Project
 }
