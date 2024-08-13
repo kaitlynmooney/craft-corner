@@ -17,7 +17,7 @@ const Explore = () => {
             role="button"
             type="submit"
           >
-            <div>Pottery</div>
+            <div id="column-title">Pottery</div>
           </a>
           <a
             className="borders text-decoration-none crochet-btn"
@@ -26,7 +26,7 @@ const Explore = () => {
             role="button"
             type="submit"
           >
-            <div>Crochet</div>
+            <div id="column-title">Crochet</div>
           </a>
         </div>
         <div className="column" id="new">
@@ -38,7 +38,7 @@ const Explore = () => {
             role="button"
             type="submit"
           >
-            <div>Stained Glass</div>
+            <div id="column-title">Stained Glass</div>
           </a>
           <a
             className="borders text-decoration-none jewelry-btn"
@@ -47,7 +47,7 @@ const Explore = () => {
             role="button"
             type="submit"
           >
-            <div>Jewelry</div>
+            <div id="column-title">Jewelry</div>
           </a>
         </div>
         <div className="column" id="affordable">
@@ -59,7 +59,7 @@ const Explore = () => {
             role="button"
             type="submit"
           >
-            <div>Knitting</div>
+            <div id="column-title">Knitting</div>
           </a>
           <a
             className="borders text-decoration-none clay-btn"
@@ -68,7 +68,7 @@ const Explore = () => {
             role="button"
             type="submit"
           >
-            <div>Clay Modeling</div>
+            <div id="column-title">Clay Modeling</div>
           </a>
         </div>
       </div>
