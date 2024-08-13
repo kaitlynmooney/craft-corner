@@ -573,6 +573,7 @@ p {
   width: 80vw;
   min-width: 280px;
   padding: 10px 20px 20px 20px;
+  margin-bottom: 40px;
 }
 
 #new-project-form p {

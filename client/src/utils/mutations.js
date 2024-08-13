@@ -61,7 +61,7 @@ export const CREATE_PROJECT = gql`
       craft: $craft
       authorId: $authorId
     ) {
-      id
+      _id
       name
     }
   }
