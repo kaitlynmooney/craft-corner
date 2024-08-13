@@ -26,6 +26,7 @@ const Dashboard = () => {
   const [userProjects, setSavedProjects] = useState([]);
   const [inProgressProjects, setInProgressProjects] = useState([]);
   const savedProjects = getSavedProjects();
+  const [draggedItems, setDraggedItems] = useState(JSON.parse(localStorage.getItem('draggedItems')) || Array(projects.length).fill(false));
 
   const {
     loading: userLoading,
@@ -42,6 +43,21 @@ const Dashboard = () => {
   useEffect(() => {
     // Initialize in-progress projects here, if needed
   }, [projectsData]);
+
+  useEffect(() => {
+    // Initialize in-progress projects from localStorage
+    const savedInProgressProjects = JSON.parse(localStorage.getItem('inProgressProjects')) || [];
+    setInProgressProjects(savedInProgressProjects);
+}, [projectsData]);
+
+  // Update local storage when dragged change
+  useEffect(() => {
+    localStorage.setItem('draggedItems', JSON.stringify(draggedItems));
+  }, [draggedItems]); // This effect only runs when draggedItems changes
+
+  useEffect(() => {
+    localStorage.setItem('inProgressProjects', JSON.stringify(inProgressProjects));
+}, [inProgressProjects]);
 
   if (userLoading || projectsLoading) {
     return <div className="loading-spinner"></div>;
@@ -73,6 +89,30 @@ const Dashboard = () => {
     navigate("/my-projects", { state: { user } });
   };
 
+  // add dropped projects to local storage 
+  const handleDropChange = (index) => {
+    const newDraggedItems = [...draggedItems];
+    newDraggedItems[index] = !newDraggedItems[index];
+    setDraggedItems(newDraggedItems);
+
+    // Get project ID for the dragged item
+    const projectId = projects[index]._id;
+    console.log(projectId)
+
+    // Update local storage with the dragged project ID
+    const storedProjectIds = JSON.parse(localStorage.getItem('draggedProjectIds')) || [];
+
+    if (newDraggedItems[index] && !storedProjectIds.includes(projectId)) {
+      storedProjectIds.push(projectId);
+    } else if (!newDraggedItems[index]) {
+      const indexToRemove = storedProjectIds.indexOf(projectId);
+      if (indexToRemove !== -1) storedProjectIds.splice(indexToRemove, 1);
+    }
+
+    localStorage.setItem('draggedProjectIds', JSON.stringify(storedProjectIds));
+  };
+
+
   const handleDropProject = (projectInput) => {
     // Find the project object from allProjects using the projectId
     const project = projects.find((proj) => proj._id === projectInput._id);
@@ -90,6 +130,10 @@ const Dashboard = () => {
       console.log('Updated In-Progress Projects:', updatedProjects);
       return updatedProjects;
     });
+
+    // Update the state of dragged items
+    const index = projects.findIndex(p => p._id === projectInput._id);
+    if (index !== -1) handleDropChange(index);
 
     // Remove the project from savedProjects
     setSavedProjects((prevProjects) => {
@@ -138,6 +182,8 @@ const Dashboard = () => {
               <InProgressProjects 
                 projects={inProgressProjects}
                 handleDropProject={handleDropProject}
+                inProgressProjects={inProgressProjects}
+                setInProgressProjects={setInProgressProjects}
               />
             </div>
             <div>
