@@ -29,8 +29,6 @@ const Projects = ({ user, projects }) => {
 
       return Array.from(updatedSavedProjects);
     });
-
-    console.log("Checked Project IDs:", checkedProjectIds);
   }, [checkedItems, projects]); // Run this effect when checkedItems or projects change
 
   // Handle checkbox change for a specific index
@@ -41,7 +39,6 @@ const Projects = ({ user, projects }) => {
 
     // Get project ID for the changed checkbox
     const projectId = projects[index]._id;
-    console.log(projectId);
 
     // Update local storage with the clicked project ID
     const storedProjectIds =
@@ -71,28 +68,27 @@ const Projects = ({ user, projects }) => {
 
   return (
     <div id="project-container">
-      {projects &&
-        projects.map((project, index) => (
-          <div key={project._id}>
-            <a href={`/project/${project._id}`}>
-              <button className="button-options">
-                <div className="form-check heart-checkbox">
-                  <input
-                    className="form-check-input"
-                    type="checkbox"
-                    value=""
-                    id={`flexCheckDefault_heart_${project._id}`} // Use project.id for unique ID
-                    checked={checkedItems[index]}
-                    onChange={() => handleCheckboxChange(index)}
-                  />
-                  <label htmlFor={`flexCheckDefault_heart_${project._id}`}>
-                    {project.name}
-                  </label>
-                </div>
-              </button>
-            </a>
-          </div>
-        ))}
+      {projects && projects.map((project, index) => (
+        <div key={project._id}>
+          <a href={`/project/${project._id}`}>
+          <button className='button-options'>
+            <div className="form-check heart-checkbox">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value=""
+                id={`flexCheckDefault_heart_${project._id}`} // Use project.id for unique ID
+                checked={checkedItems[index]}
+                onChange={() => handleCheckboxChange(index)}
+              />
+              <label htmlFor={`flexCheckDefault_heart_${project._id}`}>
+                {project.name}
+              </label>
+            </div>
+          </button>
+          </a>
+        </div>
+      ))}
     </div>
   );
 };

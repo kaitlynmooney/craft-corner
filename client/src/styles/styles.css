@@ -446,8 +446,21 @@ header {
   color: var(--background-color);
 }
 
+.success {
+  font-size: 20px;
+  color: var(--text-color);
+  font-weight: 300;
+  text-align: center;
+  width: 90vw;
+  margin: 0 auto;
+}
+
 @media (min-width: 446px) {
   .my-project-single {
+    width: 60vw;
+  }
+
+  .success {
     width: 60vw;
   }
 }
@@ -551,7 +564,6 @@ header {
   padding: 0 !important;
 }
 
-
 .btn-close {
   position: absolute;
   right: 6px;
@@ -572,6 +584,8 @@ header {
 #featured-craft {
   font-weight: bold;
   font-size: 70px;
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 #featured-craft:hover {
@@ -764,7 +778,7 @@ p {
   }
 
   #profile-img {
-    margin: 0px 0px 10px 0px;
+    margin: 10px 0px 10px 0px;
     height: 220px;
     width: 220px;
   }

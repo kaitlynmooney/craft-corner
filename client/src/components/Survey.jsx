@@ -11,6 +11,7 @@ const Survey = () => {
   const [userResponses, setUserResponses] = useState([]);
 
   const [saveSurveyPricePoint] = useMutation(ADD_SURVEYPRICEPOINT);
+  const navigate = useNavigate();
 
   const {
     loading: userLoading,
@@ -19,7 +20,7 @@ const Survey = () => {
   } = useQuery(QUERY_ME);
 
   if (userLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading-spinner"></p>;
   }
 
   if (userError) {
@@ -94,8 +95,6 @@ const Survey = () => {
 
   // function to handle saving the answer to the pricepoint question
   const handleSaveSurveyPricePoint = async (response) => {
-    console.log("handleSaveSurvey", user.username);
-    console.log("handleSaveSurvey 2", response[0]);
     try {
       const { data } = await saveSurveyPricePoint({
         variables: { username: user.username, surveyPricePoint: response[0] },
@@ -104,8 +103,6 @@ const Survey = () => {
       console.error("error saving price point", error);
     }
   };
-
-  const navigate = useNavigate();
 
   if (currentQuestion === questions.length) {
     navigate("/dashboard"); // Redirect to the dashboard page

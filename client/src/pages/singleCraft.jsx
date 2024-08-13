@@ -1,8 +1,13 @@
 import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+
 import AddButton from "../components/SavedArrayButton";
 import SingleProjHero from "../components/SingleProjHero";
-import { QUERY_SINGLE_PROJECT, QUERY_ME } from "../utils/queries";
+
+
+
+import { QUERY_SINGLE_PROJECT } from "../utils/queries";
+
 
 const SingleProject = () => {
   const { projectId } = useParams();
@@ -33,17 +38,24 @@ const SingleProject = () => {
   // Handle errors in the query
   if (error) return <div className="error-message">Error: {error.message}</div>;
 
+
   return (
     <div>
       <SingleProjHero />
       <AddButton projectId={projectId} />
+ 
+
+
+   
+      
+
       <span className="badge rounded-pill text-bg-info">
         {project.difficulty}
       </span>
       <span className="badge rounded-pill text-bg-info">
         {project.pricePoint}
       </span>
-      
+
       <div className="container">
         <div className="row">
           <div className="col">

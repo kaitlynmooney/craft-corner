@@ -46,6 +46,10 @@ db.once("open", async () => {
       description:
         "Pottery is like spinning magic with mud! You take a lump of clay, throw it on a wheel, and shape it into anything from a cool vase to a quirky mug. As the wheel spins, your hands mold the clay into something uniquely yours. It’s messy, creative, and oh-so-satisfying—plus, you get to say you made your own dishes!",
     },
+    {
+      name: "Floristry",
+      description: "Floristry, the art and practice of arranging flowers and plant materials into aesthetically pleasing compositions. It involves the creative and skilled assembly of floral elements to produce decorative arrangements for various purposes, such as events, home decor, and gifts."
+    }
   ]);
   console.log("Crafts seeded");
 
@@ -381,6 +385,49 @@ db.once("open", async () => {
       difficulty: "Pro",
       craft: crafts[6]._id,
     },
+    {
+      name: "Flower Bouqet",
+      materials: [
+        "Flowers: Choose a mix of flowers (fresh or faux).",
+        "For a basic bouquet, you might need:",
+        "5-7 stems of a focal flower (e.g., roses, daisies)",
+        "5-7 stems of a filler flower (e.g., baby’s breath, small daisies)",
+        "3-5 stems of greenery (e.g., eucalyptus, fern)",
+        "Tools:",
+        "Scissors or floral shears",
+        "Floral tape or rubber bands",
+        "Ribbon or twine (for tying the bouquet)",
+        "Optional: floral wire",
+        "Optional:",
+        "Floral foam (for arranging in a vase, if desired)",
+        "A vase or jar (for displaying the bouquet)",
+        
+      ],
+      instructions: [
+        "1. Prepare the Flowers",
+        "Trim Stems: Cut the stems of your flowers at an angle to ensure they can absorb water if they are fresh. Remove any leaves that will fall below the water line if using a vase.",
+        "Sort and Arrange: Sort your flowers into three groups: focal flowers, filler flowers, and greenery. This will help you assemble the bouquet more easily.",
+        "2. Create the Bouquet Base",
+        "Start with Focal Flowers: Begin by placing one focal flower in your hand. Hold it upright.",
+        "Add Flowers: Gradually add more focal flowers around the first one, rotating the bouquet as you go to maintain an even shape.",
+        "Incorporate Fillers: Add filler flowers to fill in gaps and add texture. Position them between the focal flowers, ensuring an even distribution.",
+        "Add Greenery: Insert greenery around the bouquet to provide a natural look and frame the flowers. Position it in a way that complements the arrangement.",
+        "3. Secure the Bouquet",
+        "Adjust and Arrange: Once you’re happy with the arrangement, hold the stems tightly and make any final adjustments to the shape and placement of the flowers.",
+        "Tie the Stems: Use floral tape or a rubber band to secure the stems at the base. This will keep the bouquet together.",
+        "4. Finish the Bouquet",
+        "Trim the Stems: Trim the stems to the desired length, ensuring they are all even. If using floral foam, cut the stems to fit into the foam.",
+        "Wrap with Ribbon or Twine: Wrap the base of the bouquet with ribbon or twine. Tie it in a bow or knot for a decorative touch.",
+        "Optional - Floral Wire: If needed, use floral wire to further secure any loose stems or to add extra support.",
+        "5. Display or Gift",
+        "Fresh Flowers: Place the bouquet in a vase with water if it’s fresh. Change the water regularly to keep the flowers fresh.",
+        "Faux Flowers: If using faux flowers, you can place the bouquet in a decorative jar or simply display it as is.",
+      ],
+      image: "flower-hero.jpg",
+      pricePoint: "$$",
+      difficulty: "Newbie",
+      craft: crafts[7]._id,
+    }
   ]);
   console.log("Projects Seeded!");
 
