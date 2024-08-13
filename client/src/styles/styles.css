@@ -451,10 +451,16 @@ header {
   color: var(--text-color);
   font-weight: 300;
   text-align: center;
+  width: 90vw;
+  margin: 0 auto;
 }
 
 @media (min-width: 446px) {
   .my-project-single {
+    width: 60vw;
+  }
+
+  .success {
     width: 60vw;
   }
 }

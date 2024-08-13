@@ -1,7 +1,8 @@
 /* DEPENDENCIES */
 import { useLocation } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 import { useState, useEffect } from "react";
-import Projects from "../components/Projects";
+import { DELETE_PROJECT } from "../utils/mutations";
 
 /* MY PROJECTS */
 const MyProjects = () => {
@@ -9,25 +10,15 @@ const MyProjects = () => {
   const { user } = location.state || {};
   const projects = user.authoredProjects;
 
+  const [deleteProject] = useMutation(DELETE_PROJECT);
+  const [success, setSuccess] = useState("");
+  const [curProjectList, setCurProjectList] = useState(projects);
+
   const initialCheckedItems = projects
     ? new Array(projects.length).fill(false)
     : [];
   const [checkedItems, setCheckedItems] = useState(initialCheckedItems);
   const [savedProjects, setSavedProjects] = useState(user?.savedProjects || []);
-
-  // Load checkbox state from local storage on component mount
-  // useEffect(() => {
-  //   try {
-  //     const storedCheckedItems = JSON.parse(
-  //       localStorage.getItem("checkedItems")
-  //     );
-  //     if (Array.isArray(storedCheckedItems)) {
-  //       setCheckedItems(storedCheckedItems);
-  //     }
-  //   } catch (error) {
-  //     console.error("Failed to load checked items from local storage:", error);
-  //   }
-  // }, []); // This effect only runs once on mount
 
   // Update savedProjects when checkedItems change
   useEffect(() => {
@@ -62,7 +53,6 @@ const MyProjects = () => {
 
     // Get project ID for the changed checkbox
     const projectId = projects[index]._id;
-    console.log(projectId);
 
     // Update local storage with the clicked project ID
     const storedProjectIds =
@@ -90,6 +80,24 @@ const MyProjects = () => {
     localStorage.setItem("checkedItems", JSON.stringify(checkedItems));
   }, [checkedItems]); // This effect only runs when checkedItems changes
 
+  // Handle deleting a project
+  const handleDelete = (projectId) => {
+    deleteProject({ variables: { id: projectId } })
+      .then((response) => {
+        setSuccess(
+          "Your project has been deleted successfully! It won't be available to find on the explore page, but any user who has this project saved will still have access to it."
+        );
+
+        // Remove the project from the current list
+        setCurProjectList((prevList) =>
+          prevList.filter((project) => project._id !== projectId)
+        );
+      })
+      .catch((error) => {
+        console.error("Error deleting project:", error);
+      });
+  };
+
   // Ensure user navigated to page from dashboard
   if (!user || !user._id) {
     return (
@@ -104,13 +112,18 @@ const MyProjects = () => {
       <h2 className="title" id="my-projects-title">
         Projects you've created
       </h2>
+      {success && <p className="success">{success}</p>}
       <div id="my-projects">
         {projects &&
-          user.authoredProjects.map((project, index) => (
+          curProjectList.map((project, index) => (
             <div key={project._id}>
               <button className="my-project-single">
                 <div className="form-check heart-checkbox">
-                  <i className="fa-solid fa-trash" id="delete-my-project"></i>
+                  <i
+                    className="fa-solid fa-trash"
+                    id="delete-my-project"
+                    onClick={() => handleDelete(project._id)}
+                  ></i>
                   <input
                     className="form-check-input"
                     type="checkbox"

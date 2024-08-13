@@ -119,7 +119,30 @@ const resolvers = {
       return newProject;
     },
     deleteProject: async (parent, { id }) => {
-      return await Project.findByIdAndDelete(id);
+      const project = await Project.findById(id);
+      if (!project) {
+        throw new Error("Project not found");
+      }
+
+      const { author, craft } = project;
+
+      // Remove project from author's authored projects
+      await User.findByIdAndUpdate(
+        author,
+        { $pull: { authoredProjects: id } },
+        { new: true, useFindAndModify: false }
+      );
+
+      // Remove project from craft's projects
+      await Craft.findByIdAndUpdate(
+        craft,
+        { $pull: { projects: id } },
+        { new: true, useFindAndModify: false }
+      );
+
+      // Delete the project itself
+      // const deletedProject = await Project.findByIdAndDelete(id);
+      return project;
     },
   },
 };
