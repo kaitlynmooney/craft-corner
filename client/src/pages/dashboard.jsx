@@ -5,7 +5,7 @@ import { useLocation } from "react-router-dom";
 import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
-import SavedProjects from "../components/savedProjects";
+import SavedProjects from "../components/SavedProjects";
 import {
   getProjectsDifficulty,
   getProjectsPrice,
