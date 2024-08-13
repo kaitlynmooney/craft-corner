@@ -33,7 +33,7 @@ const Explore = () => {
   // conditionally render cards if category isn't selected, and filtered projects if category is selected
 
   // Handle loading and error states
-  if (projectsLoading) return <p>Loading...</p>;
+  if (projectsLoading) return <p className="loading-spinner"></p>;
   if (projectsError) throw Error;
 
   return (
