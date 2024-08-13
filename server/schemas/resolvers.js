@@ -100,6 +100,7 @@ const resolvers = {
         console.error(error);
         throw new Error("Failed to save survey price point");
       }
+    },
 
     createProject: async (
       parent,
@@ -151,7 +152,7 @@ const resolvers = {
 
     },
   },
-};
+}
 
 /* EXPORTS */
 module.exports = resolvers;

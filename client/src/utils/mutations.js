@@ -42,13 +42,15 @@ export const CHANGE_AVATAR = gql`
   }
 `;
 
-
 export const ADD_SURVEYPRICEPOINT = gql`
   mutation addSurveyPricePoint($username: String!, $surveyPricePoint: Int!) {
     addSurveyPricePoint(username: $username, surveyPricePoint: $surveyPricePoint) {
       _id
       username
-      surveyPricePoint`
+      surveyPricePoint
+    }
+  }
+ `; 
 
 export const CREATE_PROJECT = gql`
   mutation createProject(
@@ -71,7 +73,6 @@ export const CREATE_PROJECT = gql`
     ) {
       _id
       name
-
     }
   }
 `;
