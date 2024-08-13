@@ -105,7 +105,7 @@ function HeaderContent({ user }) {
                 {/* // quiz if user is logged in and has not completed the quiz */}
                 <a
                   className="borders text-decoration-none"
-                  href="#"
+                  href="/survey"
                   role="button"
                   id="survey"
                 >
