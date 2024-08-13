@@ -16,6 +16,7 @@ const projectSchema = new Schema({
   },
   image: {
     type: String,
+    default: "blank_canvas.jpg",
   },
   pricePoint: {
     type: String,

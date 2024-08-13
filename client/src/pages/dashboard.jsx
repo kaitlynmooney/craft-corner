@@ -1,18 +1,17 @@
 /* DEPENDENCIES */
-import { useState } from 'react';
+import { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
-import { getSavedProjects } from '../utils/savedProjects';
+import { getSavedProjects } from "../utils/savedProjects";
 import SavedProjects from "../components/SavedProjects";
 import {
   getProjectsDifficulty,
   getProjectsPrice,
 } from "../utils/recommendedProjects";
-
 
 /* DASHBOARD */
 const Dashboard = () => {
@@ -58,14 +57,16 @@ const Dashboard = () => {
 
   // Navigates to new project page on click
   const handleNewProject = () => {
+    console.log(user);
     navigate("/new-project", { state: { user } });
   };
 
   // Navigates to my projects page on click
   const handleMyProjects = () => {
+    console.log(user);
     navigate("/my-projects", { state: { user } });
   };
-  
+
   const savedProjects = getSavedProjects();
 
   // Return dashboard, calls Profile and Projects components
@@ -99,7 +100,11 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Your Saved Projects:</h2>
-            <SavedProjects savedProjects={savedProjects} allProjects={projects} setSavedProjects={setSavedProjects}/>
+            <SavedProjects
+              savedProjects={savedProjects}
+              allProjects={projects}
+              setSavedProjects={setSavedProjects}
+            />
           </div>
           <div>
             <h2>Recommended Projects:</h2>
