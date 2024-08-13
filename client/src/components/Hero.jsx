@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import heroImage from "../images/flower-hero.jpg";
 import Projects from "../components/Projects";
 import { useQuery } from "@apollo/client";
@@ -37,9 +38,9 @@ const Hero = () => {
       <div className="hero-content">
         <p id="explore-feature">Featured Craft of the Week</p>
         <div className="featured-craft">
-          <h1 onClick={categoryHandler} id="featured-craft" role="button">
+          <Link to="/project/" onClick={categoryHandler} id="featured-craft" role="button">
             Flower Bouquets
-          </h1>
+          </Link>
         </div>
       </div>
     </div>
