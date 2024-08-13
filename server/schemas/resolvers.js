@@ -12,14 +12,22 @@ const resolvers = {
       return User.findOne({ username });
     },
     me: async (parent, args, context) => {
-      console.log('hello')
-      console.log(context.user)
+      console.log("hello in me query");
+      console.log(`me query context user`, context.user);
       if (context.user) {
-        const user = User.findOne({ _id: context.user._id })
-        .populate('savedCrafts').populate('completedProjects').populate('ongoingProjects')
+        try{
+        const user = await User.findOne({ _id: context.user._id })
+          .populate("savedCrafts")
+          .populate("completedProjects")
+          .populate("ongoingProjects");
+          console.log(user);
         return user;
+      } catch (error){
+        console.error("Error fetching user data:", error);
+        throw new Error("Error fetching user data");
       }
-      throw AuthenticationError;
+      }
+      throw new AuthenticationError("You need to be logged in!");
     },
     crafts: async () => {
       return Craft.find();
@@ -31,8 +39,10 @@ const resolvers = {
       return Project.find();
     },
     project: async (parent, { projectId }, context) => {
-      const project = await Project.findOne({ _id: projectId }).populate('craft')
-      console.log(project)
+      const project = await Project.findOne({ _id: projectId }).populate(
+        "craft"
+      );
+      console.log(project);
       return project;
     },
   },
@@ -72,7 +82,7 @@ const resolvers = {
         throw new Error("Failed to change avatar");
       }
     },
-    addSurveyPricePoint: async(parent, { username, surveyPricePoint }) => {
+    addSurveyPricePoint: async (parent, { username, surveyPricePoint }) => {
       try {
         const user = await User.findOne({ username });
         if (!user) {
@@ -84,7 +94,7 @@ const resolvers = {
         return user;
       } catch (error) {
         console.error(error);
-        throw new Error("Failed to save survey price point")
+        throw new Error("Failed to save survey price point");
       }
     },
   },
