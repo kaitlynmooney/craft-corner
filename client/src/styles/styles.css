@@ -454,6 +454,7 @@ header {
   border-radius: 15px;
   margin: 10px;
   position: relative;
+  cursor: pointer;
 }
 
 .button-options:hover {
@@ -468,6 +469,10 @@ header {
     --text-color
   ); /* Change the background color after click */
   color: var(--background-color);
+}
+
+#label {
+  cursor: pointer;
 }
 
 /* HEART CHECKBOXES */
@@ -505,6 +510,13 @@ header {
 
 .form-check {
   padding: 0 !important;
+}
+
+
+.btn-close {
+  position: absolute;
+  right: 6px;
+  top: 6px;
 }
 
 /* EXPLORE PAGE */
