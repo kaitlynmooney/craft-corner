@@ -7,12 +7,13 @@ import Error from "./pages/error.jsx";
 import Login from "./pages/login.jsx";
 import Home from "./pages/home.jsx";
 
-import SingleCraft from "./pages/singleCraft.jsx"
+import SingleCraft from "./pages/singleCraft.jsx";
 
 import SurveyPage from "./pages/SurveyPage.jsx";
 import Dashboard from "./pages/dashboard.jsx";
 import Explore from "./pages/explore.jsx";
-
+import NewProject from "./pages/newProject.jsx";
+import MyProjects from "./pages/myProjects.jsx";
 
 const router = createBrowserRouter([
   {
@@ -30,12 +31,12 @@ const router = createBrowserRouter([
       },
       {
         path: "/project/:projectId",
-        element: <SingleCraft />
-      }, 
+        element: <SingleCraft />,
+      },
       {
         path: "/survey",
         element: <SurveyPage />,
-      }, 
+      },
       {
         path: "/dashboard",
         element: <Dashboard />,
@@ -43,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: "/explore",
         element: <Explore />,
+      },
+      {
+        path: "/new-project",
+        element: <NewProject />,
+      },
+      {
+        path: "/my-projects",
+        element: <MyProjects />,
       },
     ],
   },

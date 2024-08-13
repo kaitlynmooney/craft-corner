@@ -12,11 +12,12 @@ const resolvers = {
       return User.findOne({ username });
     },
     me: async (parent, args, context) => {
-      console.log('hello')
-      console.log(context.user)
       if (context.user) {
         const user = User.findOne({ _id: context.user._id })
-        .populate('savedCrafts').populate('completedProjects').populate('ongoingProjects')
+          .populate("savedCrafts")
+          .populate("authoredProjects")
+          .populate("completedProjects")
+          .populate("ongoingProjects");
         return user;
       }
       throw AuthenticationError;
@@ -28,11 +29,13 @@ const resolvers = {
       return Craft.findOne({ name });
     },
     allProjects: async () => {
-      return await Project.find().populate('craft');
+      return await Project.find().populate("craft");
     },
     project: async (parent, { projectId }, context) => {
-      const project = await Project.findOne({ _id: projectId }).populate('craft')
-      console.log(project)
+      const project = await Project.findOne({ _id: projectId }).populate(
+        "craft"
+      );
+      console.log(project);
       return project;
     },
   },
@@ -71,6 +74,54 @@ const resolvers = {
         console.error(error);
         throw new Error("Failed to change avatar");
       }
+    },
+    createProject: async (
+      parent,
+      { name, materials, instructions, pricePoint, difficulty, craft, authorId }
+    ) => {
+      console.log("In create project");
+      // Find craft by name
+      const craftType = await Craft.findOne({ name: craft });
+      if (!craftType) {
+        throw new Error("Craft not found");
+      }
+
+      console.log("Craft type", craftType);
+      // Find author by ID
+      const author = await User.findById(authorId);
+      if (!author) {
+        throw new Error("Author not found");
+      }
+
+      console.log("Author", author);
+      // Create new project
+      const newProject = await Project({
+        name,
+        materials,
+        instructions,
+        pricePoint,
+        difficulty,
+        craft: craftType._id,
+        author: authorId,
+      });
+      console.log(newProject);
+
+      // Add project to the author's list of authored projects
+      author.authoredProjects.push(newProject._id);
+      await author.save();
+      console.log(author);
+
+      // Add project to the craft's list of projects
+      craftType.projects.push(newProject._id);
+      await craftType.save();
+      console.log(craftType);
+
+      await newProject.populate("author");
+
+      return newProject;
+    },
+    deleteProject: async (parent, { id }) => {
+      return await Project.findByIdAndDelete(id);
     },
   },
 };
