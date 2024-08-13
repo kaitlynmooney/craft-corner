@@ -23,7 +23,7 @@ export const getSavedProjects = () => {
     }
   
     // Return the new array of saved projects
-    console.log(savedProjects);
+    console.log(savedProjects)
     return savedProjects;
 };
   
