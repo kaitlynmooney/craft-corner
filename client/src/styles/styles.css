@@ -92,6 +92,9 @@ header {
   background-color: var(--background-color);
 }
 
+#surveyButton,
+#dashboardButton,
+#exploreButton,
 #logout,
 #login {
   padding: 6px 20px 6px 20px;

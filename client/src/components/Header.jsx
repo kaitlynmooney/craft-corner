@@ -47,7 +47,7 @@ function HeaderContent({ user }) {
                   className="borders text-decoration-none"
                   href="/dashboard"
                   role="button"
-                  id="exploreButton"
+                  id="dashboardButton"
                 >
                   Dashboard
                 </a>
@@ -105,7 +105,7 @@ function HeaderContent({ user }) {
                   className="borders text-decoration-none"
                   href="/survey"
                   role="button"
-                  id="survey"
+                  id="surveyButton"
                 >
                   Survey
                 </a>
@@ -148,10 +148,6 @@ export default function Header() {
           Login/Signup
         </a>
       </div>
-      {/* </div> */}
-      {/* //   </div> */}
-
-      {/* // </div> */}
     </header>
   );
 }
