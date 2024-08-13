@@ -1,5 +1,5 @@
 /* DEPENDENCIES */
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useMutation } from "@apollo/client";
 import { useLocation } from "react-router-dom";
 import { CREATE_PROJECT } from "../utils/mutations";
@@ -15,9 +15,15 @@ const CreateProject = () => {
   const [success, setSuccess] = useState("");
 
   const [createProject] = useMutation(CREATE_PROJECT);
+  const [user, setUser] = useState(null);
 
+  // Get user
   const location = useLocation();
-  const { user } = location.state || {};
+  useEffect(() => {
+    if (location.state && location.state.user) {
+      setUser(location.state.user);
+    }
+  }, [location.state]);
   const userId = user?._id;
 
   const handleSubmit = (event) => {
@@ -43,6 +49,19 @@ const CreateProject = () => {
       .then((response) => {
         console.log("Project created!", response.data.createProject);
         setSuccess("Your project has been created successfully!");
+
+        // Add to authored projects array
+        const updatedAuthoredProjects = [
+          ...user.authoredProjects,
+          response.data.createProject._id,
+        ];
+        const updatedUser = {
+          ...user,
+          authoredProjects: updatedAuthoredProjects,
+        };
+        setUser(updatedUser);
+        console.log(updatedUser);
+        console.log(user);
 
         // Reset the form
         setName("");

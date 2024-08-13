@@ -1,26 +1,27 @@
 /* PROJECTS */
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Projects = ({ user, projects }) => {
-  const initialCheckedItems = projects ? new Array(projects.length).fill(false) : [];
+  const initialCheckedItems = projects
+    ? new Array(projects.length).fill(false)
+    : [];
   const [checkedItems, setCheckedItems] = useState(initialCheckedItems);
   const [savedProjects, setSavedProjects] = useState(user?.savedProjects || []);
 
-  
   // Update savedProjects when checkedItems change
   useEffect(() => {
     const checkedProjectIds = projects
       .filter((_, idx) => checkedItems[idx])
-      .map(project => project.id);
+      .map((project) => project.id);
 
-    setSavedProjects(prevSavedProjects => {
+    setSavedProjects((prevSavedProjects) => {
       const updatedSavedProjects = new Set(prevSavedProjects);
 
       // Add new checked projects
-      checkedProjectIds.forEach(id => updatedSavedProjects.add(id));
+      checkedProjectIds.forEach((id) => updatedSavedProjects.add(id));
 
       // Remove unchecked projects
-      prevSavedProjects.forEach(id => {
+      prevSavedProjects.forEach((id) => {
         if (!checkedProjectIds.includes(id)) {
           updatedSavedProjects.delete(id);
         }
@@ -40,7 +41,8 @@ const Projects = ({ user, projects }) => {
     const projectId = projects[index]._id;
 
     // Update local storage with the clicked project ID
-    const storedProjectIds = JSON.parse(localStorage.getItem('checkedProjectIds')) || [];
+    const storedProjectIds =
+      JSON.parse(localStorage.getItem("checkedProjectIds")) || [];
 
     if (newCheckedItems[index]) {
       // Add the project ID if it's checked
@@ -56,12 +58,12 @@ const Projects = ({ user, projects }) => {
     }
 
     // Save updated project IDs to local storage
-    localStorage.setItem('checkedProjectIds', JSON.stringify(storedProjectIds));
+    localStorage.setItem("checkedProjectIds", JSON.stringify(storedProjectIds));
   };
 
   // Update local storage when checkedItems change
   useEffect(() => {
-    localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
+    localStorage.setItem("checkedItems", JSON.stringify(checkedItems));
   }, [checkedItems]); // This effect only runs when checkedItems changes
 
   return (

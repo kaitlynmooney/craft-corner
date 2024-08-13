@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
-import { getSavedProjects } from '../utils/savedProjects';
+import { getSavedProjects } from "../utils/savedProjects";
 import SavedProjects from "../components/SavedProjects";
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
@@ -15,7 +15,6 @@ import {
   getProjectsPrice,
 } from "../utils/recommendedProjects";
 import InProgressProjects from '../components/InProgressProjects';
-
 
 /* DASHBOARD */
 const Dashboard = () => {
@@ -82,10 +81,12 @@ const Dashboard = () => {
   const uniqueRecommendedProjects = Array.from(new Set(recommendedProjects));
 
   const handleNewProject = () => {
+    console.log(user);
     navigate("/new-project", { state: { user } });
   };
 
   const handleMyProjects = () => {
+    console.log(user);
     navigate("/my-projects", { state: { user } });
   };
 
