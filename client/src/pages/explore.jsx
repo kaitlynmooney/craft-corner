@@ -50,7 +50,7 @@ const Explore = () => {
       ) : (
         <div className="container">
           <div className="column" id="popular">
-            <p>Popular Crafts</p>
+            <p>Popular</p>
             <a
               className="borders text-decoration-none pottery-btn"
               href="#"
@@ -73,7 +73,7 @@ const Explore = () => {
             </a>
           </div>
           <div className="column" id="new">
-            <p>New Crafts</p>
+            <p>New</p>
             <a
               className="borders text-decoration-none glass-btn"
               href="#"
@@ -96,7 +96,7 @@ const Explore = () => {
             </a>
           </div>
           <div className="column" id="affordable">
-            <p>Affordable Crafts</p>
+            <p>Trending</p>
             <a
               className="borders text-decoration-none knitting-btn"
               href="#"
