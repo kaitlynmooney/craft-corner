@@ -147,9 +147,6 @@ const Dashboard = () => {
       }
       return updatedProjects;
     });
-
-    console.log('Project dropped into In-Progress:', project);
-    console.log('Current In-Progress Projects:', inProgressProjects);
   };
 
   return (

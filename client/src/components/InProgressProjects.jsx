@@ -1,6 +1,5 @@
 import { useDrop } from 'react-dnd';
 import { ItemTypes } from '../utils/itemTypes';
-import { useState, useEffect } from 'react';
 
 const InProgressProjects = ({ projects, handleDropProject, inProgressProjects, setInProgressProjects }) => {
     const [{ isOver }, drop] = useDrop({
@@ -14,7 +13,7 @@ const InProgressProjects = ({ projects, handleDropProject, inProgressProjects, s
 
     //remove in-progress projects when the X is clicked 
   const handleRemoveProject = (projectId) => {
-    // Remove the project ID from saved projects state
+    // Remove the project ID from inProgress state
     const updatedProjects = inProgressProjects.filter((_id) => _id !== projectId);
     setInProgressProjects(updatedProjects);
 
@@ -27,7 +26,6 @@ const InProgressProjects = ({ projects, handleDropProject, inProgressProjects, s
     }
 };
 
-
     return (
         <div
             ref={drop}
@@ -39,7 +37,7 @@ const InProgressProjects = ({ projects, handleDropProject, inProgressProjects, s
         >
             Drop in-progress projects here!
             <div id="project-container">
-                {projects.map((project, index) => (
+                {projects.map((project) => (
                     <button key={project._id} className='button-options'>
                         <button
                             type="button"

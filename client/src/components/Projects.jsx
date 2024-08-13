@@ -38,7 +38,6 @@ const Projects = ({ user, projects }) => {
 
     // Get project ID for the changed checkbox
     const projectId = projects[index]._id;
-    console.log(projectId)
 
     // Update local storage with the clicked project ID
     const storedProjectIds = JSON.parse(localStorage.getItem('checkedProjectIds')) || [];
