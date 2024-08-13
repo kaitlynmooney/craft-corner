@@ -130,16 +130,21 @@ const resolvers = {
         craft: craftType._id,
         author: authorId,
       });
+      await newProject.save();
 
       // Add project to the author's list of authored projects
-      author.authoredProjects.push(newProject._id);
-      await author.save();
+      await User.findByIdAndUpdate(
+        authorId,
+        { $push: { authoredProjects: newProject._id } },
+        { new: true, useFindAndModify: false }
+      );
 
       // Add project to the craft's list of projects
-      craftType.projects.push(newProject._id);
-      await craftType.save();
-
-      await newProject.populate("author");
+      await Craft.findByIdAndUpdate(
+        craftType._id,
+        { $push: { projects: newProject._id } },
+        { new: true, useFindAndModify: false }
+      );
 
       return newProject;
     },

@@ -586,9 +586,10 @@ p {
 #search-button {
   color: var(--background-color);
   background-color: var(--text-color);
-  padding: 4px 15px 4px 15px;
+  padding: 12px 24px;
   margin-top: 20px;
   text-decoration: none;
+  font-size: 18px;
 }
 
 #search-form {
@@ -817,6 +818,8 @@ p {
   }
 }
 
+/* EXPLORE PAGE */
+
 .column {
   flex: 1; /* Each column takes equal space */
   margin: 0 10px; /* Space between columns */
@@ -846,10 +849,13 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
+
+
 }
 
 .pottery-btn:hover {
-  opacity: 0.8; /* Slightly fade the button on hover */
+  opacity: 0.7; /* Slightly fade the button on hover */
 }
 
 .crochet-btn {
@@ -866,10 +872,12 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+
+
 }
 
 .crochet-btn:hover {
-  opacity: 0.8; /* Slightly fade the button on hover */
+  opacity: 0.7; /* Slightly fade the button on hover */
 }
 
 .glass-btn {
@@ -886,10 +894,11 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 20px;
 }
 
 .glass-btn:hover {
-  opacity: 0.8; /* Slightly fade the button on hover */
+  opacity: 0.7; /* Slightly fade the button on hover */
 }
 
 .jewelry-btn {
@@ -906,10 +915,11 @@ p {
   align-items: center;
   display: flex;
   justify-content: center;
+
 }
 
 .jewelry-btn:hover {
-  opacity: 0.8; /* Slightly fade the button on hover */
+  opacity: 0.7; /* Slightly fade the button on hover */
 }
 
 .knitting-btn {
@@ -926,10 +936,11 @@ p {
   align-items: center;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .knitting-btn:hover {
-  opacity: 0.8; /* Slightly fade the button on hover */
+  opacity: 0.7; /* Slightly fade the button on hover */
 }
 
 .clay-btn {
@@ -949,11 +960,11 @@ p {
 }
 
 .clay-btn:hover {
-  opacity: 0.8; /* Slightly fade the button on hover */
+  opacity: 0.7; /* Slightly fade the button on hover */
 }
 
 .dropdown {
-  border-bottom: 2px solid var(--text-color);
+  /* border-bottom: 2px solid var(--text-color); */
   padding-bottom: 20px;
 }
 
@@ -988,6 +999,14 @@ p {
   color: var(--text-color);
   text-align: center;
   z-index: 1; /* Ensures text is above the image */
+}
+
+#column-title {
+  font-weight: bold;
+}
+
+#column-title:hover {
+  border-bottom: 2px solid var(--text-color);
 }
 
 /* SingleProject  */
