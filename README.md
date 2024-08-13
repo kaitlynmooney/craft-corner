@@ -36,6 +36,9 @@ Violet Stanziani <br>
 Gabrielle Belanger <br>
 [Github](https://github.com/gcbel)
 
+Megan McNeill <br>
+[Github](https://github.com/bluethreadmade)
+
 ## License
 
 [MIT License](https://opensource.org/license/mit)
