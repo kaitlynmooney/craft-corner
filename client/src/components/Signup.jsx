@@ -2,17 +2,23 @@
 import { useState } from "react";
 import { useMutation } from "@apollo/client";
 import { ADD_USER } from "../utils/mutations";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+import { useNavigate } from "react-router-dom";
 
 import Auth from "../utils/auth";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
   const [formState, setFormState] = useState({
     signup_username: "",
     signup_email: "",
     signup_password: "",
   });
-  const [addUser, { error, data }] = useMutation(ADD_USER);
+  // const [addUser, { error, data }] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
+
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -33,6 +39,8 @@ const Signup = () => {
       });
 
       Auth.login(data.addUser.token);
+      navigate("/survey");
+
     } catch (e) {
       console.error(e);
     }
@@ -40,9 +48,9 @@ const Signup = () => {
   return (
     <div className="inter" id="signup-section">
       <div id="signup-section-div">
-        {data ? (
-          <Link to="/"></Link>
-        ) : (
+        {/* {data ? (
+          <Link to="/survey"></Link>
+        ) : ( */}
           <form onSubmit={handleFormSubmit}>
             <div className="borders" id="signup-div">
               <p>Username:</p>
@@ -83,7 +91,7 @@ const Signup = () => {
               )}
             </div>
           </form>
-        )}
+        {/* )} */}
       </div>
     </div>
   );
