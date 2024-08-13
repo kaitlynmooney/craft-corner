@@ -48,7 +48,7 @@ export const ADD_SURVEYPRICEPOINT = gql`
     addSurveyPricePoint(username: $username, surveyPricePoint: $surveyPricePoint) {
       _id
       username
-      surveyPricePoint
+      surveyPricePoint`
 
 export const CREATE_PROJECT = gql`
   mutation createProject(
