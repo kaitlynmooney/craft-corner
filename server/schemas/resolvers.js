@@ -12,23 +12,22 @@ const resolvers = {
       return User.findOne({ username });
     },
     me: async (parent, args, context) => {
-
-      console.log("hello in me query");
-      console.log(`me query context user`, context.user);
+      // console.log("hello in me query");
+      // console.log(`me query context user`, context.user);
       if (context.user) {
-        try{
-        const user = await User.findOne({ _id: context.user._id })
-          .populate("savedCrafts")
-          .populate("authoredProjects")
-          .populate("completedProjects")
-          .populate("ongoingProjects");
-          console.log(user);
+        try {
+          const user = await User.findOne({ _id: context.user._id })
+            .populate("savedCrafts")
+            .populate("authoredProjects")
+            .populate("completedProjects")
+            .populate("ongoingProjects");
+          // console.log(user);
 
-        return user;
-      } catch (error){
-        console.error("Error fetching user data:", error);
-        throw new Error("Error fetching user data");
-      }
+          return user;
+        } catch (error) {
+          console.error("Error fetching user data:", error);
+          throw new Error("Error fetching user data");
+        }
       }
       throw new AuthenticationError("You need to be logged in!");
     },
@@ -45,7 +44,7 @@ const resolvers = {
       const project = await Project.findOne({ _id: projectId }).populate(
         "craft"
       );
-      console.log(project);
+      // console.log(project);
       return project;
     },
   },
@@ -88,13 +87,16 @@ const resolvers = {
 
     addSurveyPricePoint: async (parent, { username, surveyPricePoint }) => {
       try {
+        console.log("User (before):", username);
         const user = await User.findOne({ username });
         if (!user) {
           throw new Error("User not found");
         }
 
+        console.log("Survey Price Point:", surveyPricePoint);
         user.surveyPricePoint = surveyPricePoint;
         await user.save();
+        console.log("User (after):", user);
         return user;
       } catch (error) {
         console.error(error);
@@ -106,21 +108,18 @@ const resolvers = {
       parent,
       { name, materials, instructions, pricePoint, difficulty, craft, authorId }
     ) => {
-      console.log("In create project");
       // Find craft by name
       const craftType = await Craft.findOne({ name: craft });
       if (!craftType) {
         throw new Error("Craft not found");
       }
 
-      console.log("Craft type", craftType);
       // Find author by ID
       const author = await User.findById(authorId);
       if (!author) {
         throw new Error("Author not found");
       }
 
-      console.log("Author", author);
       // Create new project
       const newProject = await Project({
         name,
@@ -131,17 +130,14 @@ const resolvers = {
         craft: craftType._id,
         author: authorId,
       });
-      console.log(newProject);
 
       // Add project to the author's list of authored projects
       author.authoredProjects.push(newProject._id);
       await author.save();
-      console.log(author);
 
       // Add project to the craft's list of projects
       craftType.projects.push(newProject._id);
       await craftType.save();
-      console.log(craftType);
 
       await newProject.populate("author");
 
@@ -149,10 +145,9 @@ const resolvers = {
     },
     deleteProject: async (parent, { id }) => {
       return await Project.findByIdAndDelete(id);
-
     },
   },
-}
+};
 
 /* EXPORTS */
 module.exports = resolvers;
