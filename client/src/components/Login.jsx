@@ -53,11 +53,11 @@ const Login = () => {
   return (
     <div className="inter" id="login-section">
       <div id="login-section-div">
-        {data ? (
+        {/* {data ? (
           <p>
             Success! You may now head <Link to="/">back to the homepage.</Link>
           </p>
-        ) : (
+        ) : ( */}
           <form onSubmit={handleFormSubmit}>
             <div className="borders" id="login-div">
               <p>Email:</p>
@@ -89,7 +89,7 @@ const Login = () => {
               </button>
             </div>
           </form>
-        )}
+        {/* )} */}
       </div>
     </div>
   );
