@@ -28,8 +28,6 @@ const Projects = ({ user, projects }) => {
 
       return Array.from(updatedSavedProjects);
     });
-
-    console.log('Checked Project IDs:', checkedProjectIds);
   }, [checkedItems, projects]); // Run this effect when checkedItems or projects change
 
   // Handle checkbox change for a specific index
@@ -70,7 +68,7 @@ const Projects = ({ user, projects }) => {
   return (
     <div id="project-container">
       {projects && projects.map((project, index) => (
-        <div key={project.id}>
+        <div key={project._id}>
           <a href={`/project/${project._id}`}>
           <button className='button-options'>
             <div className="form-check heart-checkbox">
