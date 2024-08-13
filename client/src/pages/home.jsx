@@ -34,7 +34,7 @@ const Home = () => {
         )}
       </div>
       <div id="homepage-content">
-        <button className="borders hover-borders" id="start-crafting">
+        <button className="borders" id="start-crafting">
           Take survey
         </button>
       </div>

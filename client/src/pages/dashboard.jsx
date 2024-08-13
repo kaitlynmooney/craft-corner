@@ -1,25 +1,36 @@
 /* DEPENDENCIES */
 // import { useState } from 'react';
 import { useQuery } from "@apollo/client";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import { QUERY_ME, QUERY_ALL_PROJECTS } from "../utils/queries";
 import Profile from "../components/Profile";
 import Projects from "../components/Projects";
 import SavedProjects from "../components/savedProjects";
-import { getProjectsDifficulty, getProjectsPrice } from "../utils/recommendedProjects";
+import {
+  getProjectsDifficulty,
+  getProjectsPrice,
+} from "../utils/recommendedProjects";
 
 /* DASHBOARD */
 const Dashboard = () => {
   const location = useLocation();
   const selectedDifficulty = location.state?.difficulty;
 
-  const { loading: userLoading, error: userError, data: userData } = useQuery(QUERY_ME);
-  const { loading: projectsLoading, error: projectsError, data: projectsData } = useQuery(QUERY_ALL_PROJECTS);
+  const {
+    loading: userLoading,
+    error: userError,
+    data: userData,
+  } = useQuery(QUERY_ME);
+  const {
+    loading: projectsLoading,
+    error: projectsError,
+    data: projectsData,
+  } = useQuery(QUERY_ALL_PROJECTS);
 
   if (userLoading || projectsLoading) {
-    return <p>Loading...</p>;
+    return <div className="loading-spinner"></div>;
   }
-  
+
   if (userError || projectsError) {
     throw new Error("Error fetching data");
   }
@@ -27,11 +38,16 @@ const Dashboard = () => {
   const user = userData?.me;
   const projects = projectsData?.allProjects;
 
-  const recommendedProjectsDifficulty = getProjectsDifficulty(selectedDifficulty, projects);
+  const recommendedProjectsDifficulty = getProjectsDifficulty(
+    selectedDifficulty,
+    projects
+  );
   const recommendedProjectsPrice = getProjectsPrice(user?.pricePoint, projects);
-  const recommendedProjects = [...recommendedProjectsDifficulty, ...recommendedProjectsPrice];
+  const recommendedProjects = [
+    ...recommendedProjectsDifficulty,
+    ...recommendedProjectsPrice,
+  ];
   const uniqueRecommendedProjects = Array.from(new Set(recommendedProjects));
-
 
   // Return dashboard, calls Profile and Projects components
   return (
@@ -52,8 +68,8 @@ const Dashboard = () => {
           </div>
           <div>
             <h2>Recommended Projects:</h2>
-            <Projects user={user} projects={uniqueRecommendedProjects}/>
-        </div>
+            <Projects user={user} projects={uniqueRecommendedProjects} />
+          </div>
         </div>
       </div>
     </div>
