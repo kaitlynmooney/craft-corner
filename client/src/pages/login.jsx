@@ -1,6 +1,6 @@
 /* DEPENDENCIES */
 import { useState } from "react";
-import Login from "../components/login";
+import Login from "../components/Login";
 import Signup from "../components/Signup";
 import GoogleOAuth from "../components/GoogleOAuth";
 
