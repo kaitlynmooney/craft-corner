@@ -584,6 +584,8 @@ header {
 #featured-craft {
   font-weight: bold;
   font-size: 70px;
+  text-decoration: none;
+  color: var(--text-color);
 }
 
 #featured-craft:hover {
