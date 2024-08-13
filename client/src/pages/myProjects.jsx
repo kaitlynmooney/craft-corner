@@ -1,19 +1,43 @@
-/* PROJECTS */
+/* DEPENDENCIES */
+import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Projects from "../components/Projects";
 
-const Projects = ({ user, projects }) => {
+/* MY PROJECTS */
+const MyProjects = () => {
+  const location = useLocation();
+  const { user } = location.state || {};
+
+  const projects = user.authoredProjects;
+
   const initialCheckedItems = projects
     ? new Array(projects.length).fill(false)
     : [];
   const [checkedItems, setCheckedItems] = useState(initialCheckedItems);
   const [savedProjects, setSavedProjects] = useState(user?.savedProjects || []);
 
+  // Load checkbox state from local storage on component mount
+  useEffect(() => {
+    try {
+      const storedCheckedItems = JSON.parse(
+        localStorage.getItem("checkedItems")
+      );
+      if (Array.isArray(storedCheckedItems)) {
+        setCheckedItems(storedCheckedItems);
+      }
+    } catch (error) {
+      console.error("Failed to load checked items from local storage:", error);
+    }
+  }, []); // This effect only runs once on mount
+
   // Update savedProjects when checkedItems change
   useEffect(() => {
+    // Gather checked project IDs
     const checkedProjectIds = projects
       .filter((_, idx) => checkedItems[idx])
       .map((project) => project.id);
 
+    // Update savedProjects to include checked projects
     setSavedProjects((prevSavedProjects) => {
       const updatedSavedProjects = new Set(prevSavedProjects);
 
@@ -29,8 +53,6 @@ const Projects = ({ user, projects }) => {
 
       return Array.from(updatedSavedProjects);
     });
-
-    console.log("Checked Project IDs:", checkedProjectIds);
   }, [checkedItems, projects]); // Run this effect when checkedItems or projects change
 
   // Handle checkbox change for a specific index
@@ -38,30 +60,6 @@ const Projects = ({ user, projects }) => {
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = !newCheckedItems[index];
     setCheckedItems(newCheckedItems);
-
-    // Get project ID for the changed checkbox
-    const projectId = projects[index]._id;
-    console.log(projectId);
-
-    // Update local storage with the clicked project ID
-    const storedProjectIds =
-      JSON.parse(localStorage.getItem("checkedProjectIds")) || [];
-
-    if (newCheckedItems[index]) {
-      // Add the project ID if it's checked
-      if (!storedProjectIds.includes(projectId)) {
-        storedProjectIds.push(projectId);
-      }
-    } else {
-      // Remove the project ID if it's unchecked
-      const indexToRemove = storedProjectIds.indexOf(projectId);
-      if (indexToRemove !== -1) {
-        storedProjectIds.splice(indexToRemove, 1);
-      }
-    }
-
-    // Save updated project IDs to local storage
-    localStorage.setItem("checkedProjectIds", JSON.stringify(storedProjectIds));
   };
 
   // Update local storage when checkedItems change
@@ -69,32 +67,47 @@ const Projects = ({ user, projects }) => {
     localStorage.setItem("checkedItems", JSON.stringify(checkedItems));
   }, [checkedItems]); // This effect only runs when checkedItems changes
 
+  // Ensure user navigated to page from dashboard
+  if (!user || !user._id) {
+    return (
+      <div className="title">
+        Error! Please sign in and view your projects from your dashboard.
+      </div>
+    );
+  }
+
+  console.log(projects);
+
   return (
-    <div id="project-container">
-      {projects &&
-        projects.map((project, index) => (
-          <div key={project._id}>
-            <a href={`/project/${project._id}`}>
-              <button className="button-options">
+    <div id="my-projs-page">
+      <h2 className="title" id="my-projects-title">
+        Projects you've created
+      </h2>
+      <div id="my-projects">
+        {projects &&
+          user.authoredProjects.map((project, index) => (
+            <div key={project._id}>
+              <button className="my-project-single">
                 <div className="form-check heart-checkbox">
+                  <i className="fa-solid fa-trash" id="delete-my-project"></i>
                   <input
                     className="form-check-input"
                     type="checkbox"
                     value=""
-                    id={`flexCheckDefault_heart_${project._id}`} // Use project.id for unique ID
-                    checked={checkedItems[index]}
+                    id={`flexCheckDefault_heart_${index}`}
+                    checked={!!checkedItems[index]}
                     onChange={() => handleCheckboxChange(index)}
                   />
-                  <label htmlFor={`flexCheckDefault_heart_${project._id}`}>
-                    {project.name}
-                  </label>
+                  <label htmlFor={`flexCheckDefault_heart_${index}`}></label>
+                  {project.name}
                 </div>
               </button>
-            </a>
-          </div>
-        ))}
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
 
-export default Projects;
+/* EXPORT */
+export default MyProjects;

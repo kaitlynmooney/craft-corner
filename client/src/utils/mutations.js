@@ -41,6 +41,7 @@ export const CHANGE_AVATAR = gql`
     }
   }
 `;
+
 export const ADD_PROJECT = gql`
   mutation Mutation($projectId: ID!, $userId: ID!) {
     addProject(projectId: $projectId, userId: $userId) {
@@ -48,6 +49,40 @@ export const ADD_PROJECT = gql`
         _id
         name
       }
+
+
+export const ADD_SURVEYPRICEPOINT = gql`
+  mutation addSurveyPricePoint($username: String!, $surveyPricePoint: Int!) {
+    addSurveyPricePoint(username: $username, surveyPricePoint: $surveyPricePoint) {
+      _id
+      username
+      surveyPricePoint
+    }
+  }
+ `; 
+
+export const CREATE_PROJECT = gql`
+  mutation createProject(
+    $name: String!
+    $materials: [String]!
+    $instructions: [String]!
+    $pricePoint: String!
+    $difficulty: String!
+    $craft: String!
+    $authorId: ID!
+  ) {
+    createProject(
+      name: $name
+      materials: $materials
+      instructions: $instructions
+      pricePoint: $pricePoint
+      difficulty: $difficulty
+      craft: $craft
+      authorId: $authorId
+    ) {
+      _id
+      name
+
     }
   }
 `;

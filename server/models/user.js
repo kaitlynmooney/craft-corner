@@ -30,6 +30,13 @@ const userSchema = new Schema({
       default: [],
     },
   ],
+  authoredProjects: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Project",
+      default: [],
+    },
+  ],
   completedProjects: [
     {
       type: Schema.Types.ObjectId,
@@ -44,6 +51,11 @@ const userSchema = new Schema({
       default: [],
     },
   ],
+  surveyPricePoint: 
+    {
+      type: Number,
+      default: 0,
+    },
 });
 
 userSchema.pre("save", async function (next) {

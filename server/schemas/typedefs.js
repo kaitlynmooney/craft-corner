@@ -1,5 +1,4 @@
-// /* TYPEDEFS */
-// /* fix later on */
+/* TYPEDEFS */
 const typeDefs = `
 type User {
   _id: ID
@@ -8,20 +7,22 @@ type User {
   password: String
   avatar: String
   savedCrafts: [Craft]
+  authoredProjects: [Project]
   completedProjects: [Project]
   ongoingProjects: [Project]
+  surveyPricePoint: Int
 }
 
 type Project {
   _id: ID
-  name:String
+  name: String
   materials: [String]
   instructions: [String]
   image: String
   pricePoint: String
   difficulty: String
   craft: Craft
-
+  author: User
 }
 
 type Craft {
@@ -49,7 +50,24 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
   changeAvatar(username: String!, avatar: String!): User
+
   addProject(projectId: ID!, userId: ID!): User
+
+
+  addSurveyPricePoint(username: String!, surveyPricePoint: Int): User
+
+  createProject(
+    name: String!,
+    materials: [String]!,
+    instructions: [String]!,
+    pricePoint: String!,
+    difficulty: String!,
+    craft: String!
+    authorId: ID!
+  ): Project
+  deleteProject(id: ID!): Project
+
+
 }
 `;
 

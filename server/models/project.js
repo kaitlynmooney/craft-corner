@@ -16,6 +16,7 @@ const projectSchema = new Schema({
   },
   image: {
     type: String,
+    default: "blank_canvas.jpg",
   },
   pricePoint: {
     type: String,
@@ -29,6 +30,10 @@ const projectSchema = new Schema({
     type: Schema.Types.ObjectId,
     ref: "Craft",
     required: true,
+  },
+  author: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
   },
 });
 

@@ -3,6 +3,7 @@
   --background-color: #f2f1ee;
   --dark-background-color: #002350;
   --text-color: #023e8d;
+  --text-color-clear: #023e8d83;
   --clear: #ffffff00;
 }
 
@@ -126,17 +127,16 @@ header {
 }
 
 #start-crafting {
-  color: var(--text-color);
-  padding: 5px 25px 5px 25px;
-  font-size: calc(24px);
-  background: var(--background-color);
+  color: var(--background-color);
+  background-color: var(--text-color);
   margin: 30px 0px 40px 0px;
   border-radius: 30px;
+  padding: 4px 15px 4px 15px;
 }
 
 #start-crafting:hover {
-  color: var(--background-color);
-  background-color: var(--text-color);
+  color: var(--text-color);
+  background: var(--background-color);
 }
 
 .loading-spinner {
@@ -149,6 +149,12 @@ header {
   animation: spin 1.3s linear infinite;
   top: 40%;
   left: calc(50% - 40px);
+}
+
+.bg-image {
+  background-image: url(client/public/images/ThreadPattern.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 @keyframes spin {
@@ -216,14 +222,6 @@ header {
 
 #homepage-content {
   margin-top: 20px;
-}
-
-#start-crafting {
-  color: var(--text-color);
-  padding: 4px 15px 4px 15px;
-  font-size: calc(16px + 1vw);
-  background: var(--background-color);
-  margin: 30px 0px 40px 0px;
 }
 
 .loading-spinner {
@@ -413,6 +411,47 @@ header {
   margin: 6px;
 }
 
+/* MY PROJECTS PAGE */
+#my-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.my-project-single {
+  text-align: center;
+  border: 0.8px solid var(--text-color);
+  height: 150px;
+  min-width: 300px;
+  width: 90vw;
+  border-radius: 15px;
+  margin: 10px 0px 10px 0px;
+  position: relative;
+}
+
+.my-project-single:hover {
+  background-color: var(--text-color-clear);
+  color: var(--background-color);
+}
+
+#delete-my-project {
+  position: absolute;
+  right: 11px;
+  top: 40px;
+  color: var(--text-color);
+}
+
+#delete-my-project:hover {
+  color: var(--background-color);
+}
+
+@media (min-width: 446px) {
+  .my-project-single {
+    width: 60vw;
+  }
+}
+
 /* SURVEY PAGE */
 #survey-page {
   background-color: var(--background-color);
@@ -559,6 +598,94 @@ p {
   transition: background-color 0.3s; /* Add a smooth transition effect */
   background-color: var(--background-color); /* Initial background color */
   color: var(--text-color); /* Initial text color */
+}
+
+/* NEW PROJECT PAGE */
+.dashboard-proj-button {
+  width: 280px;
+  padding: 6px 15px 6px 15px;
+  margin: 15px auto 15px auto;
+  font-size: 18px;
+}
+
+.dashboard-proj-button:hover {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+#new-proj {
+  margin: 0px 10vw 40px 10vw;
+}
+
+#new-project-form {
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  width: 80vw;
+  min-width: 280px;
+  padding: 10px 20px 20px 20px;
+  margin-bottom: 40px;
+}
+
+#new-project-form p {
+  color: var(--text-color);
+  font-size: 20px;
+  font-weight: 350;
+  text-align: left;
+  margin: 0px;
+}
+
+.instruction {
+  margin: 12px 0px 2px 0px !important;
+}
+
+.sub-instruction {
+  font-size: 14px !important;
+}
+
+#new-project-form input {
+  width: 100%;
+  border-radius: 15px;
+  border: 0.8px solid var(--text-color);
+  padding: 4px 10px 4px 10px;
+  background-color: var(--clear);
+  color: var(--text-color);
+}
+
+#create-project {
+  font-size: 20px;
+  margin: 10px 0px 0px 0px;
+  padding: 4px 20px 4px 20px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+#price-point,
+#difficulty,
+#craft-type {
+  color: var(--text-color);
+  background-color: var(--clear);
+  text-align: left;
+}
+
+@media (max-width: 340px) {
+  #new-proj {
+    margin: 0 auto;
+  }
+
+  #new-project-form {
+    width: 280px;
+  }
+}
+
+@media (min-width: 600px) {
+  #new-proj {
+    margin: 0px 20vw 40px 20vw;
+  }
+
+  #new-project-form {
+    width: 60vw;
+  }
 }
 
 /* EFFECTS */

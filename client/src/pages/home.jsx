@@ -1,5 +1,6 @@
 /* DEPENDENCIES */
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from 'react-router-dom';
 
 /* HOMEPAGE */
 const Home = () => {
@@ -18,9 +19,15 @@ const Home = () => {
     setLoading(false);
   };
 
+  const navigate = useNavigate();
+
+  const handleStartSurvey = () => {
+    navigate('/survey');
+  };
+
   // If videos are loaded, show videos
   return (
-    <div id="homepage">
+    <div id="homepage" className='bg-image'>
       <div id="homepage-video">
         {!loading ? (
           <iframe
@@ -34,8 +41,8 @@ const Home = () => {
         )}
       </div>
       <div id="homepage-content">
-        <button className="borders" id="start-crafting">
-          Take survey
+        <button className="borders" id="start-crafting" type="submit" onClick={handleStartSurvey}>
+          Start Crafting! &#8594;
         </button>
       </div>
     </div>
