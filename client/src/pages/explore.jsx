@@ -37,7 +37,6 @@ const Explore = () => {
   if (projectsError) throw Error;
 
   return (
-    <>
       <div id="explore">
         <Hero />
         <Dropdown
