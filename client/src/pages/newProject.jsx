@@ -89,6 +89,7 @@ const CreateProject = () => {
       <h2 className="title" id="new-project-title">
         Create a new project
       </h2>
+      {success && <p className="success">{success}</p>}
       <form
         className="borders inter"
         id="new-project-form"
@@ -166,11 +167,12 @@ const CreateProject = () => {
           <option value="Scrapbooking">Scrapbooking</option>
           <option value="Origami">Origami</option>
         </select>
-        <button className="dark-button" id="create-project" type="submit">
-          Create Project
-        </button>
+        <div>
+          <button className="dark-button" id="create-project" type="submit">
+            Create Project
+          </button>
+        </div>
       </form>
-      {success && <p className="success">{success}</p>}
     </div>
   );
 };

@@ -446,6 +446,13 @@ header {
   color: var(--background-color);
 }
 
+.success {
+  font-size: 20px;
+  color: var(--text-color);
+  font-weight: 300;
+  text-align: center;
+}
+
 @media (min-width: 446px) {
   .my-project-single {
     width: 60vw;
@@ -550,7 +557,6 @@ header {
 .form-check {
   padding: 0 !important;
 }
-
 
 .btn-close {
   position: absolute;

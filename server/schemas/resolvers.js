@@ -35,7 +35,6 @@ const resolvers = {
       const project = await Project.findOne({ _id: projectId }).populate(
         "craft"
       );
-      console.log(project);
       return project;
     },
   },
@@ -79,7 +78,6 @@ const resolvers = {
       parent,
       { name, materials, instructions, pricePoint, difficulty, craft, authorId }
     ) => {
-      console.log("In create project");
       // Find craft by name
       const craftType = await Craft.findOne({ name: craft });
       if (!craftType) {
@@ -102,7 +100,6 @@ const resolvers = {
         craft: craftType._id,
         author: authorId,
       });
-      console.log(newProject);
       await newProject.save();
 
       // Add project to the author's list of authored projects
@@ -111,7 +108,6 @@ const resolvers = {
         { $push: { authoredProjects: newProject._id } },
         { new: true, useFindAndModify: false }
       );
-      console.log(author);
 
       // Add project to the craft's list of projects
       await Craft.findByIdAndUpdate(
@@ -119,7 +115,6 @@ const resolvers = {
         { $push: { projects: newProject._id } },
         { new: true, useFindAndModify: false }
       );
-      console.log(craftType);
 
       return newProject;
     },
