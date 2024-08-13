@@ -19,7 +19,7 @@ const Survey = () => {
   } = useQuery(QUERY_ME);
 
   if (userLoading) {
-    return <p>Loading...</p>;
+    return <p className="loading-spinner"></p>;
   }
 
   if (userError) {
