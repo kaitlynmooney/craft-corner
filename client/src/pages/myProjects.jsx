@@ -7,7 +7,6 @@ import Projects from "../components/Projects";
 const MyProjects = () => {
   const location = useLocation();
   const { user } = location.state || {};
-
   const projects = user.authoredProjects;
 
   const initialCheckedItems = projects
@@ -17,18 +16,18 @@ const MyProjects = () => {
   const [savedProjects, setSavedProjects] = useState(user?.savedProjects || []);
 
   // Load checkbox state from local storage on component mount
-  useEffect(() => {
-    try {
-      const storedCheckedItems = JSON.parse(
-        localStorage.getItem("checkedItems")
-      );
-      if (Array.isArray(storedCheckedItems)) {
-        setCheckedItems(storedCheckedItems);
-      }
-    } catch (error) {
-      console.error("Failed to load checked items from local storage:", error);
-    }
-  }, []); // This effect only runs once on mount
+  // useEffect(() => {
+  //   try {
+  //     const storedCheckedItems = JSON.parse(
+  //       localStorage.getItem("checkedItems")
+  //     );
+  //     if (Array.isArray(storedCheckedItems)) {
+  //       setCheckedItems(storedCheckedItems);
+  //     }
+  //   } catch (error) {
+  //     console.error("Failed to load checked items from local storage:", error);
+  //   }
+  // }, []); // This effect only runs once on mount
 
   // Update savedProjects when checkedItems change
   useEffect(() => {
@@ -60,6 +59,30 @@ const MyProjects = () => {
     const newCheckedItems = [...checkedItems];
     newCheckedItems[index] = !newCheckedItems[index];
     setCheckedItems(newCheckedItems);
+
+    // Get project ID for the changed checkbox
+    const projectId = projects[index]._id;
+    console.log(projectId);
+
+    // Update local storage with the clicked project ID
+    const storedProjectIds =
+      JSON.parse(localStorage.getItem("checkedProjectIds")) || [];
+
+    if (newCheckedItems[index]) {
+      // Add the project ID if it's checked
+      if (!storedProjectIds.includes(projectId)) {
+        storedProjectIds.push(projectId);
+      }
+    } else {
+      // Remove the project ID if it's unchecked
+      const indexToRemove = storedProjectIds.indexOf(projectId);
+      if (indexToRemove !== -1) {
+        storedProjectIds.splice(indexToRemove, 1);
+      }
+    }
+
+    // Save updated project IDs to local storage
+    localStorage.setItem("checkedProjectIds", JSON.stringify(storedProjectIds));
   };
 
   // Update local storage when checkedItems change
@@ -75,8 +98,6 @@ const MyProjects = () => {
       </div>
     );
   }
-
-  console.log(projects);
 
   return (
     <div id="my-projs-page">

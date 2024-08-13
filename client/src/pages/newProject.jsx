@@ -47,7 +47,6 @@ const CreateProject = () => {
       },
     })
       .then((response) => {
-        console.log("Project created!", response.data.createProject);
         setSuccess("Your project has been created successfully!");
 
         // Add to authored projects array
@@ -60,8 +59,6 @@ const CreateProject = () => {
           authoredProjects: updatedAuthoredProjects,
         };
         setUser(updatedUser);
-        console.log(updatedUser);
-        console.log(user);
 
         // Reset the form
         setName("");
@@ -156,16 +153,17 @@ const CreateProject = () => {
           value={craft}
           onChange={(event) => setCraft(event.target.value)}
         >
-          <option value="Sewing">Sewing</option>
+          {/* <option value="Sewing">Sewing</option> */}
           <option value="Painting">Painting</option>
           <option value="Pottery">Pottery</option>
           <option value="Crochet">Crochet</option>
           <option value="Clay Modeling">Clay Modeling</option>
           <option value="Knitting">Knitting</option>
-          <option value="Woodworking">Woodworking</option>
+          <option value="Jewelry">Jewelry</option>
+          {/* <option value="Woodworking">Woodworking</option> */}
           <option value="Stained-Glass">Stained Glass</option>
-          <option value="Scrapbooking">Scrapbooking</option>
-          <option value="Origami">Origami</option>
+          {/* <option value="Scrapbooking">Scrapbooking</option> */}
+          {/* <option value="Origami">Origami</option> */}
         </select>
         <div>
           <button className="dark-button" id="create-project" type="submit">
