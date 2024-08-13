@@ -38,7 +38,7 @@ const SavedProjects = ({ savedProjects, allProjects, setSavedProjects, handleDro
         });
 
         const handleDrop = () => {
-            handleDropProject(project); // Call handleDropProject when a project is dropped
+            handleDropProject(); // Call handleDropProject when a project is dropped
         };
 
         return (

@@ -12,10 +12,30 @@ const InProgressProjects = ({ projects, handleDropProject }) => {
     });
 
     return (
-        <div ref={drop} style={{ backgroundColor: isOver ? 'lightblue' : 'transparent', minHeight: '100px' }}>
+        <div
+            ref={drop}
+            style={{
+                backgroundColor: isOver ? 'lightblue' : 'transparent',
+                minHeight: '100px'
+            }}
+        >
             Drop in-progress projects here!
+            <div id="project-container">
+                {projects.map(project => (
+                    <button key={project._id} className='button-options'>
+                        <button
+                            type="button"
+                            className="btn-close"
+                            aria-label="Close"
+                            // onClick={() => handleRemoveProject(project._id)}
+                        ></button>
+                        <label id='label'>{project.name}</label>
+                    </button>
+                ))}
+            </div>
         </div>
     );
+    
 };
 
 export default InProgressProjects; 

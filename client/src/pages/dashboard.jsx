@@ -73,9 +73,23 @@ const Dashboard = () => {
     navigate("/my-projects", { state: { user } });
   };
 
-  const handleDropProject = (project) => {
+  const handleDropProject = (projectInput) => {
+    // Find the project object from allProjects using the projectId
+    const project = projects.find((proj) => proj._id === projectInput._id);
+    console.log(projects);
+    console.log(project);
+
+    if (!project) {
+      console.error('Project not found:', project);
+      return;
+    }
+  
     // Update the inProgressProjects state
-    setInProgressProjects((prevProjects) => [...prevProjects, project]);
+    setInProgressProjects((prevProjects) => {
+      const updatedProjects = [...prevProjects, project];
+      console.log('Updated In-Progress Projects:', updatedProjects);
+      return updatedProjects;
+    });
 
     // Remove the project from savedProjects
     setSavedProjects((prevProjects) => {
@@ -132,7 +146,7 @@ const Dashboard = () => {
                 savedProjects={savedProjects} 
                 allProjects={projects} 
                 setSavedProjects={setSavedProjects}
-                handleDropProject={handleDropProject} // Pass down the handleDropProject function
+                handleDropProject={handleDropProject} 
               />
             </div>
             <div>
