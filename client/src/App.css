@@ -3,7 +3,6 @@
   --background-color: #fffcf3;
   --dark-background-color: #002350;
   --text-color: #023e8d;
-  --hover-color: #aa5124;
   --clear: #ffffff00;
 }
 
@@ -29,11 +28,6 @@ html {
 
 .hidden {
   display: none;
-}
-
-/* TEXT HOVER */
-#start-crafting:hover {
-  color: var(--hover-color);
 }
 
 /* FONTS */
