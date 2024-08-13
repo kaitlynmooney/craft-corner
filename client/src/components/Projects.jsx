@@ -1,26 +1,27 @@
 /* PROJECTS */
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const Projects = ({ user, projects }) => {
-  const initialCheckedItems = projects ? new Array(projects.length).fill(false) : [];
+  const initialCheckedItems = projects
+    ? new Array(projects.length).fill(false)
+    : [];
   const [checkedItems, setCheckedItems] = useState(initialCheckedItems);
   const [savedProjects, setSavedProjects] = useState(user?.savedProjects || []);
 
-  
   // Update savedProjects when checkedItems change
   useEffect(() => {
     const checkedProjectIds = projects
       .filter((_, idx) => checkedItems[idx])
-      .map(project => project.id);
+      .map((project) => project.id);
 
-    setSavedProjects(prevSavedProjects => {
+    setSavedProjects((prevSavedProjects) => {
       const updatedSavedProjects = new Set(prevSavedProjects);
 
       // Add new checked projects
-      checkedProjectIds.forEach(id => updatedSavedProjects.add(id));
+      checkedProjectIds.forEach((id) => updatedSavedProjects.add(id));
 
       // Remove unchecked projects
-      prevSavedProjects.forEach(id => {
+      prevSavedProjects.forEach((id) => {
         if (!checkedProjectIds.includes(id)) {
           updatedSavedProjects.delete(id);
         }
@@ -29,7 +30,7 @@ const Projects = ({ user, projects }) => {
       return Array.from(updatedSavedProjects);
     });
 
-    console.log('Checked Project IDs:', checkedProjectIds);
+    console.log("Checked Project IDs:", checkedProjectIds);
   }, [checkedItems, projects]); // Run this effect when checkedItems or projects change
 
   // Handle checkbox change for a specific index
@@ -40,10 +41,11 @@ const Projects = ({ user, projects }) => {
 
     // Get project ID for the changed checkbox
     const projectId = projects[index]._id;
-    console.log(projectId)
+    console.log(projectId);
 
     // Update local storage with the clicked project ID
-    const storedProjectIds = JSON.parse(localStorage.getItem('checkedProjectIds')) || [];
+    const storedProjectIds =
+      JSON.parse(localStorage.getItem("checkedProjectIds")) || [];
 
     if (newCheckedItems[index]) {
       // Add the project ID if it's checked
@@ -59,37 +61,38 @@ const Projects = ({ user, projects }) => {
     }
 
     // Save updated project IDs to local storage
-    localStorage.setItem('checkedProjectIds', JSON.stringify(storedProjectIds));
+    localStorage.setItem("checkedProjectIds", JSON.stringify(storedProjectIds));
   };
 
   // Update local storage when checkedItems change
   useEffect(() => {
-    localStorage.setItem('checkedItems', JSON.stringify(checkedItems));
+    localStorage.setItem("checkedItems", JSON.stringify(checkedItems));
   }, [checkedItems]); // This effect only runs when checkedItems changes
 
   return (
     <div id="project-container">
-      {projects && projects.map((project, index) => (
-        <div key={project.id}>
-          <a href={`/project/${project._id}`}>
-          <button className='button-options'>
-            <div className="form-check heart-checkbox">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                value=""
-                id={`flexCheckDefault_heart_${project._id}`} // Use project.id for unique ID
-                checked={checkedItems[index]}
-                onChange={() => handleCheckboxChange(index)}
-              />
-              <label htmlFor={`flexCheckDefault_heart_${project._id}`}>
-                {project.name}
-              </label>
-            </div>
-          </button>
-          </a>
-        </div>
-      ))}
+      {projects &&
+        projects.map((project, index) => (
+          <div key={project._id}>
+            <a href={`/project/${project._id}`}>
+              <button className="button-options">
+                <div className="form-check heart-checkbox">
+                  <input
+                    className="form-check-input"
+                    type="checkbox"
+                    value=""
+                    id={`flexCheckDefault_heart_${project._id}`} // Use project.id for unique ID
+                    checked={checkedItems[index]}
+                    onChange={() => handleCheckboxChange(index)}
+                  />
+                  <label htmlFor={`flexCheckDefault_heart_${project._id}`}>
+                    {project.name}
+                  </label>
+                </div>
+              </button>
+            </a>
+          </div>
+        ))}
     </div>
   );
 };
