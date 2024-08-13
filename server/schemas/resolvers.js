@@ -86,14 +86,12 @@ const resolvers = {
         throw new Error("Craft not found");
       }
 
-      console.log("Craft type", craftType);
       // Find author by ID
       const author = await User.findById(authorId);
       if (!author) {
         throw new Error("Author not found");
       }
 
-      console.log("Author", author);
       // Create new project
       const newProject = await Project({
         name,
@@ -105,18 +103,23 @@ const resolvers = {
         author: authorId,
       });
       console.log(newProject);
+      await newProject.save();
 
       // Add project to the author's list of authored projects
-      author.authoredProjects.push(newProject._id);
-      await author.save();
+      await User.findByIdAndUpdate(
+        authorId,
+        { $push: { authoredProjects: newProject._id } },
+        { new: true, useFindAndModify: false }
+      );
       console.log(author);
 
       // Add project to the craft's list of projects
-      craftType.projects.push(newProject._id);
-      await craftType.save();
+      await Craft.findByIdAndUpdate(
+        craftType._id,
+        { $push: { projects: newProject._id } },
+        { new: true, useFindAndModify: false }
+      );
       console.log(craftType);
-
-      await newProject.populate("author");
 
       return newProject;
     },
