@@ -96,7 +96,7 @@ const Survey = () => {
   const handleSaveSurveyPricePoint = async (response) => {
     try {
       const { data } = await saveSurveyPricePoint({
-        variables: { username: user.username, surveyPricePoint: response },
+        variables: { username: user.username, surveyPricePoint: response[0] },
       });
     } catch (error) {
       console.error("error saving price point", error);

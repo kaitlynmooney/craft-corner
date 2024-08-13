@@ -8,8 +8,9 @@ function HeaderContent({ user }) {
     event.preventDefault();
     Auth.logout();
   };
+
   // if logged in and completed survey show explore, dashboard and logout
-  if (user?.surveyPricePoint) {
+  if (user?.surveyPricePoint > 0) {
     return (
       <header>
         <div className="px-3 py-2 text-white">
