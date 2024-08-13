@@ -58,6 +58,11 @@ const Dashboard = () => {
     navigate("/new-project", { state: { user } });
   };
 
+  // Navigates to my projects page on click
+  const handleMyProjects = () => {
+    navigate("/my-projects", { state: { user } });
+  };
+
   // Return dashboard, calls Profile and Projects components
   return (
     <div className="inter" id="dashboard">
@@ -68,11 +73,18 @@ const Dashboard = () => {
             <Profile user={user} />
           </div>
           <div
-            className="borders"
+            className="borders dashboard-proj-button"
             id="create-new-proj-button"
             onClick={handleNewProject}
           >
             Create a new project <i className="fa-solid fa-plus"></i>
+          </div>
+          <div
+            className="borders dashboard-proj-button"
+            id="my-proj-button"
+            onClick={handleMyProjects}
+          >
+            Projects you've created
           </div>
         </div>
         <div id="projects">

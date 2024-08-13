@@ -57,14 +57,13 @@ const CreateProject = () => {
       });
   };
 
-  console.log("User", user);
-  //   if (!user || !user._id) {
-  //     return (
-  //       <div className="title">
-  //         Error! Please sign in and create a new project from your dashboard.
-  //       </div>
-  //     );
-  //   }
+  if (!user || !user._id) {
+    return (
+      <div className="title">
+        Error! Please sign in and create a new project from your dashboard.
+      </div>
+    );
+  }
 
   return (
     <div id="new-proj">

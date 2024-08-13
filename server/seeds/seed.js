@@ -49,8 +49,6 @@ db.once("open", async () => {
   ]);
   console.log("Crafts seeded");
 
-  console.log(crafts);
-
   const projects = await Project.insertMany([
     {
       name: "Simple Scarf",
@@ -393,6 +391,16 @@ db.once("open", async () => {
       password: "admin",
       savedCrafts: [crafts[6]._id, crafts[0]._id],
       completedProjects: [projects[0]._id, projects[3]._id],
+      authoredProjects: [
+        projects[0]._id,
+        projects[1]._id,
+        projects[2]._id,
+        projects[3]._id,
+        projects[4]._id,
+        projects[5]._id,
+        projects[6]._id,
+        projects[7]._id,
+      ],
     },
     {
       username: "Morticia Adams",

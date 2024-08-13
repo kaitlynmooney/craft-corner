@@ -3,6 +3,7 @@
   --background-color: #f2f1ee;
   --dark-background-color: #002350;
   --text-color: #023e8d;
+  --text-color-clear: #023e8d83;
   --clear: #ffffff00;
 }
 
@@ -413,6 +414,47 @@ header {
   margin: 6px;
 }
 
+/* MY PROJECTS PAGE */
+#my-projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.my-project-single {
+  text-align: center;
+  border: 0.8px solid var(--text-color);
+  height: 150px;
+  min-width: 300px;
+  width: 90vw;
+  border-radius: 15px;
+  margin: 10px 0px 10px 0px;
+  position: relative;
+}
+
+.my-project-single:hover {
+  background-color: var(--text-color-clear);
+  color: var(--background-color);
+}
+
+#delete-my-project {
+  position: absolute;
+  right: 11px;
+  top: 40px;
+  color: var(--text-color);
+}
+
+#delete-my-project:hover {
+  color: var(--background-color);
+}
+
+@media (min-width: 446px) {
+  .my-project-single {
+    width: 60vw;
+  }
+}
+
 /* SURVEY PAGE */
 #survey-page {
   background-color: var(--background-color);
@@ -550,14 +592,14 @@ p {
 }
 
 /* NEW PROJECT PAGE */
-#create-new-proj-button {
-  width: 230px;
+.dashboard-proj-button {
+  width: 280px;
   padding: 6px 15px 6px 15px;
   margin: 15px auto 15px auto;
   font-size: 18px;
 }
 
-#create-new-proj-button:hover {
+.dashboard-proj-button:hover {
   background-color: var(--text-color);
   color: var(--background-color);
 }

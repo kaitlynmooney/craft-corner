@@ -13,6 +13,7 @@ import SurveyPage from "./pages/SurveyPage.jsx";
 import Dashboard from "./pages/dashboard.jsx";
 import Explore from "./pages/explore.jsx";
 import NewProject from "./pages/newProject.jsx";
+import MyProjects from "./pages/myProjects.jsx";
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path: "/new-project",
         element: <NewProject />,
+      },
+      {
+        path: "/my-projects",
+        element: <MyProjects />,
       },
     ],
   },
