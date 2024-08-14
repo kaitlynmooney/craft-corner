@@ -45,6 +45,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+      <h2 className="category-title">{category}</h2>
       {category && <Projects projects={filteredArray} />}
     </>
   );
