@@ -1066,3 +1066,8 @@ p {
 .materials-list {
   list-style-type: none;
 }
+
+
+.category-title {
+  margin: 10px 10px;
+}
