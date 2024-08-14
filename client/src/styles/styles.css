@@ -594,6 +594,10 @@ header {
   font-size: 70px;
   text-decoration: none;
   color: var(--text-color);
+  background: none;
+  border-right: none;
+  border-left: none;
+  border-top: none;
 }
 
 #single-craft {
