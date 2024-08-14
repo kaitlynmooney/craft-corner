@@ -18,7 +18,7 @@ function HeaderContent({ user }) {
             <div className="my-5 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
               <div className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
                 <a
-                  className="display-4 mb-0 sofia text-decoration-none"
+                  className="display-4 mb-0 sofia text-decoration-none "
                   style={{
                     backgroundColor: "var(--background-color)",
                     color: "var(--text-color)",
@@ -34,7 +34,7 @@ function HeaderContent({ user }) {
               <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
                 <a
                   className="borders text-decoration-none"
-                  href="#"
+                  href="/explore"
                   role="button"
                   id="exploreButton"
                 >
@@ -45,9 +45,9 @@ function HeaderContent({ user }) {
               <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
                 <a
                   className="borders text-decoration-none"
-                  href="#"
+                  href="/dashboard"
                   role="button"
-                  id="exploreButton"
+                  id="dashboardButton"
                 >
                   Dashboard
                 </a>
@@ -55,7 +55,6 @@ function HeaderContent({ user }) {
               <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
                 <a
                   className="borders text-decoration-none"
-                  href="#"
                   role="button"
                   id="logout"
                   onClick={logout}
@@ -94,7 +93,6 @@ function HeaderContent({ user }) {
                 {/* // logout button if user is logged in */}
                 <a
                   className="borders text-decoration-none"
-                  href="#"
                   role="button"
                   id="logout"
                   onClick={logout}
@@ -105,9 +103,9 @@ function HeaderContent({ user }) {
                 {/* // quiz if user is logged in and has not completed the quiz */}
                 <a
                   className="borders text-decoration-none"
-                  href="#"
+                  href="/survey"
                   role="button"
-                  id="survey"
+                  id="surveyButton"
                 >
                   Survey
                 </a>
@@ -124,7 +122,7 @@ export default function Header() {
   const { loading: userLoading, data: userData } = useQuery(QUERY_ME);
 
   if (userLoading) {
-    return <p>Loading...</p>;
+    return <div className="loading-spinner"></div>;
   }
 
   const user = userData?.me;
@@ -150,10 +148,6 @@ export default function Header() {
           Login/Signup
         </a>
       </div>
-      {/* </div> */}
-      {/* //   </div> */}
-
-      {/* // </div> */}
     </header>
   );
 }

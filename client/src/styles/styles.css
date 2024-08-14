@@ -92,6 +92,9 @@ header {
   background-color: var(--background-color);
 }
 
+#surveyButton,
+#dashboardButton,
+#exploreButton,
 #logout,
 #login {
   padding: 6px 20px 6px 20px;
@@ -586,6 +589,15 @@ header {
   font-size: 70px;
   text-decoration: none;
   color: var(--text-color);
+}
+
+#single-craft {
+  font-weight: bold;
+  font-size: 70px;
+  text-decoration: none;
+  color: var(--text-color);
+  border-bottom: 2px solid var(--text-color);
+  padding-bottom: 20px;
 }
 
 #featured-craft:hover {
