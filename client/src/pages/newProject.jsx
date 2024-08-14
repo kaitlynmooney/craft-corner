@@ -86,6 +86,7 @@ const CreateProject = () => {
       <h2 className="title" id="new-project-title">
         Create a new project
       </h2>
+      {success && <p className="success">{success}</p>}
       <form
         className="borders inter"
         id="new-project-form"
