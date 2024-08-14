@@ -50,7 +50,7 @@ type Mutation {
   addUser(username: String!, email: String!, password: String!): Auth
   login(email: String!, password: String!): Auth
   changeAvatar(username: String!, avatar: String!): User
-
+  addProject(projectId: ID!, userId: ID!): User
   addSurveyPricePoint(username: String!, surveyPricePoint: Int): User
 
   createProject(

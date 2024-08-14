@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 
 import SingleProjHero from "../components/SingleProjHero";
+import SavedArrayButton from '../components/SavedArrayButton';
 import { QUERY_SINGLE_PROJECT } from "../utils/queries";
 
 const SingleProject = () => {
@@ -18,15 +19,13 @@ const SingleProject = () => {
   // Handle errors in the query
   if (error) return <div className="error-message">Error: {error.message}</div>;
 
-  // Ensure materials and instructions are defined and are arrays
-  // const materials = Array.isArray(project.materials) ? project.materials : [];
-  // const instructions = Array.isArray(project.instructions)
-  //   ? project.instructions
-  //   : [];
+  
 
   return (
     <div>
+     
       <SingleProjHero />
+      <SavedArrayButton projectId= {projectId}/>
       <div className="borders text-decoration-none" id="badge">
         {project.difficulty}
       </div>

@@ -76,6 +76,15 @@ export const CREATE_PROJECT = gql`
     }
   }
 `;
+export const ADD_PROJECT = gql`
+mutation Mutation($projectId: ID!, $userId: ID!){
+  addProject(projectId: $projectId, userId: $userId){
+    ongoingProjects{
+      _id
+      name
+    }
+  }
+}`
 
 export const DELETE_PROJECT = gql`
   mutation deleteProject($id: ID!) {
