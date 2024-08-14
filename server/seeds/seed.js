@@ -386,7 +386,7 @@ db.once("open", async () => {
       craft: crafts[6]._id,
     },
     {
-      name: "Flower Bouqet",
+      name: "Flower Bouquet",
       materials: [
         "Flowers: Choose a mix of flowers (fresh or faux).",
         "For a basic bouquet, you might need:",
