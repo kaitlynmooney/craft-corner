@@ -46,7 +46,9 @@ const Explore = () => {
         categoryHandler={categoryHandler}
       />
       {category ? (
-        <Projects projects={filteredArray} />
+        <>
+          <Projects projects={filteredArray} />
+        </>
       ) : (
         <div className="container">
           <div className="column" id="popular">

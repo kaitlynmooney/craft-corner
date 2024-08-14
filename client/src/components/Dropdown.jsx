@@ -31,7 +31,6 @@ const Dropdown = ({ category, setCategory, categoryHandler }) => {
         <a onClick={handleDropdownClick} className="dropdown-item" href="">
           Crochet
         </a>
-        {/* <h2>{category.name}</h2> */}
         <a onClick={handleDropdownClick} className="dropdown-item" href="">
           Knitting
         </a>
