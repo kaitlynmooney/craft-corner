@@ -16,6 +16,7 @@ db.once("open", async () => {
       description:
         "Crochet is like magic with a hook! You take a ball of yarn and, with some clever looping and pulling, turn it into anything from cozy blankets to cute little critters. It’s a one-hook wonder that lets you stitch your way to handmade happiness, one loop at a time!",
     },
+   
     {
       name: "Knitting",
       description:
@@ -49,6 +50,25 @@ db.once("open", async () => {
     {
       name: "Floristry",
       description: "Floristry, the art and practice of arranging flowers and plant materials into aesthetically pleasing compositions. It involves the creative and skilled assembly of floral elements to produce decorative arrangements for various purposes, such as events, home decor, and gifts."
+    },
+    {
+      name: "Sewing",
+      description:"Sewing is like the magic trick of turning fabric into fabulous! With just a needle, thread, and a bit of creativity, you can stitch together anything from a cozy quilt to a trendy outfit. It's a mix of art and precision, where each stitch is a step closer to bringing your fashion dreams to life. Whether you're hemming pants, crafting a cute dress, or making decorative pillows, sewing lets you transform simple pieces of fabric into something uniquely yours. It's the ultimate DIY that’s both relaxing and rewarding!"
+
+    },
+    {
+      name: "Woodworking",
+      description:"Woodworking is like sculpting with nature’s most versatile material—wood! Armed with tools like saws, chisels, and sandpaper, you can carve, shape, and join pieces of timber into everything from a simple birdhouse to an intricate piece of furniture. It’s a craft that blends creativity with precision, where the smell of fresh-cut wood and the satisfaction of a smooth finish are all part of the experience. Whether you’re building a bookshelf, a custom table, or a wooden toy, woodworking is the art of turning raw lumber into functional works of art, one satisfying cut at a time!"
+
+    },
+    {
+      name: "Scrapbooking",
+      description:"Scrapbooking is like being a creative detective, piecing together memories with photos, stickers, and colorful paper! It's a craft where your life becomes the story, and every page is a new chapter filled with treasured moments. You get to mix and match all kinds of decorations—think glitter, ribbons, and buttons—to bring your favorite memories to life. Whether you're capturing a family vacation, a special birthday, or everyday joys, scrapbooking turns your personal history into a beautiful, one-of-a-kind album. It’s all about preserving the past while having fun with scissors and glue!"
+    },
+    {
+      name:"Origami",
+      description:"Origami is the art of turning a simple piece of paper into a masterpiece with just a few folds! It's like magic for your hands, where flat sheets transform into 3D wonders—think cranes, dragons, and intricate flowers—all without a single cut or drop of glue. Each fold is a step in a puzzle that unlocks a new creation, and the best part? The possibilities are endless! Whether you're crafting a delicate butterfly or an impressive geometric shape, origami is all about taking something simple and making it extraordinary. It’s a playful mix of precision and imagination that brings paper to life!"
+
     }
   ]);
   console.log("Crafts seeded");
@@ -427,6 +447,81 @@ db.once("open", async () => {
       pricePoint: "$$",
       difficulty: "Newbie",
       craft: crafts[7]._id,
+    },
+    {
+      name: "Simple Fabric Tote Bag",
+      materials: [
+        "Fabric(about 1yd including bag and handles)",
+        "Thread",
+        "Needle/Sewing Machine(completely preference based)",
+        "Scissors",
+        "Pins/Clips",
+        "Iron(optional)",
+        "Measuring Tape",
+        
+      ],
+      instructions: [
+        "1. Cut the Fabric: Cut two rectangles (16 inches wide by 18 inches tall) from your fabric for the body of the bag. Cut two strips (4 inches wide by 22 inches long) for the handles.",
+        "2. Sew the Bag Body: Place the two rectangles right sides together. Sew along the sides and bottom edges, leaving the top open. Use a ½-inch seam allowance.",
+        "3.Create the Handles: Fold each handle strip in half lengthwise, with the wrong sides together. Sew along the long edge, then turn the strip right side out and press flat. Topstitch along both long edges for a neat finish.",
+        "4. Attach the Handles: Pin the handles to the inside top edge of the bag, making sure they are evenly spaced. Sew them in place with a strong stitch, backstitching for extra durability.",
+        "5. Finish the Top Edge: Fold the top edge of the bag down ½ inch to the inside, then fold it over again to enclose the raw edge. Press with an iron and topstitch around the top of the bag.",
+        "Your simple fabric tote bag is ready to use! It’s perfect for carrying books, groceries, or anything else you need on the go. Plus, it’s a great way to show off your newfound sewing skills!"
+      ],
+      image: "FabricToteBag.jpg",
+      pricePoint: "$",
+      difficulty: "Newbie",
+      craft: crafts[8]._id,
+    },
+    {
+      name: "Wooden Picture Frame",
+      materials: [
+        "Wood",
+        "Wood Glue",
+        "Sandpaper",
+        "Saw",
+        "Clamps(optional)",
+        "Wood Stain/Paint(optional)",
+        "Glass/ Plexiglass",
+        "Backing Material",
+        "Picture Hanger(optional)"
+        
+      ],
+      instructions: [
+        "1. Measure and Cut the Wood: Decide on the size of your frame. Cut four pieces of wood at 45-degree angles to create a rectangle or square. The longer pieces will form the sides, and the shorter pieces will form the top and bottom.",
+        "2. Sand the Wood: Sand each piece with 120-grit sandpaper, followed by 220-grit for a smooth finish. Focus on the edges and any rough spots.",
+        "3.Assemble the Frame: Apply wood glue to the angled edges of the frame pieces. Fit the corners together to form the frame, ensuring the angles meet tightly. Use clamps to hold the pieces in place while the glue dries.",
+        "4.Reinforce the Joints (optional): For extra strength, you can use small nails or screws at each corner after the glue has dried.",
+        "5.Finish the Frame (optional): Apply stain or paint to the frame, and let it dry completely.",
+        " 6. Insert the Glass and Backing: Place the glass or plexiglass into the frame, followed by the photo or artwork. Add the backing material and secure it with small nails or clips.",
+        "7. Attach a Hanger (optional): Attach a sawtooth hanger or wire to the back of the frame for wall mounting."
+      ],
+      image: "woodenFrame.png",
+      pricePoint: "$",
+      difficulty: "Newbie",
+      craft: crafts[9]._id,
+    },
+    {
+      name : "Memory Page",
+      materials : ["Scrapbook Paper", "Photographs", "Adhesive","Stickers or Embellishments", "Journaling Pen", "Scissors","Punches", "Stamps/Ink Pads"],
+      Instructions :["Choose Your Theme: Pick an event or moment that you want to highlight, such as a birthday, a trip to the beach, or a holiday celebration", "Select Your Photos: Choose 3-5 photos that best capture the theme. Crop them if needed to fit the layout.", "Create the Background: Choose a sheet of scrapbook paper as your background. If you’re using a plain sheet, consider adding a border or using punches to create decorative edges.", "Arrange the Photos: Lay out your photos on the background paper. Play around with different arrangements until you find a layout you like. Consider layering photos slightly or tilting them for a more dynamic look", "Add Embellishments: Use stickers, washi tape, or other embellishments to enhance the theme. For example, if your theme is a beach day, you might add stickers of seashells, waves, or sunshine.", "Journal Your Thoughts: Use your journaling pen to add a title, captions, or notes about the event. You can write directly on the background paper or on small pieces of paper that you attach to the page.", "Secure Everything: Once you’re happy with the layout, use adhesive to attach the photos and embellishments to the background. Be sure to press firmly to secure everything in place.", "Final Touches: Add any last-minute decorations or touches, like a date stamp or extra stickers."
+      ],
+      image: "memoryPage.jpg",
+      pricePoint:"$",
+      difficulty:"Newbie",
+      craft: crafts[10]._id,
+
+    }, 
+    {
+      name: "Origami Crane",
+      materials: ["Origami Paper","Flat Surface"],
+      instructions: ["1. Start with a Square Base: Begin by folding the paper diagonally in both directions to create an X crease. Then fold it in half horizontally and vertically to create a plus crease. Collapse the paper into a smaller square shape (known as a square base) by folding along the creases.", "2. Fold into a Kite Shape: With the open end of the square base facing you, fold the two edges of the top layer towards the center crease to form a kite shape. Flip the paper over and repeat on the other side.", "3.Create the Bird Base: Fold the top point of the kite down and crease it well, then unfold. Open up the bottom flap of the kite and fold it upwards along the existing creases to form a long, diamond-shaped bird base. Flip over and repeat on the other side.", "4. Form the Wings and Head: Fold the two bottom flaps upwards, which will later become the wings. To create the head, fold one of the top points down to make a small triangle. Crease well.", "5. Shape the Crane: Pull the wings slightly apart, then gently push down on the head to create the neck. Crease the neck and head to keep the shape in place. Finally, fold the wings down to complete your crane.", "6. Final Touches: Adjust the wings and tail to your liking, and you’ve completed your first origami crane!"
+      ],
+      image: "OrigamiCrane.jpg",
+      pricePoint: "$",
+      difficulty:"Newbie",
+      craft: crafts[11]._id
+
     }
   ]);
   console.log("Projects Seeded!");

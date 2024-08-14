@@ -19,10 +19,10 @@ const SingleProject = () => {
   if (error) return <div className="error-message">Error: {error.message}</div>;
 
   // Ensure materials and instructions are defined and are arrays
-  const materials = Array.isArray(project.materials) ? project.materials : [];
-  const instructions = Array.isArray(project.instructions)
-    ? project.instructions
-    : [];
+  // const materials = Array.isArray(project.materials) ? project.materials : [];
+  // const instructions = Array.isArray(project.instructions)
+  //   ? project.instructions
+  //   : [];
 
   return (
     <div>
