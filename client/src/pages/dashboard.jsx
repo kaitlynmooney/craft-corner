@@ -22,7 +22,7 @@ const Dashboard = () => {
   const location = useLocation();
   const selectedDifficulty = location.state?.difficulty;
 
- const [userProjects, setSavedProjects] = useState([]);
+  const [userProjects, setSavedProjects] = useState([]);
   const [inProgressProjects, setInProgressProjects] = useState([]);
   const savedProjects = getSavedProjects();
   const [draggedItems, setDraggedItems] = useState([]);
