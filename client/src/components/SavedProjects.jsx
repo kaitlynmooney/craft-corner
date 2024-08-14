@@ -1,5 +1,4 @@
 import { useDrag } from "react-dnd";
-import { ItemTypes } from '../utils/itemTypes';
 import { useNavigate } from 'react-router-dom';
 
 const SavedProjects = ({ savedProjects, allProjects, setSavedProjects, handleDropProject }) => {

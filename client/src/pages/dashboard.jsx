@@ -136,8 +136,6 @@ const Dashboard = () => {
   const handleDropProject = (projectInput) => {
     // Find the project object from allProjects using the projectId
     const project = projects.find((proj) => proj._id === projectInput._id);
-    console.log(projects);
-    console.log(project);
 
     if (!project) {
       console.error('Project not found:', project);
@@ -147,7 +145,6 @@ const Dashboard = () => {
     // Update the inProgressProjects state
     setInProgressProjects((prevProjects) => {
       // Check if the project is already in the list
-      console.log(prevProjects);
       const isAlreadyInProgress = prevProjects.some(p => p._id === project._id);
       
       if (isAlreadyInProgress) {
