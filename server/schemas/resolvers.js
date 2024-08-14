@@ -83,6 +83,18 @@ const resolvers = {
         throw new Error("Failed to change avatar");
       }
     },
+    addProject: async (parent, { projectId, userId }) => {
+      try {
+        console.log("addProject");
+        const user = await User.findOneAndUpdate(
+          { _id: userId },
+          { $addToSet: { ongoingProjects: projectId } }
+        ).populate("ongoingProjects");
+        return user;
+      } catch (err) {
+        console.log(err);
+      }
+    },
 
     addSurveyPricePoint: async (parent, { username, surveyPricePoint }) => {
       try {
