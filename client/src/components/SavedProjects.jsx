@@ -1,6 +1,5 @@
 import { useDrag } from "react-dnd";
-import { ItemTypes } from "../utils/itemTypes";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 
 const SavedProjects = ({
   savedProjects,
@@ -51,38 +50,30 @@ const SavedProjects = ({
         handleDropProject(); // Call handleDropProject when a project is dropped
       };
 
-      return (
-        <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1 }}>
-          <div onClick={(event) => handleDivClick(project._id, event)}>
-            <button className="button-options">
-              <button
-                type="button"
-                className="btn-close"
-                aria-label="Close"
-                onClick={() => handleRemoveProject(project._id)}
-              ></button>
-              <label id="label">{project.name}</label>
-            </button>
-          </div>
+        return (
+            <div ref={drag} style={{ opacity: isDragging ? 0.5 : 1 }}>
+                <div onClick={(event) => handleDivClick(project._id, event)}>
+                    <button className='button-options'>
+                        <button type="button" className="btn-close" aria-label="Close" onClick={() => handleRemoveProject(project._id)}></button>
+                        <label id='label'>{project.name}</label>
+                    </button>
+                </div>
+            </div>
+        );
+    };
+
+    return (
+        <div id="project-container">
+            {savedProjects && savedProjects.length > 0 ? (
+                savedProjects.map((projectId) => (
+                    <DraggableProject key={projectId} project={allProjects.find((p) => p._id === projectId)} />
+                ))
+            ) : (
+                <h6>No saved projects yet!</h6>
+            )}
         </div>
       );
     }
   };
-
-  return (
-    <div id="project-container">
-      {savedProjects && savedProjects.length > 0 ? (
-        savedProjects.map((projectId) => (
-          <DraggableProject
-            key={projectId}
-            project={allProjects.find((p) => p._id === projectId)}
-          />
-        ))
-      ) : (
-        <h4>No saved projects yet!</h4>
-      )}
-    </div>
-  );
-};
 
 export default SavedProjects;
