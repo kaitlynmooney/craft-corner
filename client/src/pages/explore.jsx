@@ -47,6 +47,7 @@ const Explore = () => {
       />
       {category ? (
         <>
+          <h2 className="category-title">{category}</h2>
           <Projects projects={filteredArray} />
         </>
       ) : (
