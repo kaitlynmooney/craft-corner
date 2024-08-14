@@ -60,7 +60,7 @@ const SavedProjects = ({ savedProjects, allProjects, setSavedProjects, handleDro
                     <DraggableProject key={projectId} project={allProjects.find((p) => p._id === projectId)} />
                 ))
             ) : (
-                <h4>No saved projects yet!</h4>
+                <h6>No saved projects yet!</h6>
             )}
         </div>
     );

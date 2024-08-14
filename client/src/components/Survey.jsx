@@ -9,9 +9,11 @@ import { useQuery } from "@apollo/client";
 const Survey = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [userResponses, setUserResponses] = useState([]);
+  const [isSurveyCompleted, setIsSurveyCompleted] = useState(false);
 
   const [saveSurveyPricePoint] = useMutation(ADD_SURVEYPRICEPOINT);
   const navigate = useNavigate();
+
 
   const {
     loading: userLoading,
@@ -90,23 +92,28 @@ const Survey = () => {
 
   const handleNextQuestion = (response) => {
     setUserResponses([...userResponses, response]);
-    setCurrentQuestion(currentQuestion + 1);
+    if (currentQuestion === questions.length - 1) {
+      handleSaveSurveyPricePoint(response);
+    } else {
+      setCurrentQuestion(currentQuestion + 1);
+    }
   };
 
   // function to handle saving the answer to the pricepoint question
   const handleSaveSurveyPricePoint = async (response) => {
     try {
-      const { data } = await saveSurveyPricePoint({
+      // Save the survey price point
+      await saveSurveyPricePoint({
         variables: { username: user.username, surveyPricePoint: response[0] },
       });
+  
+      // Set flag indicating survey completion
+      localStorage.setItem('surveyCompleted', 'true');
+      setIsSurveyCompleted(true);
     } catch (error) {
-      console.error("error saving price point", error);
+      console.error("Error saving price point", error);
     }
   };
-
-  if (currentQuestion === questions.length) {
-    navigate("/dashboard"); // Redirect to the dashboard page
-  }
 
   return (
     <main>
@@ -132,7 +139,7 @@ const Survey = () => {
               className="borders"
               id="nextquestion"
               type="submit"
-              onClick={() => handleNextQuestion("Create my Dashboard")}
+              onClick={() => navigate('/dashboard')}
             >
               Create my Dashboard! &#8594;
             </button>

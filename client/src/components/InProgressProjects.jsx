@@ -35,7 +35,7 @@ const InProgressProjects = ({ projects, handleDropProject, inProgressProjects, s
                 position: 'relative' // Ensure the drop target is positioned correctly
             }}
         >
-            Drop in-progress projects here!
+            <h6>Drop in-progress projects here!</h6>
             <div id="project-container">
                 {projects.map((project) => (
                     <button key={project._id} className='button-options'>
