@@ -24,8 +24,8 @@ const SingleProjHero = () => {
       />
       <div className="hero-content">
         <p id="explore-feature">{project.craft.name}</p>
-        <div className="featured-craft">
-          <h1 id="featured-craft" role="button">
+        <div className="single-craft">
+          <h1 id="single-craft" role="button">
             {project.name}
           </h1>
         </div>
