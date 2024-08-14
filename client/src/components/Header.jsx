@@ -13,57 +13,45 @@ function HeaderContent({ user }) {
   if (user?.surveyPricePoint > 0) {
     return (
       <header>
-        <div className="px-3 py-2 text-white">
-          <div className="bg--background-color">
-            <div className="my-5 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <div className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <a
-                  className="display-4 mb-0 sofia text-decoration-none "
-                  style={{
-                    backgroundColor: "var(--background-color)",
-                    color: "var(--text-color)",
-                  }}
-                  href="/"
-                  role="button"
-                  id="logo"
-                >
-                  Craft Corner
-                </a>
-              </div>
-
-              <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
-                <a
-                  className="borders text-decoration-none"
-                  href="/explore"
-                  role="button"
-                  id="exploreButton"
-                >
-                  Explore
-                </a>
-              </div>
-
-              <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
-                <a
-                  className="borders text-decoration-none"
-                  href="/dashboard"
-                  role="button"
-                  id="dashboardButton"
-                >
-                  Dashboard
-                </a>
-              </div>
-              <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
-                <a
-                  className="borders text-decoration-none"
-                  role="button"
-                  id="logout"
-                  onClick={logout}
-                >
-                  Logout
-                </a>
-              </div>
-            </div>
-          </div>
+        <div>
+          <a
+            className="display-4 mb-0 sofia text-decoration-none "
+            style={{
+              backgroundColor: "var(--background-color)",
+              color: "var(--text-color)",
+            }}
+            href="/"
+            role="button"
+            id="logo"
+          >
+            Craft Corner
+          </a>
+        </div>
+        <div>
+          <a
+            className="borders text-decoration-none"
+            href="/explore"
+            role="button"
+            id="exploreButton"
+          >
+            Explore
+          </a>
+          <a
+            className="borders text-decoration-none"
+            href="/dashboard"
+            role="button"
+            id="dashboardButton"
+          >
+            Dashboard
+          </a>
+          <a
+            className="borders text-decoration-none"
+            role="button"
+            id="logout"
+            onClick={logout}
+          >
+            Logout
+          </a>
         </div>
       </header>
     );
@@ -71,47 +59,41 @@ function HeaderContent({ user }) {
     // if user is logged in and has not completed the survey
     return (
       <header>
-        <div className="px-3 py-2 text-white">
-          <div className="bg--background-color">
-            <div className="my-5 d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-              <div className="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-                <a
-                  className="display-4 mb-0 sofia text-decoration-none"
-                  style={{
-                    backgroundColor: "var(--background-color)",
-                    color: "var(--text-color)",
-                  }}
-                  href="/"
-                  role="button"
-                  id="logo"
-                >
-                  Craft Corner
-                </a>
-              </div>
+        <div>
+          <a
+            className="display-4 mb-0 sofia text-decoration-none"
+            style={{
+              backgroundColor: "var(--background-color)",
+              color: "var(--text-color)",
+            }}
+            href="/"
+            role="button"
+            id="logo"
+          >
+            Craft Corner
+          </a>
+        </div>
 
-              <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
-                {/* // logout button if user is logged in */}
-                <a
-                  className="borders text-decoration-none"
-                  role="button"
-                  id="logout"
-                  onClick={logout}
-                >
-                  Logout
-                </a>
+        <div>
+          {/* // logout button if user is logged in */}
+          <a
+            className="borders text-decoration-none"
+            role="button"
+            id="logout"
+            onClick={logout}
+          >
+            Logout
+          </a>
 
-                {/* // quiz if user is logged in and has not completed the quiz */}
-                <a
-                  className="borders text-decoration-none"
-                  href="/survey"
-                  role="button"
-                  id="surveyButton"
-                >
-                  Survey
-                </a>
-              </div>
-            </div>
-          </div>
+          {/* // quiz if user is logged in and has not completed the quiz */}
+          <a
+            className="borders text-decoration-none"
+            href="/survey"
+            role="button"
+            id="surveyButton"
+          >
+            Survey
+          </a>
         </div>
       </header>
     );
@@ -138,7 +120,7 @@ export default function Header() {
         </a>
       </div>
 
-      <div className="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small d-flex align-items-center">
+      <div>
         <a
           className="borders text-decoration-none"
           href="/login"

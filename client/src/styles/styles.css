@@ -96,16 +96,19 @@ header {
 #dashboardButton,
 #exploreButton,
 #logout,
-#login{
+#login {
   padding: 6px 20px 6px 20px;
   color: var(--text-color);
+  margin: 0px 2px 0px 2px;
 }
-#badge{
+
+#badge {
   width: 10%;
   margin-top: 20px;
   margin-left: 20px;
-  font-size: 18px;;
+  font-size: 18px;
 }
+
 /* HOME PAGE */
 #homepage {
   background: var(--clear);
@@ -885,8 +888,6 @@ p {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-
-
 }
 
 .pottery-btn:hover {
@@ -907,8 +908,6 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-
-
 }
 
 .crochet-btn:hover {
@@ -950,7 +949,6 @@ p {
   align-items: center;
   display: flex;
   justify-content: center;
-
 }
 
 .jewelry-btn:hover {
@@ -1050,7 +1048,6 @@ p {
   width: 100%;
   height: auto;
   margin-top: 200px;
-
 }
 
 .project-instructions {
