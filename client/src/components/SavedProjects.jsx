@@ -28,7 +28,6 @@ const SavedProjects = ({ savedProjects, allProjects, setSavedProjects, handleDro
 
     // Define a draggable project component
     const DraggableProject = ({ project }) => {
-        console.log(ItemTypes.PROJECT);
         const [{ isDragging }, drag] = useDrag({
             type: 'PROJECT',
             item: { project },

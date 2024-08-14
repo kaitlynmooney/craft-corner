@@ -14,16 +14,19 @@ const InProgressProjects = ({ projects, handleDropProject, inProgressProjects, s
     //remove in-progress projects when the X is clicked 
   const handleRemoveProject = (projectId) => {
     // Remove the project ID from inProgress state
-    const updatedProjects = inProgressProjects.filter((_id) => _id !== projectId);
+    const updatedProjects = inProgressProjects.filter((project) => project._id !== projectId);
     setInProgressProjects(updatedProjects);
+    console.log(updatedProjects);
 
     // Update local storage to remove the project ID
-    const storedProjectIds = JSON.parse(localStorage.getItem('draggedProjectIds')) || [];
-    const indexToRemove = storedProjectIds.indexOf(projectId);
-    if (indexToRemove !== -1) {
-        storedProjectIds.splice(indexToRemove, 1);
-        localStorage.setItem('draggedProjectIds', JSON.stringify(storedProjectIds));
-    }
+  const storedProjectIds = JSON.parse(localStorage.getItem('inProgressProjects')) || [];
+  
+  // Filter out the project ID to remove
+  const updatedStoredProjectIds = storedProjectIds.filter(project => project._id !== projectId);
+  
+  // Save the updated list back to local storage
+  localStorage.setItem('inProgressProjects', JSON.stringify(updatedStoredProjectIds));
+  console.log(updatedStoredProjectIds);
 };
 
     return (
