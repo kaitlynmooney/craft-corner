@@ -27,12 +27,12 @@ const SingleProject = () => {
   return (
     <div>
       <SingleProjHero />
-      <span className="badge rounded-pill text-bg-info">
+      <div className="borders text-decoration-none" id="badge">
         {project.difficulty}
-      </span>
-      <span className="badge rounded-pill text-bg-info">
+      </div>
+      <div className="borders text-decoration-none" id="badge">
         {project.pricePoint}
-      </span>
+      </div>
       <div className="container">
         <div className="row">
           <div className="col">

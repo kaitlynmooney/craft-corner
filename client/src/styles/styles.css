@@ -33,7 +33,7 @@ body {
   border: 0.8px solid var(--text-color);
   border-radius: 15px;
 }
-
+#badge,
 .dark-button {
   background-color: var(--text-color);
   color: var(--background-color);
@@ -96,11 +96,16 @@ header {
 #dashboardButton,
 #exploreButton,
 #logout,
-#login {
+#login{
   padding: 6px 20px 6px 20px;
   color: var(--text-color);
 }
-
+#badge{
+  width: 10%;
+  margin-top: 20px;
+  margin-left: 20px;
+  font-size: 18px;;
+}
 /* HOME PAGE */
 #homepage {
   background: var(--clear);
