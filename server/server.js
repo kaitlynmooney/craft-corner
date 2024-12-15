@@ -1,3 +1,4 @@
+require("dotenv").config();
 const express = require("express");
 const { ApolloServer } = require("@apollo/server");
 const { expressMiddleware } = require("@apollo/server/express4");
@@ -27,7 +28,6 @@ const startApolloServer = async () => {
     })
   );
 
-
   // if we're in production, serve client/dist as static assets
   if (process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../client/dist")));
@@ -44,6 +44,5 @@ const startApolloServer = async () => {
     });
   });
 };
-
 
 startApolloServer();
